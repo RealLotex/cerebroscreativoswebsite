@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerebros Creativos | Trayectos de Formación Digital para Niños y Jóvenes</title>
-    
+    <title>Cerebros Creativos - Clases online en vivo para niños y jóvenes</title>
+    <meta name="description" content="Cerebros Creativos es una comunidad de educación en línea para niños y jóvenes, enfocada en habilidades del futuro.">
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 
@@ -28,11 +28,23 @@
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'glow': 'glow 1.5s ease-in-out infinite', 
                     },
                     keyframes: {
                         fadeIn: {
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' },
+                        },
+                        // NUEVOS KEYFRAMES PARA EL BRILLO SUAVE
+                        glow: {
+                            '0%, 100%': { 
+                                opacity: '1', 
+                                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)' // Sin sombra
+                            },
+                            '50%': { 
+                                opacity: '1', 
+                                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)' // Sombra brillante
+                            },
                         }
                     }
                 }
@@ -75,7 +87,7 @@
                         <a href="#trayectos" class="text-white hover:bg-white/10 hover:text-brand-accent transition-all px-4 py-2 rounded-full border border-white/20 text-sm font-medium">
                             Trayectos
                         </a>
-                        <a href="https://wa.me/5493404564631?text=Hola,%20quisiera%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20trayectos%20de%20formaci%C3%B3n" 
+                        <a href="https://cerebroscreativos.org/inscripciones"" 
                            target="_blank"
                            class="px-5 py-2 rounded-full font-bold shadow-lg transition-transform hover:scale-105 bg-brand-accent text-brand-primary">
                             Clase de Prueba
@@ -97,7 +109,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#metodo" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Método</a>
                 <a href="#trayectos" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Trayectos</a>
-                <a href="https://wa.me/5493404564631?text=Hola,%20quisiera%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20trayectos%20de%20formaci%C3%B3n" 
+                <a href="https://cerebroscreativos.org/inscripciones" 
                    target="_blank"
                    class="block w-full text-left mt-2 px-3 py-3 rounded-md text-base font-bold text-brand-accent hover:bg-white/10">
                     Solicitar Información
@@ -230,7 +242,7 @@
                 Programas completos a distancia, con encuentros semanales en vivo.
             </p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="trayectos-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6" id="trayectos-grid">
                 <!-- Grid Items will be injected here by JS, but also kept static for SEO if needed. Using JS to map icons easily -->
             </div>
         </div>
@@ -241,19 +253,101 @@
         <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 via-transparent to-transparent"></div>
         
         <div class="relative z-10 max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold mb-12">Si no hacemos nada, el futuro quedará desprotegido</h2>
+            <h2 class="text-4xl font-bold mb-8">Queremos Conocerte</h2>
             <p class="text-xl mb-10 text-blue-100">
-                Asegura hoy las herramientas que tus hijos necesitarán mañana.
+                Contactanos ahora para saber más de nuestras propuestas.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/5493404564631?text=Hola,%20quisiera%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20trayectos%20de%20formaci%C3%B3n"
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+                <a href="https://cerebroscreativos.org/inscripciones"
                    target="_blank"
-                   class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i> Hablar con un Asesor
+                   class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto animate-glow">
+                    <i data-lucide="message-circle-more" class="w-5 h-5"></i> Pulse aquí para enviar un whatsapp
                 </a>
             </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+              <a href="https://cerebroscreativos.org/inscripciones"
+                 target="_blank"
+                 class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto">
+                  <i data-lucide="phone" class="w-5 h-5"></i> +54 9 3404 564631
+              </a>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+              <a href="mailto:contacto@cerebroscreativos.org"
+                 target="_blank"
+                 class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto">
+                  <i data-lucide="mail" class="w-5 h-5"></i> contacto@cerebroscreativos.org
+              </a>
+            </div>
         </div>
+    </section>
+
+    <section class="py-20 px-4 bg-black/20">
+      <div class="max-w-5xl mx-auto ">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Preguntas Frecuentes</h2>
+          <p class="opacity-70">Resolvemos las dudas de padres que buscan el mejor futuro digital.</p>
+        </div>  
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Qué es Cerebros Creativos?¿Qué son los trayectos de formación para niños y jóvenes?</h3>
+              <p class="text-sm opacity-80">
+                Cerebros Creativos es una comunidad de educación en línea para niños y jóvenes, enfocada en habilidades del futuro. Nuestros trayectos de formación digital son programas educativos diseñados para <strong>preparar a tus hijos para el mundo del mañana</strong>. A diferencia de un curso tradicional, en Cerebros Creativos aplicamos la <em>pedagogía Montessori</em> para que niños y jóvenes <strong>exploren sus intereses</strong>, aprendiendo habilidades técnicas complejas <strong>mientras disfrutan el proceso de aprendizaje.</strong>
+              </p>
+          </div>
+  
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Cómo transformar el tiempo de pantalla en algo productivo?</h3>
+              <p class="text-sm opacity-80">
+                Entendemos la preocupación por el exceso de pantallas. En lugar de prohibir la tecnología, <strong>cambiamos la relación que tus hijos tienen con ella</strong>. Aprovechamos su interés natural por las pantallas para enseñarles a <strong>utilizar los dispositivos como herramientas de poder</strong>, convirtiendo esas horas de uso en habilidades para su futuro profesional, como la programación, el diseño o la producción digital, siempre bajo un enfoque Montessori que prioriza el disfrute.
+              </p>
+          </div>
+  
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Ofrecen cursos de programación de videojuegos o clases de programacion con Roblox?</h3>
+              <p class="text-sm opacity-80">
+                Sí. Contamos con trayectos específicos de programación de videojuegos para niños donde aprenden a crear mundos, y un curso especializado en programación en Roblox. En estos espacios, <strong>los chicos desarrollan lógica y diseño dentro de su plataforma favorita</strong>, aprendiendo a estructurar sus propios juegos en lugar de solo jugarlos.
+              </p>
+          </div>
+  
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Como enseñar a los niños a usar Inteligencia Artificial (IA)?</h3>
+              <p class="text-sm opacity-80">
+                Creemos que la mejor manera es <strong>enseñarles a dominar a la IA para que la IA no los domine</strong>. En Cerebros Creativos, la Inteligencia Artificial no es un tema aparte, sino que está incluida en todos nuestros trayectos como una herramienta práctica. <strong>Nuestros alumnos aprenden a interactuar con sistemas de IA para potenciar sus proyectos</strong> de programación, arte digital o emprendimiento, asegurando que adquieran las habilidades de manejo de tecnología avanzada necesarias para un futuro donde los algoritmos son clave.
+              </p>
+          </div>
+          
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Las clases son grabadas o tienen acompañamiento docente?</h3>
+              <p class="text-sm opacity-80">
+                Priorizamos el contacto humano. Ofrecemos clases en vivo online con acompañamiento docente real. No utilizamos sistemas estandarizados ni videos pregrabados sin supervisión; <strong>garantizamos que cada alumno disfrute su propio proceso de aprendizaje con una guía constante que respeta sus tiempos</strong>, tal como dicta el método Montessori.
+              </p>
+          </div>
+  
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 class="font-bold text-lg text-brand-accent mb-2">Mi hijo es creativo pero no le gusta programar, ¿hay opciones para él?</h3>
+              <p class="text-sm opacity-80">
+                ¡Claro que sí! La tecnología es más que código. Ofrecemos trayectos de Arte Digital 2D, Modelado y Animación 3D para dar vida a personajes, y Producción Musical para la composición y mezcla digital. <strong>Fomentamos la creatividad digital en todas sus formas</strong>, permitiendo que cada joven descubra qué le apasiona realmente.
+              </p>
+          </div>
+
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+            <h3 class="font-bold text-lg text-brand-accent mb-2">¿Qué es el programa de Emprendimientos e Inversiones 4.0?</h3>
+            <p class="text-sm opacity-80">
+              El trayecto de Emprendimientos e Inversiones 4.0 está diseñado para <strong>transformar ideas en proyectos digitales concretos</strong>. Es la opción ideal para jóvenes que buscan desarrollar una mentalidad de liderazgo y negocio. Es más que un curso de trading o un curso de inversiones para adolescentes: <strong>nuestro programa cubre aspectos fundamentales de finanzas para jóvenes</strong>, como el desarrollo de modelos de negocio, la comunicación estratégica y la gestión de la creatividad empresarial.
+            </p>
+          </div>
+
+          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+            <h3 class="font-bold text-lg text-brand-accent mb-2">¿Por qué el método Montessori funciona en la educación tecnológica?</h3>
+            <p class="text-sm opacity-80">
+              El método Montessori en tecnología es efectivo porque desafía el modelo educativo tradicional que impone temas estandarizados. En Cerebros Creativos, <strong>orientamos al alumno a la exploración de intereses, garantizando que el origen de su crecimiento sea el disfrute y no la presión</strong>. Esto se traduce en un aprendizaje duradero y más profundo. Al fomentar el descubrimiento y la creatividad digital en un entorno sin la presión del sistema tradicional, <strong>logramos una transformación real en la manera de aprender y aseguramos que el proceso sea más efectivo.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- --- FOOTER --- -->
@@ -269,7 +363,7 @@
             <div class="flex gap-6 opacity-70">
                 <a href="https://www.facebook.com/cerebroscreativosorg" class="hover:text-white transition-colors">Facebook</a>
                 <a href="https://www.instagram.com/cerebroscreativosorg/" class="hover:text-white transition-colors">Instagram</a>
-                <a href="https://wa.me/5493404564631?text=Hola,%20quisiera%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20trayectos%20de%20formaci%C3%B3n" class="hover:text-white transition-colors">WhatsApp</a>
+                <a href="https://cerebroscreativos.org/inscripciones" class="hover:text-white transition-colors">WhatsApp</a>
                 <a href="mailto:contacto@cerebroscreativos.org" class="hover:text-white transition-colors">Email</a>
             </div>
         </div>
@@ -279,14 +373,15 @@
     <script>
         // Data Definitions
         const trayectosData = [
-            { title: "Programación de Videojuegos", icon: "gamepad-2", desc: "Crear mundos, no solo jugarlos." },
-            { title: "Programación en Roblox", icon: "box", desc: "Diseño y lógica en su plataforma favorita." },
-            { title: "Arte Digital 2D", icon: "palette", desc: "Ilustración y creatividad digital." },
-            { title: "Modelado y Animación 3D", icon: "monitor-play", desc: "Dar vida a personajes y objetos tridimensionales." },
-            { title: "Contenidos + Marketing Digital", icon: "video", desc: "Comunicación estratégica para redes." },
-            { title: "Producción Musical", icon: "music", desc: "Composición y mezcla digital." },
-            { title: "Prog. Web + Sistemas", icon: "code", desc: "El lenguaje que construye internet." },
-            { title: "Emprendimientos 4.0", icon: "rocket", desc: "De la idea al negocio digital." },
+            { title: "Desarrollo de Videojuegos", icon: "gamepad-2", desc: "Clases de programación de videojuegos online. Taller de creación con Unity para adolescentes y curso programación de juegos 3D en Unreal Engine." },
+            { title: "Programación en Roblox", icon: "cuboid", desc: "Curso de programación en Roblox para niños y jóvenes. Aprenden diseño y lógica dentro de su plataforma favorita." },
+            { title: "Arte y Dibujo Digital", icon: "palette", desc: "Clases de dibujo para niñas y niños. Ilustración con tablets y PC para impulsar la creatividad digital." },
+            { title: "Modelado y Animación 3D", icon: "rotate-3d", desc: "Curso de modelado 3D con Blender. Incluye clases de animación 3D para dar vida a personajes y objetos tridimensionales." },
+            { title: "Creacion de Contenidos + Marketing Digital", icon: "monitor-play", desc: "Curso de youtube y tiktok para niños online y Curso de streamer con edición de video para jóvenes. Incluye comunicación estratégica para redes." },
+            { title: "Producción Musical", icon: "music", desc: "Clases de producción musical online. Crear bases y canciones con instrumentos digitales, composición y mezcla digital." },
+            { title: "Lectura Crítica y Storytelling", icon: "notebook-pen", desc: "Taller de lectura y escritura para jóvenes. Desarrollo del pensamiento crítico desde la filosofía y la narrativa." },
+            { title: "Prog. Web + Sistemas Informáticos", icon: "code", desc: "Clases de programación web para adolescentes. Domina HTML y Javascript, el lenguaje que construye internet. Crea sistemas programando en Google Drive." },
+            { title: "Emprendimientos e Inversiones 4.0", icon: "rocket", desc: "Curso de finanzas para jóvenes online y taller de emprendimientos digitales. De la idea al negocio digital." },
         ];
 
         // 1. Render Trayectos Grid (Static List)
@@ -347,7 +442,7 @@
             currentSlide = (currentSlide + 1) % trayectosData.length;
             renderCarousel();
             lucide.createIcons(); // Re-init icons for new slides
-        }, 3000);
+        }, 4500);
 
         // Initial Carousel Render
         renderCarousel();
