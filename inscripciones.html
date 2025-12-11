@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo a WhatsApp...</title>
+    
+    <meta http-equiv="refresh" content="0; url=https://wa.me/5493404564631?text=Hola,%20quisiera%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20trayectos%20de%20formaci%C3%B3n">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        a {
+            color: #25D366; /* Color de WhatsApp */
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redirigiendo...</h1>
+        <p>Si la página no redirige automáticamente, haz clic en el siguiente enlace:</p>
+        <a href="https://wa.me/5493404564631?text=Hola,%20quisiera%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20trayectos%20de%20formaci%C3%B3n">
+            Ir a WhatsApp
+        </a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.replace("https://wa.me/5493404564631?text=Hola,%20quisiera%20tener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20trayectos%20de%20formaci%C3%B3n");
+            }, 500); // 0.5 segundos de retraso para el respaldo
+        };
+    </script>
+</body>
+</html>
