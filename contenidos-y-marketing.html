@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trayecto Tecnológico 2026 - Productor Digital</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#00357a',
+                        'brand-darker': '#00285c',
+                        'brand-accent': '#5ce1e6',
+                        'brand-footer': '#002a60',
+                    },
+                    fontFamily: {
+                        sans: ['ui-sans-serif', 'system-ui', 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji"],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animaciones personalizadas */
+        @keyframes pulse-custom {
+            50% { opacity: .5; }
+        }
+        .animate-pulse-custom {
+            animation: pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-white min-h-screen font-sans pb-20 selection:bg-brand-accent selection:text-brand-dark">
+
+    <header class="relative overflow-hidden px-6 pt-12 pb-8 text-center">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
+        
+        <div class="relative z-10">
+            <span class="inline-block py-1 px-3 rounded-full border text-xs font-bold tracking-wider uppercase mb-4 shadow-[0_0_10px_rgba(92,225,230,0.3)] bg-[rgba(0,74,173,0.5)] border-brand-accent text-brand-accent">
+                Trayecto Tecnológico 2026
+            </span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                De Espectador <br>a <span class="text-brand-accent">Productor Digital</span>
+            </h1>
+            <p class="text-lg mb-8 max-w-md mx-auto opacity-90">
+                Una formación completa para jóvenes de 12 a 18 años, donde dominaremos las redes, el márketing y la edición de video.
+            </p>
+        </div>
+    </header>
+
+    <section class="px-6 py-10 bg-black/20">
+        <h2 class="text-2xl font-bold mb-6 text-center">Las habilidades que aprenderemos</h2>
+        <div class="grid gap-4 md:grid-cols-3 max-w-5xl mx-auto">
+            
+            <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+                <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
+                    <i data-lucide="video" class="w-5 h-5"></i> Creación de Contenido
+                </h3>
+                <p class="text-sm opacity-80">Aprenderemos diseño de guiones, edición básica y optimización de piezas visuales para destacar en redes.</p>
+            </div>
+
+            <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+                <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
+                    <i data-lucide="trending-up" class="w-5 h-5"></i> Estrategia de Difusión
+                </h3>
+                <p class="text-sm opacity-80">Entenderemos métricas y KPIs. Sabremos crear embudos de venta y campañas que funcionan, no solo "likes".</p>
+            </div>
+
+            <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+                <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
+                    <i data-lucide="film" class="w-5 h-5"></i> Narrativa de Cine
+                </h3>
+                <p class="text-sm opacity-80">No solo editamos; contamos historias. Dominaremos iluminación, color grading y postproducción avanzada.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="px-6 py-12 relative max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-2">
+            <i data-lucide="flag" class="text-brand-accent"></i> Hoja de Ruta del Alumno
+        </h2>
+
+        <div class="relative border-l-2 border-dashed ml-4 md:ml-8 space-y-12 border-white/20">
+            
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-dark bg-brand-accent"></div>
+                
+                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-darker border-[rgba(92,225,230,0.2)]">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                            <i data-lucide="video" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Primeros 20 Encuentros</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Módulo 1: Creación de Contenidos</h3>
+                    <p class="text-sm mb-4 opacity-70">Dejamos de sólo consumir para empezar a crear.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Diseño de Guiones</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Edición Básica</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Iluminación</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Optimización Redes</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-accent">Software que aprenderá:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-dark">Canva</span>
+                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-dark">CapCut</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                        <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
+                            <i data-lucide="award" class="w-5 h-5 text-yellow-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase font-bold tracking-wider opacity-70">Hito Desbloqueado</p>
+                            <p class="text-sm font-semibold text-yellow-100">Certificado Digital 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-dark bg-brand-accent"></div>
+                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-darker border-[rgba(92,225,230,0.2)]">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                            <i data-lucide="trending-up" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Siguientes 20 Encuentros</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Módulo 2: Marketing Digital</h3>
+                    <p class="text-sm mb-4 opacity-70">No sirve crear si nadie lo ve. Aprendemos a llegar a la audiencia correcta.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Buyer Persona</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Embudos Simples</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Copywriting</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Métricas & KPIs</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-accent">Software que aprenderá:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-dark">Meta Business Suite</span>
+                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-dark">YouTube Studio</span>
+                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-dark">Buffer</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                        <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
+                            <i data-lucide="award" class="w-5 h-5 text-yellow-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase font-bold tracking-wider opacity-70">Hito Desbloqueado</p>
+                            <p class="text-sm font-semibold text-yellow-100">Certificado Digital 2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12">
+                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-dark bg-brand-accent"></div>
+                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-darker border-[rgba(92,225,230,0.2)]">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                            <i data-lucide="film" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Etapa Final</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Módulo 3: Edición Profesional</h3>
+                    <p class="text-sm mb-4 opacity-70">El salto de calidad definitivo. Calidad cinematográfica y narrativa avanzada.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Corrección de Color</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Máscaras y VFX</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Ritmo y Montaje</span>
+                        <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Narrativa Visual</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-accent">Software que aprenderá:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-dark">DaVinci Resolve</span>
+                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-dark">Handbrake</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                        <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
+                            <i data-lucide="award" class="w-5 h-5 text-yellow-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase font-bold tracking-wider opacity-70">Hito Desbloqueado</p>
+                            <p class="text-sm font-semibold text-yellow-100">Certificado Digital 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 pt-4">
+                <div class="absolute -left-[15px] top-4 w-8 h-8 rounded-full flex items-center justify-center border-4 z-10 shadow-[0_0_15px_rgba(92,225,230,0.6)] bg-brand-accent border-brand-dark">
+                    <i data-lucide="circle-check-big" class="w-4 h-4 font-bold text-brand-dark"></i>
+                </div>
+                <div class="font-bold text-lg animate-pulse-custom text-brand-accent">
+                    ¡Perfil Profesional Completado!
+                </div>
+                <p class="text-sm opacity-60">Listo para el mercado o proyectos propios.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="px-6 py-12 border-t bg-brand-footer border-white/10">
+        <div class="max-w-md mx-auto">
+            <div class="mb-10 bg-black/20 p-5 rounded-xl border border-white/10">
+                <h3 class="font-bold text-lg mb-4 flex items-center gap-2 text-brand-accent">
+                    <i data-lucide="monitor" class="w-5 h-5"></i> Requisitos Técnicos
+                </h3>
+                <ul class="space-y-3 text-sm opacity-80">
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 text-blue-300"><i data-lucide="panels-top-left" class="w-4 h-4"></i></div>
+                        <span><strong>Sistema Operativo:</strong> Windows 10/11</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 text-blue-300"><i data-lucide="cpu" class="w-4 h-4"></i></div>
+                        <span><strong>PC Estándar:</strong> Menos de 5 años de antigüedad (salvo PC Gamer, si es más antigua).</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 text-blue-300"><i data-lucide="mouse-pointer" class="w-4 h-4"></i></div>
+                        <span><strong>Navegador:</strong> Google Chrome o Microsoft Edge actualizados.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 text-blue-300"><i data-lucide="mic" class="w-4 h-4"></i></div>
+                        <span><strong>Cámara y Micrófono:</strong> Para comunicarnos en los encuentros en vivo.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-6 text-center">Detalles del Cursado</h2>
+            <div class="rounded-2xl p-6 shadow-2xl relative overflow-hidden border bg-brand-dark border-[rgba(92,225,230,0.3)]">
+                <ul class="space-y-6 relative z-10">
+                    <li class="flex items-center gap-3">
+                        <div class="p-2 rounded-lg bg-[rgba(0,74,173,1)] text-brand-accent">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">1 Encuentro por semana.</p>
+                            <p class="text-xs opacity-60">Incluso los feriados</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="p-2 rounded-lg bg-[rgba(0,74,173,1)] text-brand-accent">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Clases de 1h 30m</p>
+                            <p class="text-xs opacity-60">Modalidad Online en Vivo</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="p-2 rounded-lg bg-[rgba(0,74,173,1)] text-brand-accent">
+                            <i data-lucide="circle-play" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Las clases quedan grabadas</p>
+                            <p class="text-xs opacity-60">Repasa o recupera clases siempre</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="mt-8 pt-6 border-t border-white/10">
+                    <div class="flex justify-between items-end mb-2">
+                        <span class="text-sm opacity-60">Valor Mensual</span>
+                        <div class="text-right">
+                            <span class="text-3xl font-bold">Consulte Precio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
