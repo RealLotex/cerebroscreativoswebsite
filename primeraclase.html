@@ -44,7 +44,7 @@
 
         h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
         h2 { color: var(--azul-primario); margin-top: 0; display: flex; align-items: center; }
-
+        .nota {margin: 50px 0px;}
         .badge { 
             background: var(--naranja-accent); 
             color: white; 
@@ -84,6 +84,13 @@
             padding-left: 15px;
             margin: 15px 0;
         }
+
+        h3 {
+            font-size: 1.1rem;
+            border-left: 4px solid var(--naranja-accent);
+            padding-left: 15px;
+            margin: 15px 0;
+        }
     </style>
 </head>
 <body>
@@ -98,11 +105,11 @@
   <div class="step">
       <span class="badge">Paso 1</span>
       <h2>Iniciar sesión en Google</h2>
-      <p class="instruccion-texto">Abre tu navegador (debe ser Edge o Chrome) e ingresa a <a href="https://google.com" target="_blank">google.com</a>. Si no has iniciado sesión, haz click en "Acceder", introduce tu correo de Gmail y contraseña. Cuando aparezca nuestra foto de perfil, ya habremos iniciado sesión!</p>
+      <p class="instruccion-texto">Abre tu navegador (debe ser Edge o Chrome) e ingresa a <a href="https://google.com" target="_blank">google.com</a>. Si no has iniciado sesión, haz click en "Acceder", introduce tu correo de Gmail y contraseña.</p>
       <img src="guiajitsi/paso1_google.png" alt="Captura de pantalla Login de Google" class="screenshot">
       <img src="guiajitsi/paso1_login.png" alt="Captura de pantalla Login de Google" class="screenshot">
+      <h3 class="nota">Cuando aparezca nuestra foto de perfil, ya habremos iniciado sesión!</h3>
       <img src="guiajitsi/paso1_listo.png" alt="Captura de pantalla Login de Google" class="screenshot">
-
   </div>
 
   <div class="step">
