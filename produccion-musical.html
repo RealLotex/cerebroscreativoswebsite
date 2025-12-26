@@ -30,14 +30,22 @@
 <body class="bg-brand-dark text-white min-h-screen font-sans pb-20 selection:bg-brand-accent selection:text-brand-dark">
 
     <header class="relative overflow-hidden px-6 pt-12 pb-8 text-center">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
+      <div class="absolute inset-0 z-0">
+        <img 
+            src="images/produccion-musical.jpg" 
+            alt="Background" 
+            class="w-full h-full object-cover object-top opacity-100"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/40 to-brand-dark"></div>
+      </div>     
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
         
         <div class="relative z-10">
             <span class="inline-block py-1 px-3 rounded-full border text-xs font-bold tracking-wider uppercase mb-4 shadow-[0_0_10px_rgba(92,225,230,0.3)] bg-[rgba(0,74,173,0.5)] border-brand-accent text-brand-accent">
                 Trayecto Tecnológico 2026 (14+ años)
             </span>
             <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                Productor Musical y <span class="text-brand-accent">Diseñador Sonoro</span>
+                Productor Musical y <br><span class="text-brand-accent">Diseñador Sonoro</span>
             </h1>
             <p class="text-lg mb-8 max-w-md mx-auto opacity-90">
                 Curso intensivo en el Digital Audio Workstation (DAW) Reaper para grabar, componer, mezclar y masterizar música original.
@@ -88,7 +96,7 @@
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="waveform" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Primeros 20 Encuentros</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Primeros 20 Encuentros</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 1: Fundamentos del Sonido y Grabación Digital</h3>
                     <p class="text-sm mb-4 opacity-70">Dominio de la interfaz del DAW y técnicas esenciales de captura y edición de audio.</p>
@@ -126,7 +134,7 @@
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="music" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Siguientes 20 Encuentros</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Siguientes 20 Encuentros</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 2: Composición, MIDI y Mezcla Esencial</h3>
                     <p class="text-sm mb-4 opacity-70">Aprende a componer música digitalmente y a darle coherencia con las primeras herramientas de mezcla.</p>
@@ -166,7 +174,7 @@
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="zap" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Etapa Final</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Etapa Final</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 3: Automatización, Mastering y Proyecto Final</h3>
                     <p class="text-sm mb-4 opacity-70">La etapa final para darle brillo, movimiento y volumen profesional a tus producciones.</p>

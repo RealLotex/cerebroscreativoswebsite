@@ -71,6 +71,15 @@
 
     <!-- --- HERO SECTION --- -->
     <header class="relative pt-16 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden text-center lg:text-left">
+      <div class="absolute inset-0 z-0">
+        <img 
+            src="images/chico-computadora-wide.jpg" 
+            alt="Background" 
+            class="w-full h-full object-cover opacity-50"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/40 to-brand-dark"></div>
+      </div>
+  
         <!-- Background Gradient Orb -->
         <div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 rounded-full blur-[120px] opacity-30 pointer-events-none bg-brand-accent"></div>
         
@@ -115,7 +124,7 @@
               h-[500px] sm:max-h-[400px] sm:max-w-[400px]
               rounded-3xl overflow-hidden relative shadow-2xl
               border border-white/10
-              bg-gradient-to-br from-blue-900 to-slate-900
+              bg-gradient-to-br from-blue-900/50 to-slate-900/50
               flex flex-col items-center justify-center
               p-6 sm:p-8">
                      
@@ -138,10 +147,13 @@
 
     <!-- --- PROBLEM AGITATION SECTION --- -->
     <section class="py-16 px-4 bg-black/20">
+      
         <div class="max-w-4xl mx-auto text-center">
+          
             <h2 class="text-3xl font-bold mb-8">Estamos viviendo el cambio tecnológico más grande de nuestra historia.</h2>
             
             <div class="grid md:grid-cols-2 gap-8 text-left">
+              
                 <div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
                     <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-red-300">
                         <i data-lucide="users" class="w-5 h-5"></i> El Desafío
@@ -193,6 +205,7 @@
 
     <!-- --- TRAYECTOS GRID --- -->
     <section id="trayectos" class="py-20 px-4 bg-black/20">
+      
         <div class="max-w-7xl mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold text-center mb-4"> Todos nuestros trayectos incluyen herramientas de <span class="font-bold text-brand-accent">Inteligencia Artificial</span>.</h2>
             <p class="text-center mb-12 opacity-80 max-w-2xl mx-auto">
@@ -214,21 +227,21 @@
           <div class="space-y-8">
               <div class="flex flex-col md:flex-row items-center gap-4 bg-brand-dark rounded-3xl p-6 border border-brand-accent/20">
                   <div class="flex-1 text-center p-4 border rounded-xl border-white/10 bg-black/20">
-                      <span class="text-[10px] uppercase tracking-widest opacity-50">Al completar 20 semanas</span>
+                      <span class="text-[10px] uppercase tracking-widest text-right opacity-50">Al completar 20 semanas</span>
                       <p class="font-bold">Módulo 1</p>
                       <i data-lucide="award" class="w-6 h-6 text-yellow-400 mx-auto mt-2"></i>
                       <p class="text-[10px] mt-1 text-yellow-100/50 italic">Certificado Inicial</p>
                   </div>
                   <i data-lucide="chevron-right" class="hidden md:block text-brand-accent"></i>
                   <div class="flex-1 text-center p-4 border rounded-xl border-white/10 bg-black/20">
-                      <span class="text-[10px] uppercase tracking-widest opacity-50">Al completar 40 semanas</span>
+                      <span class="text-[10px] uppercase tracking-widest text-right opacity-50">Al completar 40 semanas</span>
                       <p class="font-bold">Módulo 2</p>
                       <i data-lucide="award" class="w-6 h-6 text-yellow-400 mx-auto mt-2"></i>
                       <p class="text-[10px] mt-1 text-yellow-100/50 italic">Certificado Intermedio</p>
                   </div>
                   <i data-lucide="chevron-right" class="hidden md:block text-brand-accent"></i>
                   <div class="flex-1 text-center p-4 border rounded-xl border-white/10 bg-brand-darker">
-                      <span class="text-[10px] uppercase tracking-widest opacity-50">Al completar 60 semanas</span>
+                      <span class="text-[10px] uppercase tracking-widest text-right opacity-50">Al completar 60 semanas</span>
                       <p class="font-bold">Módulo 3</p>
                       <i data-lucide="award" class="w-8 h-8 text-yellow-400 mx-auto mt-2 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]"></i>
                       <p class="text-[10px] mt-1 text-yellow-400 font-bold uppercase">Diploma de Especialista</p>
@@ -369,7 +382,7 @@
                         <i data-lucide="${item.icon}" width="48" height="48"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-2 animate-fade-in">${item.title}</h3>
-                    <p class="text-sm opacity-70 max-w-xs mx-auto animate-fade-in">${item.desc}</p>
+                    <p class="text-sm opacity-100 max-w-xs mx-auto animate-fade-in">${item.desc}</p>
                 `;
                 carouselContainer.appendChild(slide);
 

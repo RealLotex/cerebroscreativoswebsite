@@ -30,17 +30,25 @@
 <body class="bg-brand-dark text-white min-h-screen font-sans pb-20 selection:bg-brand-accent selection:text-brand-dark">
 
     <header class="relative overflow-hidden px-6 pt-12 pb-8 text-center">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
+      <div class="absolute inset-0 z-0">
+        <img 
+            src="images/niños-diseñando-3d.jpg" 
+            alt="Background" 
+            class="w-full h-full object-cover opacity-100"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/40 to-brand-dark"></div>
+      </div>  
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
         
         <div class="relative z-10">
             <span class="inline-block py-1 px-3 rounded-full border text-xs font-bold tracking-wider uppercase mb-4 shadow-[0_0_10px_rgba(92,225,230,0.3)] bg-[rgba(0,74,173,0.5)] border-brand-accent text-brand-accent">
                 Trayecto Tecnológico 2026 (12+ años)
             </span>
             <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                Modelado 3D y <span class="text-brand-accent">Animación para Cine</span>
+                Modelado y <span class="text-brand-accent">Animación 3D</span>
             </h1>
             <p class="text-lg mb-8 max-w-md mx-auto opacity-90">
-                Aprende a crear modelos, darles vida con rigging y animación, y producir cortos animados con el motor profesional Blender.
+                Aprende a crear objetos 3D, darles vida con rigging y animación, y presentarlos en videos animados con la suite profesional Blender.
             </p>
         </div>
     </header>
@@ -53,21 +61,21 @@
                 <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
                     <i data-lucide="scan" class="w-5 h-5"></i> Modelado y Texturizado
                 </h3>
-                <p class="text-sm opacity-80">Creación de modelos de alta calidad para personajes y escenarios, utilizando texturas PBR y UV mapping.</p>
+                <p class="text-sm opacity-80">Creación de modelos de alta calidad para personajes, productos y escenarios, utilizando texturas PBR y UV mapping.</p>
             </div>
 
             <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
                 <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
                     <i data-lucide="bone" class="w-5 h-5"></i> Rigging y Animación
                 </h3>
-                <p class="text-sm opacity-80">Dominio del rigging (esqueletos) y los principios de la animación para dar movimientos creíbles a los personajes.</p>
+                <p class="text-sm opacity-80">Dominio del rigging (esqueletos) y los principios de la animación para dar movimientos creíbles a los objetos.</p>
             </div>
 
             <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
                 <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
                     <i data-lucide="projector" class="w-5 h-5"></i> Producción Cinematográfica
                 </h3>
-                <p class="text-sm opacity-80">Iluminación de cine, renderizado de escenas y edición para producir cortos animados listos para compartir.</p>
+                <p class="text-sm opacity-80">Iluminación de cine, renderizado de escenas y edición para producir comerciales y cortos animados listos para compartir.</p>
             </div>
 
         </div>
@@ -88,7 +96,7 @@
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="component" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Primeros 20 Encuentros</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Primeros 20 Encuentros</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 1: Modelado de Personajes 3D y Rigging</h3>
                     <p class="text-sm mb-4 opacity-70">Aprende a crear modelos de personajes listos para moverse.</p>
@@ -126,7 +134,7 @@
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="tree-pine" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Siguientes 20 Encuentros</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Siguientes 20 Encuentros</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 2: Construcción de Entornos y Materiales PBR</h3>
                     <p class="text-sm mb-4 opacity-70">Crea escenas complejas, desde paisajes hasta ciudades, con texturas realistas.</p>
@@ -165,7 +173,7 @@
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="film" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Etapa Final</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Etapa Final</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 3: Producción Cinematográfica y Cortos Animados</h3>
                     <p class="text-sm mb-4 opacity-70">Lleva los personajes y entornos a la vida con animación avanzada, narrativa y edición de video.</p>

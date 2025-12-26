@@ -30,6 +30,14 @@
 <body class="bg-brand-dark text-white min-h-screen font-sans pb-20 selection:bg-brand-accent selection:text-brand-dark">
 
     <header class="relative overflow-hidden px-6 pt-12 pb-8 text-center">
+      <div class="absolute inset-0 z-0">
+        <img 
+            src="images/chico-programando.jpg" 
+            alt="Background" 
+            class="w-full h-full object-cover opacity-100"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/40 to-brand-dark"></div>
+      </div>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
         
         <div class="relative z-10">
@@ -88,7 +96,7 @@
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="code" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Primeros 20 Encuentros</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Primeros 20 Encuentros</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 1: Introducción a la Programación Visual</h3>
                     <p class="text-sm mb-4 opacity-70">Aprende la lógica de desarrollo de juegos 2D con una herramienta de industria.</p>
@@ -122,11 +130,11 @@
             <div class="relative pl-8 md:pl-12">
                 <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-dark bg-brand-accent"></div>
                 <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-darker border-[rgba(92,225,230,0.2)]">
-                    <div class="flex justify-between items-start mb-2">
+                    <div class="flex justify-between items-start mb-2 gap-2">
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="route" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Siguientes 20 Encuentros</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60 text-right">Siguientes 20 Encuentros</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 2: Simulaciones y Sistemas de Física</h3>
                     <p class="text-sm mb-4 opacity-70">Desarrollando juegos más complejos que reaccionan de manera realista al entorno.</p>
@@ -164,7 +172,7 @@
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="box" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xs font-mono uppercase tracking-widest opacity-60">Etapa Final</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Etapa Final</span>
                     </div>
                     <h3 class="text-xl font-bold mb-1">Módulo 3: Mundos 3D y Scripting con Lua</h3>
                     <p class="text-sm mb-4 opacity-70">El salto al desarrollo 3D con un foco en la programación textual para mecánicas avanzadas.</p>
