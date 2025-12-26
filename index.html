@@ -69,7 +69,7 @@
 <body class="bg-brand-bg text-white min-h-screen">
 
     <!-- --- NAVBAR --- -->
-    <nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.9)]">
+    <nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
@@ -106,7 +106,7 @@
         </div>
 
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-primary shadow-xl absolute w-full border-t border-white/10">
+        <div id="mobile-menu" class="hidden md:hidden backdrop-blur-md shadow-xl w-full border-b border-white/10 ">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#metodo" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Método</a>
                 <a href="#trayectos" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Trayectos</a>
@@ -121,6 +121,14 @@
 
     <!-- --- HERO SECTION --- -->
     <header class="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden text-center lg:text-left">
+      <div class="absolute inset-0 z-0">
+        <img 
+            src="images/chico-computadora-wide.jpg" 
+            alt="Background" 
+            class="w-full h-full object-cover opacity-50"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/40 to-brand-dark"></div>
+      </div>
         <!-- Background Gradient Orb -->
         <div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 rounded-full blur-[120px] opacity-30 pointer-events-none bg-brand-accent"></div>
         
@@ -165,7 +173,7 @@
               h-[500px] sm:max-h-[400px] sm:max-w-[400px]
               rounded-3xl overflow-hidden relative shadow-2xl
               border border-white/10
-              bg-gradient-to-br from-blue-900 to-slate-900
+              bg-gradient-to-br from-blue-900/50 to-slate-900/50
               flex flex-col items-center justify-center
               p-6 sm:p-8">
                      
@@ -299,7 +307,7 @@
 
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Qué es Cerebros Creativos y cómo revelamos el potencial digital de mi hijo/a?</h3>
+              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Qué es Cerebros Creativos y cómo revelamos el potencial digital de tu hijo/a?</h3>
               <p class="text-sm opacity-80">
                 Cerebros Creativos es una comunidad de educación en línea, enfocada en liberar el <strong>potencial de liderazgo</strong> en habilidades del futuro. Nuestros trayectos de formación están diseñados para <strong>que su hijo/a tome la delantera en el mundo del mañana</strong>. Aplicamos la <em>pedagogía Montessori</em> para que niños y jóvenes exploren sus intereses, asegurando que el origen de su crecimiento sea el <strong>disfrute</strong>, no la presión.
               </p>
@@ -320,7 +328,7 @@
           </div>
   
           <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Cómo aseguramos que la Inteligencia Artificial sea una herramienta, no un obstáculo?</h3>
+              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Cómo aseguramos que la Inteligencia Artificial sea una herramienta y no un obstáculo?</h3>
               <p class="text-sm opacity-80">
                 Creemos que la mejor estrategia es <strong>enseñarles a dominar a la IA para potenciar su propia creatividad</strong>. En Cerebros Creativos, la IA está incluida en todos nuestros trayectos como un asistente de poder. Nuestros alumnos aprenden a interactuar con sistemas avanzados para potenciar sus proyectos, asegurando que adquieran las habilidades de <strong>liderazgo tecnológico</strong> necesarias para el futuro.
               </p>
@@ -429,7 +437,7 @@
                         <i data-lucide="${item.icon}" width="48" height="48"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-2 animate-fade-in">${item.title}</h3>
-                    <p class="text-sm opacity-70 max-w-xs mx-auto animate-fade-in">${item.desc}</p>
+                    <p class="text-sm opacity-100 max-w-xs mx-auto animate-fade-in">${item.desc}</p>
                 `;
                 carouselContainer.appendChild(slide);
 
