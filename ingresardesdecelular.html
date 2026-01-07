@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Desde Celular | Cerebros Creativos</title>
+    <style>
+        /* Paleta Cerebros Creativos */
+        :root {
+            --azul-primario: #004687; /* Azul profundo institucional */
+            --naranja-accent: #1ea4b0; /* Naranja creativo */
+            --gris-fondo: #032f5c;
+            --texto: #333333;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--texto); 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 0; 
+            background-color: var(--gris-fondo); 
+        }
+
+        header { 
+            background: var(--azul-primario); 
+            color: white; 
+            padding: 3rem 1rem; 
+            text-align: center; 
+            border-bottom: 6px solid var(--naranja-accent);
+        }
+
+        .container { padding: 20px; }
+
+        .step { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            margin-bottom: 2.5rem; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #eee;
+        }
+
+        h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { color: var(--azul-primario); margin-top: 0; display: flex; align-items: center; }
+        .nota {margin: 50px 0px;}
+        .badge { 
+            background: var(--naranja-accent); 
+            color: white; 
+            padding: 5px 15px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            font-size: 0.8rem; 
+            margin-right: 0px;
+            text-transform: uppercase;
+        }
+
+        .screenshot { 
+            width: 100%; 
+            border: 1px solid #ddd; 
+            border-radius: 12px; 
+            margin: 20px 0; 
+            display: block; 
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot:hover { transform: scale(1.01); }
+
+        a { color: var(--naranja-accent); font-weight: bold; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        footer { 
+            background: #032f5c;
+            color: #ccc; 
+            text-align: center; 
+            padding: 20px; 
+            margin-top: 50px; 
+        }
+
+        .instruccion-texto {
+            font-size: 1.1rem;
+            border-left: 4px solid var(--naranja-accent);
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            border-left: 4px solid var(--naranja-accent);
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cerebros Creativos</h1>
+    <p>Acceso a Clases Virtuales desde Celular</p>
+</header>
+
+<div class="container">
+
+  <div class="step">
+      <h2>Pulsá en el Link que te enviamos</h2>
+      <img src="guiajitsi/celulares/0.png" alt="Captura de pantalla Login de Google" class="screenshot">
+  </div>
+
+  <div class="step">
+      <span class="badge">Paso 1</span>
+      <h2>Pulsá "Unirse en el navegador" (El boton de abajo!)</h2>
+      <p class="instruccion-texto">No hace falta descargar la App!</p>
+      <img src="guiajitsi/celulares/a.png" alt="Captura de pantalla botón más" class="screenshot">
+  </div>
+
+  <div class="step">
+      <span class="badge">Paso 2</span>
+      <h2>Permitir acceso a la Cámara y Micrófono "mientras visitamos el sitio"</h2>
+      <img src="guiajitsi/celulares/b.png" alt="Captura de pantalla menú desplegable" class="screenshot">
+  </div>
+
+  <div class="step">
+    <span class="badge">Paso 3</span>
+    <h2>Permitir acceso a la Cámara "mientras la app está en uso"</h2>
+    <img src="guiajitsi/celulares/c.png" alt="Captura de pantalla menú desplegable" class="screenshot">
+  </div>
+
+  <div class="step">
+    <span class="badge">Paso 4</span>
+    <h2>Permitir acceso al Micrófono "mientras la app está en uso"</h2>
+    <img src="guiajitsi/celulares/d.png" alt="Captura de pantalla menú desplegable" class="screenshot">
+  </div>
+
+  <div class="step">
+      <span class="badge">Paso 5</span>
+      <h2>Ponemos nuestro nombre!</h2>
+      <p class="instruccion-texto">Escribí tu nombre y apellido en el recuadro para que el profesor te identifique. Finalmente, presiona el botón azul <strong>"Entrar a la Reunión" (Join Meeting)</strong>.</p>
+      <img src="guiajitsi/celulares/e.png" alt="Captura de pantalla botón entrar Jitsi" class="screenshot">
+  </div>
+
+  <div class="step">
+    <span class="badge">Listo</span>
+    <h2>A esperar que empiece!</h2>
+    <p class="instruccion-texto">Ahora debemos esperar que sea la hora. Cuando el profe se conecte, la reunión comenzará automáticamente. <span class="badge">NO PULSAR</span> "SOY EL ANFITRIÓN" ya que esto nos llevará a otra pantalla y podría expulsarnos de la sala!</p>
+    <img src="guiajitsi/celulares/f.png" alt="Captura de pantalla botón entrar Jitsi" class="screenshot">
+</div>
+</div>
+
+<footer>
+    <p>&copy; Cerebros Creativos</p>
+</footer>
+
+</body>
+</html>
