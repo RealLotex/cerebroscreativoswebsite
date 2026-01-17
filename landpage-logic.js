@@ -112,7 +112,7 @@ window.addEventListener('contenidoCompartidoCargado', () => {
         lucide.createIcons();
 
 
-
+          fbq('track', 'ViewContent');
           document.getElementById('btn-whatsapp').addEventListener('click', function() {
           fbq('track', 'Lead');
           });
