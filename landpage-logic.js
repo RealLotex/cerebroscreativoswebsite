@@ -110,5 +110,28 @@ window.addEventListener('contenidoCompartidoCargado', () => {
 
         // 4. Initialize Icons
         lucide.createIcons();
+
+
+
+          document.getElementById('btn-whatsapp').addEventListener('click', function() {
+          fbq('track', 'Lead');
+          });
+
+          document.getElementById('btn-phone').addEventListener('click', function() {
+          fbq('track', 'Lead');
+          });
+
+          document.getElementById('btn-mail').addEventListener('click', function() {
+          fbq('track', 'Lead');
+          });
+          document.getElementById('btn-whatsapp-top').addEventListener('click', function() {
+          fbq('track', 'Lead');
+          });
+          document.getElementById('btn-whatsapp-top-mobile').addEventListener('click', function() {
+          fbq('track', 'Lead');
+          });
 });
+
+
+
 
