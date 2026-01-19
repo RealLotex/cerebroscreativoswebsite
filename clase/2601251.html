@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo a tu clase</title>
+    
+    <meta http-equiv="refresh" content="0; url=https://meet.jit.si/moderated/f85d46cafb32c5c46b48667819089f6eb87e7cf71fc178d345721bca3ce85d86">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        a {
+            color: #132ba3; /* Color de WhatsApp */
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redirigiendo...</h1>
+        <p>Si la página no redirige automáticamente, haz clic en el siguiente enlace:</p>
+        <a href="https://meet.jit.si/moderated/f85d46cafb32c5c46b48667819089f6eb87e7cf71fc178d345721bca3ce85d86">
+            Entrar a mi clase
+        </a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.replace("https://meet.jit.si/moderated/f85d46cafb32c5c46b48667819089f6eb87e7cf71fc178d345721bca3ce85d86");
+            }, 500); // 0.5 segundos de retraso para el respaldo
+        };
+    </script>
+</body>
+</html>
