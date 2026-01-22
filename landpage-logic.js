@@ -91,22 +91,25 @@ window.addEventListener('contenidoCompartidoCargado', () => {
         renderCarousel();
 
         // 3. Mobile Menu Toggle
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                // Change icon to X (we need to manually handle this with lucide or just toggle class)
-                // For simplicity in vanilla js, we just re-render
-                // But lucide replaces the element, so we target the parent button innerHTML
-                icon.parentElement.innerHTML = '<i data-lucide="x" id="menu-icon"></i>';
-            } else {
-                menu.classList.add('hidden');
-                icon.parentElement.innerHTML = '<i data-lucide="menu" id="menu-icon"></i>';
-            }
-            lucide.createIcons();
-        }
+        window.toggleMenu = function() {
+          const menu = document.getElementById('mobile-menu');
+          const icon = document.getElementById('menu-icon');
+          
+          if (!menu || !icon) return; // Seguridad por si no cargaron
+  
+          if (menu.classList.contains('hidden')) {
+              menu.classList.remove('hidden');
+              icon.parentElement.innerHTML = '<i data-lucide="x" id="menu-icon"></i>';
+          } else {
+              menu.classList.add('hidden');
+              icon.parentElement.innerHTML = '<i data-lucide="menu" id="menu-icon"></i>';
+          }
+          
+          // Importante: Re-inicializar Lucide después de cambiar el HTML
+          if (typeof lucide !== 'undefined') {
+              lucide.createIcons();
+          }
+      };
 
         // 4. Initialize Icons
         lucide.createIcons();
@@ -124,12 +127,18 @@ window.addEventListener('contenidoCompartidoCargado', () => {
           document.getElementById('btn-mail').addEventListener('click', function() {
           fbq('track', 'Lead');
           });
-          document.getElementById('btn-whatsapp-top').addEventListener('click', function() {
-          fbq('track', 'Lead');
-          });
-          document.getElementById('btn-whatsapp-top-mobile').addEventListener('click', function() {
-          fbq('track', 'Lead');
-          });
+          const btnWhatsappTop = document.getElementById('btn-whatsapp-top');
+          if (btnWhatsappTop) {
+            btnWhatsappTop.addEventListener('click', function() {
+              fbq('track', 'Lead');
+            });
+          }
+          const btnWhatsappTopMobile = document.getElementById('btn-whatsapp-top-mobile');
+          if (btnWhatsappTopMobile) {
+            btnWhatsappTopMobile.addEventListener('click', function() {
+              fbq('track', 'Lead');
+            });
+          }
 });
 
 

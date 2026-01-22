@@ -76,9 +76,58 @@
         /* Ocultar scrollbar en carrusel si fuera necesario */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .text-shadow-lg { text-shadow: 1px 1px 8px rgba(0, 0, 0); }
+        .text-shadow-md { text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); }
+
+
+
     </style>
 </head>
 <body class="bg-brand-bg text-white min-h-screen">
+
+  <!-- --- NAVBAR --- -->
+<nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+              <div class="font-bold text-2xl tracking-tighter flex items-center">
+                  CerebrosCreativos<span class="text-brand-accent">.org</span>
+              </div>
+          </div>
+          
+          <!-- Desktop Menu -->
+          <div class="hidden md:block">
+              <div class="ml-10 flex items-center space-x-6">
+                  <a href="#metodo" class="hidden lg:block text-white hover:bg-white/10 hover:text-brand-accent transition-all px-4 py-2 rounded-full border border-white/20 text-sm font-medium">
+                      Método
+                  </a>
+                  <a href="#trayectos" class="hidden lg:block text-white hover:bg-white/10 hover:text-brand-accent transition-all px-4 py-2 rounded-full border border-white/20 text-sm font-medium">
+                      Trayectos
+                  </a>
+                  <script src="acceso-a-clases.js"></script>
+                  <acceso-a-clases></acceso-a-clases>
+              </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+              <button onclick="toggleMenu()" class="p-2 rounded-md hover:bg-white/10 text-white">
+                  <i data-lucide="menu" id="menu-icon"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="hidden md:hidden w-full border-b border-white/10 ">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="#metodo" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Método</a>
+          <a href="#trayectos" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Trayectos</a>
+          <acceso-a-clases></acceso-a-clases>
+      </div>
+  </div>
+</nav>
 
     <div id="texto-compartido">Cargando Contenido...</div>
     <script src="contenido-landpage.js"></script>
@@ -190,23 +239,13 @@
       </div>
     </section>
 
-    <!-- --- FOOTER --- -->
-    <footer class="py-10 px-6 border-t border-white/10 bg-black/20 text-sm">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex flex-col items-center md:items-start">
-                <div class="font-bold text-xl tracking-tighter mb-2">
-                    CerebrosCreativos<span class="text-brand-accent">.org</span>
-                </div>
-                <p class="opacity-50">© 2026 Todos los derechos reservados.</p>
-            </div>
-            
-            <div class="flex gap-6 opacity-70">
-                <a href="https://www.facebook.com/cerebroscreativosorg" class="hover:text-white transition-colors">Facebook</a>
-                <a href="https://www.instagram.com/cerebroscreativosorg/" class="hover:text-white transition-colors">Instagram</a>
-                <a href="https://cerebroscreativos.org/inscripciones" class="hover:text-white transition-colors">WhatsApp</a>
-                <a href="mailto:contacto@cerebroscreativos.org" class="hover:text-white transition-colors">Email</a>
-            </div>
-        </div>
-    </footer>
+    <script src="cookies-consent.js"></script>
+    <cookies-consent></cookies-consent>
+
+     <!-- --- FOOTER --- -->
+
+
+    <script src="footer-loader.js"></script>
+    <custom-footer></custom-footer>
 </body>
 </html>
