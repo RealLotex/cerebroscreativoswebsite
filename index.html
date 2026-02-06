@@ -1,251 +1,363 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerebros Creativos - Clases online en vivo para niños y jóvenes</title>
-    <meta name="description" content="Cerebros Creativos es una comunidad de educación en línea para niños y jóvenes, enfocada en habilidades del futuro.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cerebros Creativos</title>
+  <meta name="description"
+    content="Cerebros Creativos es una comunidad de aprendizaje en línea dedicada a fomentar el crecimiento personal y profesional de personas de todas las edades en Argentina.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico">
 
-    <!-- Tailwind CSS (Estilos) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuración de Colores de Marca -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#00357a',      // Fondo Principal
-                            primary: '#004aad', // Azul Brillante
-                            accent: '#5ce1e6',  // Cian/Turquesa
-                            secondary: '#78d25e'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-in-out',
-                        'glow': 'glow 1.5s ease-in-out infinite', 
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        // NUEVOS KEYFRAMES PARA EL BRILLO SUAVE
-                        glow: {
-                            '0%, 100%': { 
-                                opacity: '1', 
-                                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)' // Sin sombra
-                            },
-                            '50%': { 
-                                opacity: '1', 
-                                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)' // Sombra brillante
-                            },
-                        }
-                    }
-                }
+  <!-- Tailwind CSS (Estilos) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Configuración de Colores de Marca -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#00357a',      // Fondo Principal
+              primary: '#004aad', // Azul Brillante
+              accent: '#5ce1e6',  // Cian/Turquesa
+              secondary: '#78d25e'
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'glow': 'glow 1.5s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            // NUEVOS KEYFRAMES PARA EL BRILLO SUAVE
+            glow: {
+              '0%, 100%': {
+                opacity: '1',
+                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)' // Sin sombra
+              },
+              '50%': {
+                opacity: '1',
+                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)' // Sombra brillante
+              },
+            }
+          }
         }
-        <!-- Meta Pixel Code -->
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '847369751637766');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=847369751637766&ev=PageView&noscript=1"/></noscript>
+      }
+    }
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '847369751637766');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=847369751637766&ev=PageView&noscript=1" /></noscript>
 
-    <!-- Fuente Inter (Google Fonts) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Fuente Inter (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Iconos Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Iconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        /* Ocultar scrollbar en carrusel si fuera necesario */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .text-shadow-lg { text-shadow: 1px 1px 8px rgba(0, 0, 0); }
-        .text-shadow-md { text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); }
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
 
+    /* Ocultar scrollbar en carrusel si fuera necesario */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
 
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
-    </style>
+    .text-shadow-lg {
+      text-shadow: 1px 1px 8px rgba(0, 0, 0);
+    }
+
+    .text-shadow-md {
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
+
 <body class="bg-brand-bg text-white min-h-screen">
 
   <!-- --- NAVBAR --- -->
-<nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-          <!-- Logo -->
-          <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
-              <div class="font-bold text-2xl tracking-tighter flex items-center">
-                  CerebrosCreativos<span class="text-brand-accent">.org</span>
-              </div>
-          </div>
-          
-          <!-- Desktop Menu -->
-          <div class="hidden md:block">
-              <div class="ml-10 flex items-center space-x-6">
-                  <a href="#metodo" class="hidden lg:block text-white hover:bg-white/10 hover:text-brand-accent transition-all px-4 py-2 rounded-full border border-white/20 text-sm font-medium">
-                      Método
-                  </a>
-                  <a href="#trayectos" class="hidden lg:block text-white hover:bg-white/10 hover:text-brand-accent transition-all px-4 py-2 rounded-full border border-white/20 text-sm font-medium">
-                      Trayectos
-                  </a>
-                  <script src="acceso-a-clases.js"></script>
-                  <acceso-a-clases></acceso-a-clases>
-              </div>
-          </div>
-
-          <!-- Mobile menu button -->
-          <div class="md:hidden">
-              <button onclick="toggleMenu()" class="p-2 rounded-md hover:bg-white/10 text-white">
-                  <i data-lucide="menu" id="menu-icon"></i>
-              </button>
-          </div>
-      </div>
-  </div>
-
-  <!-- Mobile Menu Panel -->
-  <div id="mobile-menu" class="hidden md:hidden w-full border-b border-white/10 ">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="#metodo" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Método</a>
-          <a href="#trayectos" onclick="toggleMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Trayectos</a>
-          <acceso-a-clases></acceso-a-clases>
-      </div>
-  </div>
-</nav>
-
-    <div id="texto-compartido">Cargando Contenido...</div>
-    <script src="contenido-landpage.js"></script>
-
-        <!-- --- CTA FINAL --- -->
-    <section class="py-24 px-6 text-center relative overflow-hidden">
-      <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 via-transparent to-transparent"></div>
-      
-      <div class="relative z-10 max-w-3xl mx-auto">
-          <h2 class="text-4xl font-bold mb-8">No te quedes sin lugar,<br> Asegurá una vacante.</h2>
-          <p class="text-xl mb-10 text-blue-100">
-              Contactanos ahora para empezar la inscripción y guardarles un cupo.
-          </p>
-          
-          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-              <a href="https://cerebroscreativos.org/inscripciones"
-                target="_blank"
-                id="btn-whatsapp"
-                class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto animate-glow">
-                  <i data-lucide="message-circle-more" class="w-5 h-5"></i> Enviar un whatsapp
-              </a>
-          </div>
-
-          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <a href="tel:+5493404564631"
-              target="_blank"
-              id="btn-phone"
-              class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto">
-                <i data-lucide="phone" class="w-5 h-5"></i> Llamar por teléfono
-            </a>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <a href="mailto:contacto@cerebroscreativos.org"
-              target="_blank"
-              id="btn-mail"
-              class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto">
-                <i data-lucide="mail" class="w-5 h-5"></i> Enviar un Mail
-            </a>
-          </div>
-      </div>
-    </section>
-    <script src="landpage-logic.js"></script>
-
-
-    <section class="py-20 px-4 bg-black/20">
-      <div class="max-w-5xl mx-auto ">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">Preguntas Frecuentes</h2>
-          <p class="opacity-70">Resolvemos las dudas de padres <strong>visionarios</strong> que buscan el mejor futuro digital.</p>
-        </div>  
-
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Qué es Cerebros Creativos y cómo revelamos el potencial digital de tu hijo/a?</h3>
-              <p class="text-sm opacity-80">
-                Cerebros Creativos es una comunidad de educación en línea, enfocada en liberar el <strong>potencial de liderazgo</strong> en habilidades del futuro. Nuestros trayectos de formación están diseñados para <strong>que su hijo/a tome la delantera en el mundo del mañana</strong>. Aplicamos la <em>pedagogía Montessori</em> para que niños y jóvenes exploren sus intereses, asegurando que el origen de su crecimiento sea el <strong>disfrute</strong>, no la presión.
-              </p>
-          </div>
-  
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Cómo transformar el tiempo de pantalla en un talento para el futuro?</h3>
-              <p class="text-sm opacity-80">
-                <strong>Validamos su preocupación.</strong> En lugar de prohibir, <strong>cambiamos el rol que su hijo/a tiene con la tecnología</strong>. Aprovechamos esa <em>curiosidad natural</em> para enseñarles a <strong>utilizar los dispositivos como herramientas de poder y creación</strong>. Convertimos esas horas de uso en habilidades profesionales, bajo un enfoque Montessori que prioriza que el proceso sea divertido y autodirigido.
-              </p>
-          </div>
-  
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 class="font-bold text-lg text-brand-accent mb-2">Mi hijo/a ama los videojuegos. ¿Cómo aprovechamos esa pasión?</h3>
-              <p class="text-sm opacity-80">
-                ¡Esa pasión es un gran punto de partida! Contamos con trayectos específicos de programación de videojuegos y un curso especializado en Roblox. En estos espacios, los chicos desarrollan lógica y pensamiento de diseño dentro de sus mundos favoritos, transformándose de jugadores pasivos a <strong>creadores y arquitectos</strong> de sus propios juegos.
-              </p>
-          </div>
-  
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Cómo aseguramos que la Inteligencia Artificial sea una herramienta y no un obstáculo?</h3>
-              <p class="text-sm opacity-80">
-                Creemos que la mejor estrategia es <strong>enseñarles a dominar a la IA para potenciar su propia creatividad</strong>. En Cerebros Creativos, la IA está incluida en todos nuestros trayectos como un asistente de poder. Nuestros alumnos aprenden a interactuar con sistemas avanzados para potenciar sus proyectos, asegurando que adquieran las habilidades de <strong>liderazgo tecnológico</strong> necesarias para el futuro.
-              </p>
-          </div>
-          
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 class="font-bold text-lg text-brand-accent mb-2">¿Las clases son en vivo o tienen contenidos pregrabados?</h3>
-              <p class="text-sm opacity-80">
-                Priorizamos el contacto humano y el principio de <em>"respeto por la persona"</em>. Por eso sólo ofrecemos clases <strong>en vivo online</strong> con acompañamiento docente real. <strong>Garantizamos que cada alumno disfrute su propio proceso de aprendizaje con una guía constante</strong> que respeta sus tiempos y ritmo de exploración, tal como dicta el método Montessori.
-              </p>
-          </div>
-  
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 class="font-bold text-lg text-brand-accent mb-2">Mi hijo es creativo pero no le gusta el código, ¿hay opciones para su talento?</h3>
-              <p class="text-sm opacity-80">
-                ¡Claro que sí! <strong>La tecnología es una herramienta para la creatividad en todas sus formas.</strong> Ofrecemos trayectos de Arte Digital 2D, Modelado y Animación 3D para dar vida a personajes, y Producción Musical. Fomentamos la <em>creatividad digital en todas sus ramas</em>, permitiendo que cada joven descubra qué le apasiona realmente para que se convierta en un <strong>artista digital completo</strong>.
-              </p>
-          </div>
-
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <h3 class="font-bold text-lg text-brand-accent mb-2">¿Cómo desarrollamos una mentalidad de liderazgo y negocio en los jóvenes?</h3>
-            <p class="text-sm opacity-80">
-              El trayecto de Emprendimientos e Inversiones 4.0 está diseñado para <strong>transformar ideas en proyectos digitales concretos</strong>. Es la opción ideal para jóvenes que buscan desarrollar una <strong>mentalidad de liderazgo y negocio</strong>. Es más que finanzas: nuestro programa cubre aspectos fundamentales como la comunicación estratégica, la ética empresarial y la gestión de la creatividad, preparando a los jóvenes para ser los <strong>fundadores del mañana</strong>.
-            </p>
-          </div>
-
-          <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-            <h3 class="font-bold text-lg text-brand-accent mb-2">¿Por qué el método Montessori asegura un aprendizaje más efectivo?</h3>
-            <p class="text-sm opacity-80">
-              El método Montessori es efectivo porque valida los intereses del alumno, desafiando el modelo educativo que impone temas. En Cerebros Creativos, <strong>orientamos al alumno a la exploración de intereses, garantizando que el origen de su crecimiento sea el disfrute y no la presión</strong>. Esto se traduce en un aprendizaje duradero y más profundo. Al fomentar el descubrimiento y la creatividad digital, <strong>logramos una transformación real en la manera de aprender.</strong>
-            </p>
+  <nav class="fixed w-full z-50 bg-brand-bg/10 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center flex-col gap-2 md:flex-row md:justify-between py-2 md:h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+          <div class="font-bold text-2xl tracking-tighter flex items-center">
+            CerebrosCreativos<span class="text-brand-accent">.org</span>
           </div>
         </div>
+
+        <script src="acceso-a-clases.js"></script>
+        <acceso-a-clases></acceso-a-clases>
       </div>
-    </section>
-
-    <script src="cookies-consent.js"></script>
-    <cookies-consent></cookies-consent>
-
-     <!-- --- FOOTER --- -->
+    </div>
 
 
-    <script src="footer-loader.js"></script>
-    <custom-footer></custom-footer>
+  </nav>
+
+
+
+  <main
+    class="relative pt-36 md:pt-28 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-center md:mt-0 overflow-hidden">
+
+
+
+    <div class="absolute inset-0 z-0">
+      <img src="escritorio.png" alt="Background" class="w-full h-full object-cover opacity-80" />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/40 to-brand-dark"></div>
+
+    </div>
+
+    <div
+      class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 md:translate-x-1/2 w-96 h-96 rounded-full blur-[120px] opacity-30 pointer-events-none bg-brand-accent">
+    </div>
+
+
+
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-brand-primary/20 via-brand-bg to-brand-bg opacity-50">
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10">
+
+      <div class="text-center mb-0 md:mb-12">
+        <h1 class="hidden md:block md:text-5xl font-extrabold tracking-tight mb-4">
+          Conocé nuestra<span class="text-brand-accent"> propuesta</span>
+        </h1>
+        <!-- p class="text-xl text-blue-200 max-w-2xl mx-auto">
+              Somos una comunidad de educación tecnológica adaptada a cada etapa del desarrollo creativo.
+          </p!-->
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+        <div
+          class="group relative bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(92,225,230,0.15)] flex flex-col">
+
+          <div
+            class="px-8 py-2 bg-gradient-to-b from-brand-primary/20 to-transparent flex items-center justify-center h-18">
+            <img src="./logo-kids.png" alt="Cerebros Creativos KIDS"
+              class="max-h-full w-auto object-contain drop-shadow-lg transition-transform duration-500">
+          </div>
+
+          <div class="px-8 flex-1 flex flex-col mb-4">
+            <div class="mb-4">
+              <span
+                class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">Para
+                Niños</span>
+              <h3 class="text-xl font-bold text-white mb-2">Despertamos la Creatividad</h3>
+              <p class="text-sm text-blue-100 leading-relaxed mb-4 min-h-[4.5rem]">
+                Transformamos el tiempo de pantalla en tiempo creativo. Revelamos el potencial digital aplicando
+                pedagogía Montessori.
+              </p>
+            </div>
+
+            <div class="space-y-3 mb-8 flex-1">
+              <div class="flex gap-3 items-start">
+                <div class="bg-emerald-500/10 p-1.5 rounded text-emerald-300 mt-0.5"><i data-lucide="sparkles"
+                    class="w-4 h-4"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Exploración de Intereses</h4>
+                  <p class="text-xs text-white/60">No imponemos temas, guiamos la curiosidad.</p>
+                </div>
+              </div>
+              <div class="flex gap-3 items-start">
+                <div class="bg-emerald-500/10 p-1.5 rounded text-emerald-300 mt-0.5"><i data-lucide="gamepad-2"
+                    class="w-4 h-4"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Usamos la tecnología para algo más que entretenerse.</h4>
+                  <p class="text-xs text-white/60">Nos convertimos en creadores digitales.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="/propuesta.html"
+              class="w-full py-4 rounded-xl bg-white/10 hover:bg-emerald-700 hover:text-white border border-white/20 hover:border-emerald-500 transition-all font-bold text-center flex items-center justify-center gap-2 group-hover:shadow-lg">
+              Ver propuesta KIDS <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="group relative bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(92,225,230,0.15)] flex flex-col">
+
+          <div
+            class="px-8 py-2 bg-gradient-to-b from-brand-primary/20 to-transparent flex items-center justify-center h-18">
+            <img src="./logo-jr.png" alt="Cerebros Creativos JR_"
+              class="max-h-full w-auto object-contain drop-shadow-lg transition-transform duration-500">
+          </div>
+
+          <div class="px-8 flex-1 flex flex-col  mb-4">
+            <div class="mb-4">
+              <span
+                class="inline-block px-3 py-1 rounded-full bg-brand-accent/20 text-brand-accent text-xs font-bold uppercase tracking-wider mb-3">Para
+                Jóvenes</span>
+              <h3 class="text-xl font-bold text-white mb-2">Descubrimos Nuestra Pasión</h3>
+              <p class="text-sm text-blue-100 leading-relaxed mb-4 min-h-[4.5rem]">
+                Preparamos a los jóvenes para que puedan vivir el futuro elijan. Los orientamos a ser creadores
+                autónomos y
+                emprendedores digitales.
+              </p>
+            </div>
+
+            <div class="space-y-3 mb-8 flex-1">
+              <div class="flex gap-3 items-start">
+                <div class="bg-brand-accent/10 p-1.5 rounded text-brand-accent mt-0.5"><i data-lucide="code-2"
+                    class="w-4 h-4"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Proyectos Reales</h4>
+                  <p class="text-xs text-white/60">Desarrollo de un portafolio profesional.</p>
+                </div>
+              </div>
+              <div class="flex gap-3 items-start">
+                <div class="bg-brand-accent/10 p-1.5 rounded text-brand-accent mt-0.5"><i data-lucide="rocket"
+                    class="w-4 h-4"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Autonomía</h4>
+                  <p class="text-xs text-white/60">Gestión de tiempos y monetización de habilidades.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="/propuestajr.html"
+              class="w-full py-4 rounded-xl bg-white/10 hover:bg-brand-primary hover:text-white border border-white/20 hover:border-brand-accent transition-all font-bold text-center flex items-center justify-center gap-2 group-hover:shadow-lg">
+              Ver propuesta JR_ <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="group relative bg-white/10 backdrop-blur-sm  border border-white/10 rounded-3xl overflow-hidden hover:border-brand-accent/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(92,225,230,0.15)] flex flex-col">
+
+          <div
+            class="px-8 py-2 bg-gradient-to-b from-brand-primary/20 to-transparent flex items-center justify-center h-18">
+            <img src="./logo-studio.png" alt="Cerebros Creativos Studio"
+              class="max-h-full w-auto object-contain drop-shadow-lg transition-transform duration-500">
+          </div>
+
+          <div class="px-8 flex-1 flex flex-col mb-4">
+            <div class="mb-4">
+              <span
+                class="inline-block px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold uppercase tracking-wider mb-3">Para
+                Adultos / Pro</span>
+              <h3 class="text-xl font-bold text-white mb-2">Impulsamos la Evolución Continua</h3>
+              <p class="text-sm text-blue-100 leading-relaxed mb-4 min-h-[4.5rem]">
+                Ampliamos el set de habilidades de aquellos que quieren seguir creciendo profesionalmente.
+              </p>
+            </div>
+
+            <div class="space-y-3 mb-8 flex-1">
+              <div class="flex gap-3 items-start">
+                <div class="bg-purple-500/10 p-1.5 rounded text-purple-300 mt-0.5"><i data-lucide="layers"
+                    class="w-4 h-4"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Upskilling</h4>
+                  <p class="text-xs text-white/60">Dominá IA y otras herramientas de vanguardia.</p>
+                </div>
+              </div>
+              <div class="flex gap-3 items-start">
+                <div class="bg-purple-500/10 p-1.5 rounded text-purple-300 mt-0.5"><i data-lucide="briefcase"
+                    class="w-4 h-4"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white">Networking</h4>
+                  <p class="text-xs text-white/60">Conectá con otros creadores.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="/propuestastudio.html"
+              class="w-full py-4 rounded-xl bg-white/10 hover:bg-purple-800 hover:text-white border border-white/20 hover:border-purple-500 transition-all font-bold text-center flex items-center justify-center gap-2 group-hover:shadow-lg">
+              Ver propuesta Studio <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-16 text-center">
+        <p class="text-sm">¿Tenés dudas sobre cuál es la propuesta ideal?</p>
+        <a href="/inscripciones.html" target="_blank" class="text-brand-accent hover:underline mt-2 inline-block">Hablar
+          con un asesor académico</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="cookies-consent.js"></script>
+  <cookies-consent></cookies-consent>
+
+  <!-- --- FOOTER --- -->
+
+
+  <script src="custom-footer.js"></script>
+  <custom-footer></custom-footer>
+
+  <script>
+    // Esta función inicializa los iconos
+    function initIcons() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+
+    // Se ejecuta cuando el DOM está listo
+    document.addEventListener('DOMContentLoaded', initIcons);
+
+    // Por si acaso Live Server recarga partes dinámicas
+    window.onload = initIcons;
+
+    window.toggleMenu = function () {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+
+      if (!menu || !icon) return; // Seguridad por si no cargaron
+
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.parentElement.innerHTML = '<i data-lucide="x" id="menu-icon"></i>';
+      } else {
+        menu.classList.add('hidden');
+        icon.parentElement.innerHTML = '<i data-lucide="menu" id="menu-icon"></i>';
+      }
+
+      // Importante: Re-inicializar Lucide después de cambiar el HTML
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+  </script>
 </body>
+
 </html>
