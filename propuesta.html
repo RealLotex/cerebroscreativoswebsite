@@ -129,7 +129,7 @@
             </a>
             <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y quisiera hablar con un asesor"
               target="_blank"
-              class="px-5 py-2 rounded-full font-bold shadow-lg transition-transform hover:scale-105 bg-brand-accent text-brand-primary">
+              class="px-5 py-2 rounded-full font-bold shadow-lg transition-transform hover:scale-105 bg-brand-accent text-brand-primary meta-lead-btn">
               Hablar con un asesor
             </a>
           </div>
@@ -152,7 +152,7 @@
         <a href="#trayectos" onclick="toggleMenu()"
           class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Trayectos</a>
         <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y quisiera hablar con un asesor" target="_blank" onclick="toggleMenu()"
-          class="block w-full text-left mt-2 px-3 py-3 rounded-md text-base font-bold text-brand-accent hover:bg-white/10">
+          class="block w-full text-left mt-2 px-3 py-3 rounded-md text-base font-bold text-brand-accent hover:bg-white/10 meta-lead-btn">
           Hablar con un asesor
         </a>
       </div>
@@ -311,7 +311,7 @@
               </div>
       
               <div class="pb-8 mt-auto">
-                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y me interesa la modalidad de cursado independiente" target="_blank" class="block w-full py-3 rounded-xl border border-purple-500/30 text-purple-100 font-semibold text-center hover:bg-purple-500 hover:text-white transition-all group-hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y me interesa la modalidad de cursado independiente" target="_blank" class="block w-full py-3 rounded-xl border border-purple-500/30 text-purple-100 font-semibold text-center hover:bg-purple-500 hover:text-white transition-all group-hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] meta-lead-btn">
                   Elegir Independiente
                 </a>
               </div>
@@ -365,7 +365,7 @@
               </div>
       
               <div class="pb-10 mt-auto">
-                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y me interesa la modalidad grupal en vivo" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-brand-accent text-slate-900 font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(92,225,230,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y me interesa la modalidad grupal en vivo" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-brand-accent text-slate-900 font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(92,225,230,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] meta-lead-btn">
                   Quiero esta modalidad <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
               </div>
@@ -413,7 +413,7 @@
               </div>
       
               <div class="pb-8 mt-auto">
-                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y me interesa la modalidad de tutoría 1 a 1" target="_blank" class="block w-full py-3 rounded-xl border border-pink-500/30 text-pink-100 font-semibold text-center hover:bg-pink-500 hover:text-white transition-all group-hover:shadow-[0_0_20px_rgba(236,72,153,0.4)]">
+                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y me interesa la modalidad de tutoría 1 a 1" target="_blank" class="block w-full py-3 rounded-xl border border-pink-500/30 text-pink-100 font-semibold text-center hover:bg-pink-500 hover:text-white transition-all group-hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] meta-lead-btn">
                   Consultar Tutoría
                 </a>
               </div>
@@ -856,7 +856,15 @@
       });
     }
 
-
+    document.addEventListener('click', function(e) {
+    // Check if the clicked element has your specific class
+      if (e.target && e.target.classList.contains('meta-lead-btn')) {
+        fbq('track', 'Lead', {
+          content_name: e.target.innerText, // Automatically grabs the button text
+          source: window.location.pathname  // Records which page they were on
+        });
+      }
+    });
 
 
   </script>

@@ -129,7 +129,7 @@
             </a>
             <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos Studio y quisiera hablar con un asesor"
               target="_blank"
-              class="px-5 py-2 rounded-full font-bold shadow-lg transition-transform hover:scale-105 bg-brand-accent text-brand-primary">
+              class="meta-lead-btn px-5 py-2 rounded-full font-bold shadow-lg transition-transform hover:scale-105 bg-brand-accent text-brand-primary">
               Consultar disponibilidad
             </a>
           </div>
@@ -152,7 +152,7 @@
         <a href="#trayectos" onclick="toggleMenu()"
           class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-white">Formaciones</a>
         <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos Studio y quisiera hablar con un asesor" target="_blank" onclick="toggleMenu()"
-          class="block w-full text-left mt-2 px-3 py-3 rounded-md text-base font-bold text-brand-accent hover:bg-white/10">
+          class="meta-lead-btn block w-full text-left mt-2 px-3 py-3 rounded-md text-base font-bold text-brand-accent hover:bg-white/10">
           Consultar disponibilidad
         </a>
       </div>
@@ -309,7 +309,7 @@
               </div>
       
               <div class="pb-8 mt-auto">
-                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos Studio y me interesa la modalidad de autoaprendizaje" target="_blank" class="block w-full py-3 rounded-xl border border-emerald-500/30 text-emerald-100 font-semibold text-center hover:bg-emerald-500 hover:text-white transition-all group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos Studio y me interesa la modalidad de autoaprendizaje" target="_blank" class="meta-lead-btn block w-full py-3 rounded-xl border border-emerald-500/30 text-emerald-100 font-semibold text-center hover:bg-emerald-500 hover:text-white transition-all group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]">
                   Elegir Autoaprendizaje
                 </a>
               </div>
@@ -363,7 +363,7 @@
               </div>
       
               <div class="pb-10 mt-auto">
-                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos Studio y me interesa la modalidad grupal sincrónica" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-brand-accent text-slate-900 font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(92,225,230,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos Studio y me interesa la modalidad grupal sincrónica" target="_blank" class="meta-lead-btn flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-brand-accent text-slate-900 font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(92,225,230,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
                   Reservar tu lugar <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
               </div>
@@ -411,7 +411,7 @@
               </div>
       
               <div class="pb-8 mt-auto">
-                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos Studio y me interesa la mentoría 1 a 1" target="_blank" class="block w-full py-3 rounded-xl border border-pink-500/30 text-pink-100 font-semibold text-center hover:bg-pink-500 hover:text-white transition-all group-hover:shadow-[0_0_20px_rgba(236,72,153,0.4)]">
+                <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos Studio y me interesa la mentoría 1 a 1" target="_blank" class="meta-lead-btn block w-full py-3 rounded-xl border border-pink-500/30 text-pink-100 font-semibold text-center hover:bg-pink-500 hover:text-white transition-all group-hover:shadow-[0_0_20px_rgba(236,72,153,0.4)]">
                   Solicitar Mentoría
                 </a>
               </div>
@@ -816,6 +816,7 @@
 
 
     fbq('track', 'ViewContent');
+    
     document.getElementById('btn-whatsapp').addEventListener('click', function () {
       fbq('track', 'Lead');
     });
@@ -840,7 +841,15 @@
       });
     }
 
-
+    document.addEventListener('click', function(e) {
+    // Check if the clicked element has your specific class
+      if (e.target && e.target.classList.contains('meta-lead-btn')) {
+        fbq('track', 'Lead', {
+          content_name: e.target.innerText, // Automatically grabs the button text
+          source: window.location.pathname  // Records which page they were on
+        });
+      }
+    });
 
 
   </script>
