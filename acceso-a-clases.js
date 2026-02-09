@@ -72,7 +72,7 @@ class AccesoAClases extends HTMLElement {
     }
 
     const rutas = {
-      'marcosrosich': "https://meet.jit.si/moderated/1a69f7149346dcf73bf7ab289ba8f37809cb7f26eaacd47f8762024ea6dff9d9",
+      'marcosrosich': "https://meet.jit.si/moderated/e42502027a1ad7edbdb04e78648a9b7d5152339704b7645a7943320a59c3fef8",
       'eugenioporta': "https://meet.jit.si/moderated/d8c21ddbb4b2325d88f92b4e79e5861492ded2f5bd79cb1c5bbeab3f6a922484"
     };
 
