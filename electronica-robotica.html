@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Electrónica y Robótica para niños</title>
+    <meta name="description"
+    content="Cerebros Creativos: Curso de robótica y electrónica para niños. Aprendé a crear tus propios circuitos y robots en Argentina.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#00357a',      // Fondo Principal
+              primary: '#00357a', // Azul Brillante
+              accent: '#5ce1e6',  // Cian/Turquesa
+              secondary: '#78d25e'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'glow': 'glow 1.5s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            glow: {
+              '0%, 100%': {
+                opacity: '1',
+                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)'
+              },
+              '50%': {
+                opacity: '1',
+                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)'
+              },
+            }
+          }
+        }
+      }
+    }
+
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '847369751637766');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=847369751637766&ev=PageView&noscript=1" /></noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .text-shadow-lg { text-shadow: 1px 1px 8px rgba(0, 0, 0); }
+    .text-shadow-md { text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); }
+  </style>
+</head>
+
+<body class="bg-brand-primary text-white min-h-screen font-sans selection:bg-brand-accent selection:text-brand-primary">
+  
+  <nav class="fixed w-full z-50 bg-brand-bg/10 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center flex-col gap-2 md:flex-row md:justify-between py-2 md:h-20">
+        <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+          <div class="font-bold text-2xl tracking-tighter flex items-center">
+            CerebrosCreativos<span class="text-brand-accent">.org</span>
+          </div>
+        </div>
+        <script src="acceso-a-clases.js?v=20260209"></script>
+        <acceso-a-clases></acceso-a-clases>
+      </div>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden px-6 pt-36 pb-8 text-center">
+    <div class="absolute inset-0 z-0">
+      <img 
+          src="images/niños-diseñando-3d.jpg" 
+          alt="Niño armando un robot" 
+          class="w-full h-full object-cover opacity-100"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-primary via-brand-primary/40 to-brand-primary"></div>
+    </div>    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
+      
+    <div class="relative z-10">
+        <span class="inline-block py-1 px-3 rounded-full border text-xs font-bold tracking-wider uppercase mb-4 shadow-[0_0_10px_rgba(92,225,230,0.3)] bg-[rgba(0,74,173,0.5)] border-brand-accent text-brand-accent">
+            Trayecto Tecnológico 2026
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-shadow-md">
+            Electrónica y<br><span class="text-brand-accent">Robótica</span>
+        </h1>
+        <p class="text-lg mb-8 max-w-md mx-auto opacity-90">
+            Una aventura para descubrir cómo funcionan las cosas, creando circuitos y dando vida a tus propios robots desde cero.
+        </p>
+    </div>
+  </header>
+
+  <section class="px-6 py-10 bg-black/20">
+      <h2 class="text-2xl font-bold mb-6 text-center">Habilidades del Futuro</h2>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          
+          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+              <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
+                  <i data-lucide="zap" class="w-5 h-5"></i> Circuitos Eléctricos
+              </h3>
+              <p class="text-sm opacity-80">Aprenderemos cómo viaja la energía para encender luces, motores y sonidos de forma segura.</p>
+          </div>
+
+          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+              <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
+                  <i data-lucide="cpu" class="w-5 h-5"></i> Cerebros Robóticos
+              </h3>
+              <p class="text-sm opacity-80">Descubriremos los microcontroladores y cómo programarlos para que nuestro robot tome decisiones.</p>
+          </div>
+
+          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+              <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
+                  <i data-lucide="eye" class="w-5 h-5"></i> Sensores y Acción
+              </h3>
+              <p class="text-sm opacity-80">Haremos que nuestros inventos "vean" la distancia o "sientan" la luz usando sensores inteligentes.</p>
+          </div>
+
+          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+              <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
+                  <i data-lucide="wrench" class="w-5 h-5"></i> Construcción Maker
+              </h3>
+              <p class="text-sm opacity-80">Fomentamos el ingenio usando materiales reciclados y componentes reales para armar estructuras.</p>
+          </div>
+
+      </div>
+  </section>
+
+  <section class="px-6 py-12 relative max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-2">
+          <i data-lucide="map" class="text-brand-accent"></i> Ruta del Joven Inventor
+      </h2>
+
+      <div class="relative border-l-2 border-dashed ml-4 md:ml-8 space-y-12 border-white/20">
+          
+          <div class="relative pl-8 md:pl-12">
+              <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
+              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
+                  <div class="flex justify-between items-start mb-2">
+                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                          <i data-lucide="battery-charging" class="w-5 h-5"></i>
+                      </div>
+                      <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Primeras 20 clases</span>
+                  </div>
+                  <h3 class="text-xl font-bold mb-1">Módulo 1: Energía y Luz</h3>
+                  <p class="text-sm mb-4 opacity-70">Entendemos la electricidad básica creando circuitos con LEDs, interruptores y pilas.</p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Polaridad</span>
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Resistencias</span>
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Circuitos Simples</span>
+                  </div>
+
+                  <div class="mb-4">
+                      <p class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-accent">Herramientas:</p>
+                      <div class="flex flex-wrap gap-2">
+                          <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">Tinkercad</span>
+                          <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">Kit de Inicio</span>
+                      </div>
+                  </div>
+
+                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                      <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
+                          <i data-lucide="sparkles" class="w-5 h-5 text-yellow-400"></i>
+                      </div>
+                      
+                      <div>
+                          <p class="text-[10px] uppercase font-bold tracking-wider opacity-70">Hito Desbloqueado</p>
+                          <p class="text-sm font-semibold text-yellow-100">Dominio de la Energía</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="relative pl-8 md:pl-12">
+              <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
+              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
+                  <div class="flex justify-between items-start mb-2">
+                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                          <i data-lucide="bot" class="w-5 h-5"></i>
+                      </div>
+                      <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Siguientes 20 clases</span>
+                  </div>
+                  <h3 class="text-xl font-bold mb-1">Módulo 2: Sensores y Automatismo</h3>
+                  <p class="text-sm mb-4 opacity-70">Hacemos que nuestros circuitos reaccionen al entorno: luz, tacto y sonido.</p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Fotocélulas</span>
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Buzzers</span>
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Motores</span>
+                  </div>
+                  <div class="mb-4">
+                    <p class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-accent">Herramientas:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">Tinkercad</span>
+                        <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">Kit de Intermedio</span>
+                    </div>
+                  </div>
+                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                      <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
+                          <i data-lucide="award" class="w-5 h-5 text-yellow-400"></i>
+                      </div>
+                      <div>
+                          <p class="text-[10px] uppercase font-bold tracking-wider opacity-70">Hito Desbloqueado</p>
+                          <p class="text-sm font-semibold text-yellow-100">Maestro de Sensores</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="relative pl-8 md:pl-12">
+              <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
+              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
+                  <div class="flex justify-between items-start mb-2">
+                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                          <i data-lucide="circuit-board" class="w-5 h-5"></i>
+                      </div>
+                      <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Últimas 20 Clases</span>
+                  </div>
+                  <h3 class="text-xl font-bold mb-1">Módulo 3: Creación del Robot</h3>
+                  <p class="text-sm mb-4 opacity-70">Construimos un prototipo robótico que cumpla una misión específica.</p>
+                  
+                  <div class="flex flex-wrap gap-2 mb-4">
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Programación de Bloques</span>
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Ensamblaje Maker</span>
+                      <span class="text-xs px-2 py-1 rounded border opacity-80 border-white/30">Solución de Problemas</span>
+                  </div>
+                  <div class="mb-4">
+                    <p class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-accent">Herramientas:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">Entorno de programación Arduino</span>
+                        <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">Kit Arduino</span>
+                    </div>
+                  </div>
+                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                      <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
+                          <i data-lucide="crown" class="w-5 h-5 text-yellow-400"></i>
+                      </div>
+                      <div>
+                          <p class="text-[10px] uppercase font-bold tracking-wider opacity-70">Hito Desbloqueado</p>
+                          <p class="text-sm font-semibold text-yellow-100">Maker Pro</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="relative pl-8 md:pl-12 pt-4">
+              <div class="absolute -left-[15px] top-4 w-8 h-8 rounded-full flex items-center justify-center border-4 z-10 shadow-[0_0_15px_rgba(92,225,230,0.6)] bg-brand-accent border-brand-primary">
+                  <i data-lucide="circle-check-big" class="w-4 h-4 font-bold text-brand-primary"></i>
+              </div>
+              <div class="font-bold text-lg animate-pulse-custom text-brand-accent">
+                  ¡Somos Ingenieros Creativos!
+              </div>
+              <p class="text-sm opacity-60">Listos para transformar el mundo con hardware.</p>
+          </div>
+
+      </div>
+  </section>
+
+  <!-- --- CTA FINAL --- -->
+  <section class="py-24 px-6 text-center relative overflow-hidden bg-black/20">
+    <div
+      class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 via-transparent to-transparent">
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold mb-8">Los cupos son limitados.<br>No pierdas tu vacante.</h2>
+
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+        <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y quisiera hablar con un asesor" target="_blank" id="btn-whatsapp"
+          class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto animate-glow">
+          <i data-lucide="message-circle-more" class="w-5 h-5"></i> Enviar un whatsapp
+        </a>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+        <a href="tel:+5493404564631" target="_blank" id="btn-phone"
+          class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto">
+          <i data-lucide="phone" class="w-5 h-5"></i> Llamar por teléfono
+        </a>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+        <a href="mailto:contacto@cerebroscreativos.org" target="_blank" id="btn-mail"
+          class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto">
+          <i data-lucide="mail" class="w-5 h-5"></i> Enviar un Mail
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="py-10 md:py-20 px-4 md:px-6 max-w-4xl mx-auto overflow-hidden">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+      <div class="w-full">
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+          <i data-lucide="cpu" class="text-brand-accent shrink-0"></i>
+          <span>Requisitos Técnicos</span>
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
+            <i data-lucide="video" class="text-brand-accent w-6 h-6 shrink-0"></i>
+            <p class="text-sm"><strong>Cámara y Micrófono:</strong> Esenciales. No solo para escuchar, sino para
+              participar, preguntar y colaborar.</p>
+          </li>
+          <li class="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
+            <i data-lucide="monitor" class="text-brand-accent w-6 h-6 shrink-0"></i>
+            <p class="text-sm"><strong>PC o Tablet:</strong> Un dispositivo con menos de 5 años de antigüedad (o PC
+              Gamer si es más antigua).</p>
+          </li>
+          <li class="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
+            <i data-lucide="package" class="text-brand-accent w-6 h-6 shrink-0"></i>
+            <p class="text-sm"><strong>Kit de Componentes:</strong> Te asesoramos sobre qué elementos básicos comprar para las prácticas físicas.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w-full">
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+          <i data-lucide="settings" class="text-brand-accent shrink-0"></i>
+          <span>Detalles de Cursado</span>
+        </h3>
+        <div class="bg-brand-bg p-5 md:p-6 rounded-2xl border border-brand-accent/30 shadow-2xl ">
+          <ul class="space-y-4 text-sm opacity-90">
+            <li class="flex flex-col md:flex-row justify-between items-left border-b border-white/10 pb-2 gap-2">
+              <span class="opacity-70">Duración de cada curso:</span>
+              <span class="font-bold text-brand-accent">5 meses</span>
+            </li>
+            <li class="flex flex-col md:flex-row  justify-between items-left border-b border-white/10 pb-2 gap-2">
+              <span class="opacity-70">Duración de las clases (grupales):</span>
+              <span class="font-bold text-brand-accent">1h 30m</span>
+            </li>
+            <li class="flex flex-col md:flex-row  justify-between items-left border-b border-white/10 pb-2 gap-2">
+              <span class="opacity-70">Duración de las clases (particulares):</span>
+              <span class="font-bold text-brand-accent">1 hora</span>
+            </li>
+            <li class="flex flex-col md:flex-row justify-between items-left gap-2">
+              <span class="opacity-70">Grabaciones para repasar:</span>
+              <span class="font-bold text-brand-accent">Siempre disponibles</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-4 text-center border-t border-white/5">
+            <p class="text-sm uppercase tracking-widest opacity-60 mb-1">Valor Mensual</p>
+            <p class="text-2xl md:text-3xl font-bold text-brand-accent">Consulte Cuota</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script src="custom-footer.js"></script>
+  <custom-footer></custom-footer>
+  <script>
+      lucide.createIcons();
+  </script>
+</body>
+</html>
