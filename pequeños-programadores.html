@@ -3,57 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trayecto Tecnológico 2026 - Pequeños Programadores</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Curso de programación para niños</title>
+    <meta name="description"
+    content="Cerebros Creativos es una comunidad de aprendizaje en línea dedicada a fomentar el crecimiento personal y profesional de personas de todas las edades en Argentina.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-dark': '#00357a',
-                        'brand-darker': '#00285c',
-                        'brand-accent': '#5ce1e6',
-                        'brand-footer': '#002a60',
-                    },
-                    fontFamily: {
-                        sans: ['ui-sans-serif', 'system-ui', 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji"],
-                    }
-                }
+  <!-- Tailwind CSS (Estilos) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Configuración de Colores de Marca -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#00357a',      // Fondo Principal
+              primary: '#00357a', // Azul Brillante
+              accent: '#5ce1e6',  // Cian/Turquesa
+              secondary: '#78d25e'
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'glow': 'glow 1.5s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            // NUEVOS KEYFRAMES PARA EL BRILLO SUAVE
+            glow: {
+              '0%, 100%': {
+                opacity: '1',
+                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)' // Sin sombra
+              },
+              '50%': {
+                opacity: '1',
+                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)' // Sombra brillante
+              },
+            }
+          }
         }
-    </script>
+      }
+    }
 
-    <style>
-        @keyframes pulse-custom {
-            50% { opacity: .5; }
-        }
-        .animate-pulse-custom {
-            animation: pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-    </style>
+
+    <!-- Meta Pixel Code -->
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '847369751637766');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=847369751637766&ev=PageView&noscript=1" /></noscript>
+
+  <!-- Fuente Inter (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Iconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Ocultar scrollbar en carrusel si fuera necesario */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .text-shadow-lg {
+      text-shadow: 1px 1px 8px rgba(0, 0, 0);
+    }
+
+    .text-shadow-md {
+      text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
-<body class="bg-brand-dark text-white min-h-screen font-sans pb-20 selection:bg-brand-accent selection:text-brand-dark">
 
-    <header class="relative overflow-hidden px-6 pt-12 pb-8 text-center">
+<body class="bg-brand-primary text-white min-h-screen font-sans selection:bg-brand-accent selection:text-brand-primary">
+  <!-- --- NAVBAR --- -->
+  <nav class="fixed w-full z-50 bg-brand-bg/10 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center flex-col gap-2 md:flex-row md:justify-between py-2 md:h-20">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+          <div class="font-bold text-2xl tracking-tighter flex items-center">
+            CerebrosCreativos<span class="text-brand-accent">.org</span>
+          </div>
+        </div>
+
+        <script src="acceso-a-clases.js?v=20260209"></script>
+        <acceso-a-clases></acceso-a-clases>
+      </div>
+    </div>
+
+
+  </nav>
+    <header class="relative overflow-hidden px-6 pt-36 pb-8 text-center">
       <div class="absolute inset-0 z-0">
         <img 
             src="images/niño-programando.jpg" 
             alt="Background" 
             class="w-full h-full object-cover opacity-100"
         />
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/40 to-brand-dark"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-primary via-brand-primary/40 to-brand-primary"></div>
       </div>    
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
         
         <div class="relative z-10">
             <span class="inline-block py-1 px-3 rounded-full border text-xs font-bold tracking-wider uppercase mb-4 shadow-[0_0_10px_rgba(92,225,230,0.3)] bg-[rgba(0,74,173,0.5)] border-brand-accent text-brand-accent">
-                Trayecto Tecnológico 2026 (5+ años)
+                Trayecto Tecnológico 2026
             </span>
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                Creador de <br><span class="text-brand-accent">Historias Interactivas</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-shadow-md">
+                Pequeños<br><span class="text-brand-accent">Programadores</span>
             </h1>
             <p class="text-lg mb-8 max-w-md mx-auto opacity-90">
                 Una aventura para que los más pequeños aprendan a dar vida a sus ideas programando sus propios juegos y cuentos.
@@ -104,9 +189,9 @@
         <div class="relative border-l-2 border-dashed ml-4 md:ml-8 space-y-12 border-white/20">
             
             <div class="relative pl-8 md:pl-12">
-                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-dark bg-brand-accent"></div>
+                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
                 
-                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-darker border-[rgba(92,225,230,0.2)]">
+                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
                     <div class="flex justify-between items-start mb-2">
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="play" class="w-5 h-5"></i>
@@ -126,7 +211,7 @@
                     <div class="mb-4">
                         <p class="text-xs font-bold uppercase tracking-wider mb-2 text-brand-accent">Herramienta:</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-dark">ScratchJr</span>
+                            <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">ScratchJr</span>
                         </div>
                     </div>
 
@@ -143,8 +228,8 @@
             </div>
 
             <div class="relative pl-8 md:pl-12">
-                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-dark bg-brand-accent"></div>
-                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-darker border-[rgba(92,225,230,0.2)]">
+                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
+                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
                     <div class="flex justify-between items-start mb-2">
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="message-square" class="w-5 h-5"></i>
@@ -174,8 +259,8 @@
             </div>
 
             <div class="relative pl-8 md:pl-12">
-                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-dark bg-brand-accent"></div>
-                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-darker border-[rgba(92,225,230,0.2)]">
+                <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
+                <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
                     <div class="flex justify-between items-start mb-2">
                         <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
                             <i data-lucide="gamepad-2" class="w-5 h-5"></i>
@@ -205,8 +290,8 @@
             </div>
 
             <div class="relative pl-8 md:pl-12 pt-4">
-                <div class="absolute -left-[15px] top-4 w-8 h-8 rounded-full flex items-center justify-center border-4 z-10 shadow-[0_0_15px_rgba(92,225,230,0.6)] bg-brand-accent border-brand-dark">
-                    <i data-lucide="circle-check-big" class="w-4 h-4 font-bold text-brand-dark"></i>
+                <div class="absolute -left-[15px] top-4 w-8 h-8 rounded-full flex items-center justify-center border-4 z-10 shadow-[0_0_15px_rgba(92,225,230,0.6)] bg-brand-accent border-brand-primary">
+                    <i data-lucide="circle-check-big" class="w-4 h-4 font-bold text-brand-primary"></i>
                 </div>
                 <div class="font-bold text-lg animate-pulse-custom text-brand-accent">
                     ¡Somos Creadores Digitales!
@@ -217,81 +302,102 @@
         </div>
     </section>
 
-    <section class="px-6 py-12 border-t bg-brand-footer border-white/10">
-        <div class="max-w-md mx-auto">
-            <div class="mb-10 bg-black/20 p-5 rounded-xl border border-white/10">
-                <h3 class="font-bold text-lg mb-4 flex items-center gap-2 text-brand-accent">
-                    <i data-lucide="monitor" class="w-5 h-5"></i> Requisitos Técnicos
-                </h3>
-                <ul class="space-y-3 text-sm opacity-80">
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 text-blue-300"><i data-lucide="panels-top-left" class="w-4 h-4"></i></div>
-                        <span><strong>Sistema Operativo:</strong> Windows 10/11</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 text-blue-300"><i data-lucide="cpu" class="w-4 h-4"></i></div>
-                        <span><strong>PC Estándar:</strong> Menos de 5 años de antigüedad (salvo PC Gamer, si es más antigua).</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 text-blue-300"><i data-lucide="mouse-pointer" class="w-4 h-4"></i></div>
-                        <span><strong>Navegador:</strong> Google Chrome o Microsoft Edge actualizados.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="mt-1 text-blue-300"><i data-lucide="mic" class="w-4 h-4"></i></div>
-                        <span><strong>Cámara y Micrófono:</strong> Para comunicarnos en los encuentros en vivo.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <div class="mt-1 text-blue-300"><i data-lucide="circle-user-round" class="w-4 h-4"></i></div>
-                      <span><strong>Cuenta de Google:</strong> La necesitaremos para ingresar al Aula Virtual (Classroom) y compartir archivos.</span>
-                    </li>
-                </ul>
-            </div>
+  
+    <!-- --- CTA FINAL --- -->
+    <section class="py-24 px-6 text-center relative overflow-hidden bg-black/20">
+      <div
+        class="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 via-transparent to-transparent">
+      </div>
+  
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Los cupos son limitados.<br>No pierdas tu vacante.</h2>
 
-            <h2 class="text-2xl font-bold mb-6 text-center">Detalles del Cursado</h2>
-            <div class="rounded-2xl p-6 shadow-2xl relative overflow-hidden border bg-brand-dark border-[rgba(92,225,230,0.3)]">
-                <ul class="space-y-6 relative z-10">
-                    <li class="flex items-center gap-3">
-                        <div class="p-2 rounded-lg bg-[rgba(0,74,173,1)] text-brand-accent">
-                            <i data-lucide="calendar" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold">1 Encuentro por semana.</p>
-                            <p class="text-xs opacity-60">Incluso los feriados</p>
-                        </div>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="p-2 rounded-lg bg-[rgba(0,74,173,1)] text-brand-accent">
-                            <i data-lucide="clock" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold">Clases de 1h 30m</p>
-                            <p class="text-xs opacity-60">Modalidad Online en Vivo</p>
-                        </div>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <div class="p-2 rounded-lg bg-[rgba(0,74,173,1)] text-brand-accent">
-                            <i data-lucide="circle-play" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold">Las clases quedan grabadas</p>
-                            <p class="text-xs opacity-60">Repasa o recupera clases siempre</p>
-                        </div>
-                    </li>
-                </ul>
-                <div class="mt-8 pt-6 border-t border-white/10">
-                    <div class="flex justify-between items-end mb-2">
-                        <span class="text-sm opacity-60">Valor Mensual</span>
-                        <div class="text-right">
-                            <span class="text-3xl font-bold text-brand-accent">Consulte Precio</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+          <a href="https://wa.me/5493404564631?text=Hola! vengo de Cerebros Creativos KIDS y quisiera hablar con un asesor" target="_blank" id="btn-whatsapp"
+            class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto animate-glow">
+            <i data-lucide="message-circle-more" class="w-5 h-5"></i> Enviar un whatsapp
+          </a>
         </div>
+  
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+          <a href="tel:+5493404564631" target="_blank" id="btn-phone"
+            class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto">
+            <i data-lucide="phone" class="w-5 h-5"></i> Llamar por teléfono
+          </a>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+          <a href="mailto:contacto@cerebroscreativos.org" target="_blank" id="btn-mail"
+            class="px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:scale-105 bg-brand-accent text-brand-primary flex items-center gap-2 justify-center w-full max-w-sm sm:max-w-md mx-auto">
+            <i data-lucide="mail" class="w-5 h-5"></i> Enviar un Mail
+          </a>
+        </div>
+      </div>
     </section>
-
+    <section class="py-10 md:py-20 px-4 md:px-6 max-w-4xl mx-auto overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+  
+        <div class="w-full">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <i data-lucide="cpu" class="text-brand-accent shrink-0"></i>
+            <span>Requisitos Técnicos</span>
+          </h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
+              <i data-lucide="video" class="text-brand-accent w-6 h-6 shrink-0"></i>
+              <p class="text-sm"><strong>Cámara y Micrófono:</strong> Esenciales. No solo para escuchar, sino para
+                participar, preguntar y colaborar.</p>
+            </li>
+            <li class="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
+              <i data-lucide="monitor" class="text-brand-accent w-6 h-6 shrink-0"></i>
+              <p class="text-sm"><strong>PC o Tablet:</strong> Un dispositivo con menos de 5 años de antigüedad (o PC
+                Gamer si es más antigua).</p>
+            </li>
+            <li class="flex items-start gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
+              <i data-lucide="circle-user-round" class="text-brand-accent w-6 h-6 shrink-0"></i>
+              <p class="text-sm"><strong>Cuenta de Google:</strong> La necesitaremos para compartir archivos y acceder a recursos de la cursada.</p>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="w-full">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <i data-lucide="settings" class="text-brand-accent shrink-0"></i>
+            <span>Detalles de Cursado</span>
+          </h3>
+          <div class="bg-brand-bg p-5 md:p-6 rounded-2xl border border-brand-accent/30 shadow-2xl ">
+            <ul class="space-y-4 text-sm opacity-90">
+              <li class="flex flex-col md:flex-row justify-between items-left border-b border-white/10 pb-2 gap-2">
+                <span class="opacity-70">Duración de cada curso:</span>
+                <span class="font-bold text-brand-accent">5 meses</span>
+              </li>
+              <li class="flex flex-col md:flex-row  justify-between items-left border-b border-white/10 pb-2 gap-2">
+                <span class="opacity-70">Duración de las clases (grupales):</span>
+                <span class="font-bold text-brand-accent">1h 30m</span>
+              </li>
+              <li class="flex flex-col md:flex-row  justify-between items-left border-b border-white/10 pb-2 gap-2">
+                <span class="opacity-70">Duración de las clases (particulares):</span>
+                <span class="font-bold text-brand-accent">1 hora</span>
+              </li>
+              <li class="flex flex-col md:flex-row justify-between items-left gap-2">
+                <span class="opacity-70">Grabaciones para repasar:</span>
+                <span class="font-bold text-brand-accent">Siempre disponibles</span>
+              </li>
+            </ul>
+            <div class="mt-6 pt-4 text-center border-t border-white/5">
+              <p class="text-sm uppercase tracking-widest opacity-60 mb-1">Valor Mensual</p>
+              <p class="text-2xl md:text-3xl font-bold text-brand-accent">Consulte Cuota</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </section>
+    <script src="custom-footer.js"></script>
+    <custom-footer></custom-footer>
     <script>
         lucide.createIcons();
     </script>
 </body>
+
 </html>
