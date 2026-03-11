@@ -10,51 +10,10 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" href="favicon.ico">
 
-  <!-- Tailwind CSS (Estilos) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./dist/output.css" rel="stylesheet">
 
   <!-- Configuración de Colores de Marca -->
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              bg: '#00357a',      // Fondo Principal
-              primary: '#004aad', // Azul Brillante
-              accent: '#5ce1e6',  // Cian/Turquesa
-              secondary: '#78d25e'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          },
-          animation: {
-            'fade-in': 'fadeIn 0.5s ease-in-out',
-            'glow': 'glow 1.5s ease-in-out infinite',
-          },
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: '0' },
-              '100%': { opacity: '1' },
-            },
-            // NUEVOS KEYFRAMES PARA EL BRILLO SUAVE
-            glow: {
-              '0%, 100%': {
-                opacity: '1',
-                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)' // Sin sombra
-              },
-              '50%': {
-                opacity: '1',
-                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)' // Sombra brillante
-              },
-            }
-          }
-        }
-      }
-    }
-
-
     <!-- Meta Pixel Code -->
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
