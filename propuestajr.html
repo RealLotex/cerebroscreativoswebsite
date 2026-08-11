@@ -594,61 +594,71 @@
         title: "Desarrolo de Videojuegos 2D y 3D", 
         icon: "gamepad-2", 
         color: "pink", 
-        desc: "Crea videojuegos con Blender, Unity y Unreal Engine. Modelado 3D, física y gameplay interactivo." 
+        desc: "Crea videojuegos con Blender, Unity y Unreal Engine. Modelado 3D, física y gameplay interactivo.",
+        url: "programacion-de-videojuegos-12-14.html"
       },
       { 
         title: "Ilustración Digital & Animación 2D", 
         icon: "brush", 
         color: "cyan", 
-        desc: "Ilustrá y Animá con Krita o Photoshop. Crea arte digital, cómics y animaciones 2D de impacto." 
+        desc: "Ilustrá y Animá con Krita o Photoshop. Crea arte digital, cómics y animaciones 2D de impacto.",
+        url: "arte-digital.html"
       },
       { 
         title: "Modelado 3D & Motion Graphics", 
         icon: "film", 
         color: "red", 
-        desc: "Animá con Davinci Resolve, Fusion y Blender. Crea efectos visuales y animaciones de impacto." 
+        desc: "Animá con Davinci Resolve, Fusion y Blender. Crea efectos visuales y animaciones de impacto.",
+        url: "modelado-y-animacion-3d.html"
       },
       { 
         title: "Edición de Video + Marketing Digital", 
         icon: "clapperboard", 
         color: "emerald", 
-        desc: "Editá videos profesionales con DaVinci Resolve. Dominá las redes y creá contenido viral." 
+        desc: "Editá videos profesionales con DaVinci Resolve. Dominá las redes y creá contenido viral.",
+        url: "contenidos-y-marketing.html"
       },
       { 
         title: "Desarrollo Web & Apps", 
         icon: "code", 
         color: "blue", 
-        desc: "Aprende HTML, CSS, JavaScript. Crea sitios web, aplicaciones y sistemas integrados en Google Drive" 
+        desc: "Aprende HTML, CSS, JavaScript. Crea sitios web, aplicaciones y sistemas integrados en Google Drive",
+        url: "programacion-de-videojuegos-15.html"
       },
       { 
         title: "Storytelling y Lectura", 
         icon: "feather", // Cambié icono para más variedad
         color: "emerald", // Tema Intelectual
-        desc: "Taller de narrativa y filosofía para desarrollar pensamiento crítico profundo." 
+        desc: "Taller de narrativa y filosofía para desarrollar pensamiento crítico profundo.",
+        url: "lectura-critica-y-storytelling.html"
       },
       { 
         title: "Producción Musical & Audio", 
         icon: "music", 
         color: "orange", 
-        desc: "Produce música, mezcla y domina DAWs como Ableton o FL Studio. Crea beats y composiciones profesionales." 
+        desc: "Produce música, mezcla y domina DAWs como Ableton o FL Studio. Crea beats y composiciones profesionales.",
+        url: "produccion-musical.html"
       },
       { 
-        title: "Fotografía Profesional", 
-        icon: "camera", 
+        title: "Electrónica y Robótica", 
+        icon: "cpu", 
         color: "yellow", 
-        desc: "Dominá composición, iluminación y edición. Crea y edita fotos impactantes para redes y proyectos." 
+        desc: "Construimos circuitos y robots aprendiendo electrónica desde cero.",
+        url: "electronica-robotica.html"
       },
       { 
-        title: "Inteligencia Artificial & Data Science", 
-        icon: "brain-circuit", 
+        title: "Creador de Contenidos", 
+        icon: "share-2", 
         color: "indigo", 
-        desc: "Aprende Python, ChatGPT y machine learning. El futuro es de quienes entienden IA." 
+        desc: "Creá y publicá contenido original en redes sociales y plataformas digitales.",
+        url: "creador-de-contenidos.html"
       },
       { 
-        title: "Emprendimiento Digital", 
-        icon: "rocket", 
+        title: "Programación en Roblox", 
+        icon: "cuboid", 
         color: "lime", 
-        desc: "Crea tu propio negocio online. E-commerce, monetización en redes y negocios digitales." 
+        desc: "Lógica de programación Lua creando experiencias en plataformas virtuales.",
+        url: "programación-en-roblox.html"
       },
     ];
   
@@ -675,25 +685,21 @@
       // Clases base + Clases dinámicas de borde y sombra
       div.className = `group relative p-6 h-full flex flex-col rounded-2xl border border-white/5 bg-slate-900/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 ${theme.border} hover:shadow-[0_0_30px_-5px] ${theme.shadow}`;
       
-      div.innerHTML = `
-          <div class="mb-5 w-14 h-14 rounded-xl flex items-center justify-center transition-colors ${theme.bg} ${theme.text}">
-              <i data-lucide="${item.icon}" class="w-7 h-7"></i>
-          </div>
-          
-          <h3 class="font-bold text-lg text-white leading-tight mb-3 group-hover:text-white transition-colors">
-            ${item.title}
-          </h3>
-          
-          <p class="text-sm text-slate-400 group-hover:text-slate-300 leading-relaxed">
-            ${item.desc}
-          </p>
-          
-          <!--
-          <div class="mt-auto pt-4 flex justify-end opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
-             <i data-lucide="arrow-right" class="w-5 h-5 ${theme.text}"></i>
-          </div>
-          -->
-      `;
+      const detailBtn = item.url
+        ? '<a href="' + item.url + '" aria-label="Ver detalle de ' + item.title + '" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white text-lg font-bold shadow-lg transition-all z-10">&gt;</a>'
+        : '';
+
+      div.innerHTML =
+          detailBtn +
+          '<div class="mb-5 w-14 h-14 rounded-xl flex items-center justify-center transition-colors ' + theme.bg + ' ' + theme.text + '">' +
+            '<i data-lucide="' + item.icon + '" class="w-7 h-7"></i>' +
+          '</div>' +
+          '<h3 class="font-bold text-lg text-white leading-tight mb-3 group-hover:text-white transition-colors">' +
+            item.title +
+          '</h3>' +
+          '<p class="text-sm text-slate-400 group-hover:text-slate-300 leading-relaxed">' +
+            item.desc +
+          '</p>';
       gridContainer.appendChild(div);
     });
     
@@ -827,7 +833,7 @@
       } else {
         window.location.href = '/';
       }
-    });
+    }
 
 
   </script>
