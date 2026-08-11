@@ -71,6 +71,14 @@
   <nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between py-2 md:h-20">
+        <!-- Volver -->
+        <div class="flex items-center">
+          <button onclick="goBack()"
+            class="flex items-center gap-2 px-3 py-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 border border-white/20 transition-all text-sm font-medium"
+            aria-label="Volver">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver
+          </button>
+        </div>
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
           <div class="font-bold text-2xl tracking-tighter flex items-center">
@@ -809,6 +817,15 @@
           content_name: e.target.innerText, // Automatically grabs the button text
           source: window.location.pathname  // Records which page they were on
         });
+      }
+    });
+
+    // --- Botón Volver ---
+    function goBack() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = '/';
       }
     });
 
