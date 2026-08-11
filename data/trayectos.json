@@ -1,0 +1,122 @@
+[
+  {
+    "trayecto": "kids",
+    "slug": "kids",
+    "nombre": "Cerebros Creativos KIDS",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/propuesta.html"
+  },
+  {
+    "trayecto": "junior",
+    "slug": "jr",
+    "nombre": "Cerebros Creativos Jr_",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/propuestajr.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "studio",
+    "nombre": "Cerebros Creativos Studio",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/propuestastudio.html"
+  },
+  {
+    "trayecto": "videojuegos",
+    "slug": "programacion-de-videojuegos-10-11",
+    "nombre": "Programación de Videojuegos (10-11)",
+    "edad_min": 10,
+    "edad_max": 11,
+    "url": "/programacion-de-videojuegos-10-11.html"
+  },
+  {
+    "trayecto": "videojuegos",
+    "slug": "programacion-de-videojuegos-12-14",
+    "nombre": "Programación de Videojuegos (12-14)",
+    "edad_min": 12,
+    "edad_max": 14,
+    "url": "/programacion-de-videojuegos-12-14.html"
+  },
+  {
+    "trayecto": "videojuegos",
+    "slug": "programacion-de-videojuegos-15",
+    "nombre": "Programación de Videojuegos AAA (15+)",
+    "edad_min": 15,
+    "edad_max": null,
+    "url": "/programacion-de-videojuegos-15.html"
+  },
+  {
+    "trayecto": "roblox",
+    "slug": "programacion-en-roblox",
+    "nombre": "Programación de Videojuegos Roblox",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/programación-en-roblox.html"
+  },
+  {
+    "trayecto": "programadores",
+    "slug": "pequenos-programadores",
+    "nombre": "Curso de programación para niños",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/pequeños-programadores.html"
+  },
+  {
+    "trayecto": "musica",
+    "slug": "produccion-musical",
+    "nombre": "Producción Musical",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/produccion-musical.html"
+  },
+  {
+    "trayecto": "arte-digital",
+    "slug": "arte-digital",
+    "nombre": "Arte y Dibujo Digital",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/arte-digital.html"
+  },
+  {
+    "trayecto": "robotica",
+    "slug": "electronica-robotica",
+    "nombre": "Electrónica y Robótica",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/electronica-robotica.html"
+  },
+  {
+    "trayecto": "creador-contenidos",
+    "slug": "creador-de-contenidos",
+    "nombre": "Creador en Redes Sociales",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/creador-de-contenidos.html"
+  },
+  {
+    "trayecto": "modelado-3d",
+    "slug": "modelado-y-animacion-3d",
+    "nombre": "Modelado y Animación 3D",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/modelado-y-animacion-3d.html"
+  },
+  {
+    "trayecto": "productor-digital",
+    "slug": "contenidos-y-marketing",
+    "nombre": "Productor Digital",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/contenidos-y-marketing.html"
+  },
+  {
+    "trayecto": "storytelling",
+    "slug": "lectura-critica-y-storytelling",
+    "nombre": "Lectura Crítica y Storytelling",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/lectura-critica-y-storytelling.html"
+  }
+]
