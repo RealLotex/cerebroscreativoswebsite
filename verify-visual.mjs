@@ -1,4 +1,4 @@
-// Verificación visual (Playwright/Chromium) de las propuestas
+// Verificación visual (Playwright/Chromium) del sistema visual del sitio
 import { chromium } from 'playwright';
 
 const BASE = process.env.BASE_URL || 'http://localhost:8333';
@@ -13,64 +13,117 @@ const viewports = {
   mobile: { width: 390, height: 844 },
 };
 
-const files = [
-  { file: 'propuesta.html', label: 'kids', expectDetailLinks: 10 },
-  { file: 'propuestajr.html', label: 'jr', expectDetailLinks: 10 },
-  { file: 'propuestastudio.html', label: 'studio', expectDetailLinks: 0 },
+const pages = [
+  { file: 'index.html', label: 'home', theme: 'home-light' },
+  { file: 'propuesta.html', label: 'kids', theme: 'proposal-light', detailLinks: 10 },
+  { file: 'propuestajr.html', label: 'jr', theme: 'proposal-light', detailLinks: 10 },
+  { file: 'propuestastudio.html', label: 'studio', theme: 'proposal-light', detailLinks: 0 },
+  { file: 'arte-digital.html', label: 'arte-digital', theme: 'detail-light' },
+  { file: 'contenidos-y-marketing.html', label: 'contenidos-marketing', theme: 'detail-light' },
+  { file: 'creador-de-contenidos.html', label: 'creador-contenidos', theme: 'detail-light' },
+  { file: 'electronica-robotica.html', label: 'electronica-robotica', theme: 'detail-light' },
+  { file: 'lectura-critica-y-storytelling.html', label: 'storytelling', theme: 'detail-light' },
+  { file: 'modelado-y-animacion-3d.html', label: 'modelado-3d', theme: 'detail-light' },
+  { file: 'pequeños-programadores.html', label: 'pequenos-programadores', theme: 'detail-light' },
+  { file: 'produccion-musical.html', label: 'produccion-musical', theme: 'detail-light' },
+  { file: 'programacion-de-videojuegos-10-11.html', label: 'videojuegos-10-11', theme: 'detail-light' },
+  { file: 'programacion-de-videojuegos-12-14.html', label: 'videojuegos-12-14', theme: 'detail-light' },
+  { file: 'programacion-de-videojuegos-15.html', label: 'videojuegos-15', theme: 'detail-light' },
+  { file: 'programación-en-roblox.html', label: 'roblox', theme: 'detail-light' },
 ];
 
 let failed = false;
 
+function logResult(ok, vpName, p, details) {
+  console.log(`[${vpName}] ${p.label}: ${details} | ${ok ? 'OK' : 'FAIL'}`);
+  if (!ok) failed = true;
+}
+
 for (const [vpName, vp] of Object.entries(viewports)) {
-  for (const f of files) {
+  for (const p of pages) {
     const page = await browser.newPage({ viewport: vp });
-    await page.goto(`${BASE}/${f.file}`, { waitUntil: 'networkidle' });
-    await page.waitForTimeout(350);
+    await page.goto(`${BASE}/${encodeURI(p.file)}`, { waitUntil: 'networkidle' });
+    await page.waitForTimeout(250);
 
-    const detailLinks = await page.locator('#trayectos-grid .course-detail-link').count();
-    const hasVolver = await page.locator('button[onclick="goBack()"]').count();
-    const isLight = await page.evaluate(() => document.body.classList.contains('proposal-light'));
-
+    const hasTheme = await page.evaluate((theme) => document.body.classList.contains(theme), p.theme);
     const horizontalOverflow = await page.evaluate(() =>
       document.documentElement.scrollWidth > document.documentElement.clientWidth + 1
     );
-
-    const overlaps = await page.evaluate(() => {
-      const cards = [...document.querySelectorAll('#trayectos-grid .course-card')];
-      return cards.filter(card => {
-        const icon = card.querySelector('.course-icon');
-        const link = card.querySelector('.course-detail-link');
-        if (!icon || !link) return false;
-        const a = icon.getBoundingClientRect();
-        const b = link.getBoundingClientRect();
-        return !(a.right <= b.left || a.left >= b.right || a.bottom <= b.top || a.top >= b.bottom);
-      }).length;
+    const bodyIsLight = await page.evaluate(() => {
+      const rgb = getComputedStyle(document.body).backgroundColor.match(/\d+/g)?.map(Number) || [];
+      return rgb.length >= 3 && rgb[0] > 220 && rgb[1] > 220 && rgb[2] > 220;
     });
 
-    const touchTargetFailures = vpName === 'mobile'
-      ? await page.evaluate(() =>
-          [...document.querySelectorAll('#trayectos-grid .course-detail-link')]
-            .filter(el => el.getBoundingClientRect().height < 44).length
-        )
-      : 0;
+    let extraOk = true;
+    const extra = [];
 
-    await page.locator('#trayectos').scrollIntoViewIfNeeded();
-    await page.waitForTimeout(200);
-    await page.screenshot({ path: `${OUT}/${vpName}_${f.label}.png`, fullPage: true });
+    if (p.theme === 'proposal-light') {
+      const detailLinks = await page.locator('#trayectos-grid .course-detail-link').count();
+      const overlaps = await page.evaluate(() => {
+        const cards = [...document.querySelectorAll('#trayectos-grid .course-card')];
+        return cards.filter(card => {
+          const icon = card.querySelector('.course-icon');
+          const link = card.querySelector('.course-detail-link');
+          if (!icon || !link) return false;
+          const a = icon.getBoundingClientRect();
+          const b = link.getBoundingClientRect();
+          return !(a.right <= b.left || a.left >= b.right || a.bottom <= b.top || a.top >= b.bottom);
+        }).length;
+      });
+      const touchFailures = vpName === 'mobile'
+        ? await page.evaluate(() =>
+            [...document.querySelectorAll('#trayectos-grid .course-detail-link')]
+              .filter(el => el.getBoundingClientRect().height < 44).length
+          )
+        : 0;
+      const haloCount = await page.locator('.final-cta [class*="from-blue-500"]').count();
 
-    const ok =
-      detailLinks === f.expectDetailLinks &&
-      hasVolver === 1 &&
-      isLight &&
-      !horizontalOverflow &&
-      overlaps === 0 &&
-      touchTargetFailures === 0;
+      extraOk = detailLinks === p.detailLinks && overlaps === 0 && touchFailures === 0 && haloCount === 0;
+      extra.push(`links=${detailLinks}/${p.detailLinks}`, `overlaps=${overlaps}`, `touch<44=${touchFailures}`, `ctaHalo=${haloCount}`);
 
-    console.log(
-      `[${vpName}] ${f.label}: links=${detailLinks}/${f.expectDetailLinks} | volver=${hasVolver} | light=${isLight} | overflow=${horizontalOverflow} | overlaps=${overlaps} | touch<44=${touchTargetFailures} | ${ok ? 'OK' : 'FAIL'}`
-    );
+      if (p.label === 'kids') {
+        const firstCardText = await page.locator('#trayectos-grid .course-card').first().innerText();
+        const oldAgePresent = /10\s*a\s*11|10\s*[-–]\s*11/.test(firstCardText);
+        const certColorsOk = await page.evaluate(() => {
+          const stages = [...document.querySelectorAll('#modalidad .space-y-8 > .flex > .flex-1')];
+          if (stages.length < 3) return false;
+          return stages.every(stage => {
+            const bg = getComputedStyle(stage).backgroundColor.match(/\d+/g)?.map(Number) || [];
+            const label = stage.querySelector('p:last-child');
+            const color = label ? getComputedStyle(label).color.match(/\d+/g)?.map(Number) || [] : [];
+            const lightBg = bg.length >= 3 && bg[0] > 190 && bg[1] > 190 && bg[2] > 190;
+            const readableLabel = color.length >= 3 && Math.min(...color.slice(0,3)) < 150;
+            return lightBg && readableLabel;
+          });
+        });
+        extraOk = extraOk && !oldAgePresent && certColorsOk;
+        extra.push(`oldAge=${oldAgePresent}`, `certColors=${certColorsOk}`);
+      }
+    }
 
-    if (!ok) failed = true;
+    if (p.theme === 'detail-light') {
+      const haloCount = await page.locator('.final-cta [class*="from-blue-500"]').count();
+      const rawBlueHalos = await page.locator('[class*="from-blue-500"][class*="radial-gradient"]').count();
+      const finalCta = await page.locator('.final-cta').count();
+      extraOk = haloCount === 0 && rawBlueHalos === 0;
+      extra.push(`finalCTA=${finalCta}`, `ctaHalo=${haloCount}`, `rawBlueHalo=${rawBlueHalos}`);
+    }
+
+    if (p.theme === 'home-light') {
+      const cards = await page.locator('main .grid > .group').count();
+      extraOk = cards === 3;
+      extra.push(`proposalCards=${cards}`);
+    }
+
+    const ok = hasTheme && bodyIsLight && !horizontalOverflow && extraOk;
+    logResult(ok, vpName, p, [
+      `theme=${hasTheme}`,
+      `light=${bodyIsLight}`,
+      `overflow=${horizontalOverflow}`,
+      ...extra
+    ].join(' | '));
+
+    await page.screenshot({ path: `${OUT}/${vpName}_${p.label}.png`, fullPage: true });
     await page.close();
   }
 }
