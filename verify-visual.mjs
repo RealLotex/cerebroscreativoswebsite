@@ -37,6 +37,15 @@ const pages = [
 
 let failed = false;
 
+const faviconBuffer = fs.readFileSync('cc-favicon.png');
+const faviconSourceOk =
+  faviconBuffer.length === 827 &&
+  faviconBuffer.readUInt32BE(16) === 64 &&
+  faviconBuffer.readUInt32BE(20) === 64;
+
+console.log(`[source] cc-favicon.png: padded-64=${faviconSourceOk ? 'OK' : 'FAIL'}`);
+if (!faviconSourceOk) failed = true;
+
 // Global source-level branding contract: every HTML file must use the shared favicon/theme.
 const htmlFiles = fs.readdirSync('.').filter(name => name.toLowerCase().endsWith('.html'));
 const oldBrandColor = /#(?:00357a|004aad|5ce1e6|78d25e)|(?:0\s*,\s*74\s*,\s*173)|(?:0\s*,\s*53\s*,\s*122)|(?:92\s*,\s*225\s*,\s*230)/i;
@@ -76,12 +85,17 @@ for (const [vpName, vp] of Object.entries(viewports)) {
       const favicon = document.querySelector('link[rel="icon"]')?.getAttribute('href') || '';
       const chrome = document.querySelector('nav, header');
       const hasBrandName = /Cerebros\s*Creativos|CerebrosCreativos/i.test(chrome?.textContent || '');
-      const hasMark = !!chrome?.querySelector('.cc-navbar-mark');
+      const mark = chrome?.querySelector('.cc-navbar-mark');
+
+      const markOk = !hasBrandName || (
+        !!mark &&
+        getComputedStyle(mark).objectFit === 'contain'
+      );
 
       return primary === '#0f766e' &&
         accent === '#82fccc' &&
         favicon.includes('cc-favicon.png') &&
-        (!hasBrandName || hasMark);
+        markOk;
     });
     const bodyIsLight = await page.evaluate(() => {
       const rgb = getComputedStyle(document.body).backgroundColor.match(/\d+/g)?.map(Number) || [];
@@ -169,6 +183,7 @@ for (const [vpName, vp] of Object.entries(viewports)) {
       const cards = await page.locator('.home-proposal-card').count();
       const realTextBrands = await page.locator('.home-proposal-card__brand').count();
       const croppedLogos = await page.locator('.home-proposal-card__logo-crop').count();
+      const brandRows = await page.locator('.home-proposal-card__brand-row').count();
       const bullets = await page.locator('.home-proposal-card__bullets li').count();
       const ctas = await page.locator('.home-proposal-card__cta').count();
       const visualStyleOk = await page.evaluate((vpName) => {
@@ -176,8 +191,9 @@ for (const [vpName, vp] of Object.entries(viewports)) {
         const pill = document.querySelector('.home-proposal-card__pill');
         const studio = document.querySelector('.home-proposal-card__logo-crop--studio img');
         const crops = [...document.querySelectorAll('.home-proposal-card__logo-crop')];
+        const rows = [...document.querySelectorAll('.home-proposal-card__brand-row')];
         const grid = document.querySelector('.home-proposal-grid');
-        if (!card || !pill || !studio || crops.length !== 3 || !grid) return false;
+        if (!card || !pill || !studio || crops.length !== 3 || rows.length !== 3 || !grid) return false;
 
         const cardBg = getComputedStyle(card).backgroundColor.match(/\d+/g)?.map(Number) || [];
         const pillBg = getComputedStyle(pill).backgroundColor.match(/\d+/g)?.map(Number) || [];
@@ -187,6 +203,21 @@ for (const [vpName, vp] of Object.entries(viewports)) {
         const imagesRightAligned = crops.every(el => {
           const img = el.querySelector('img');
           return img && getComputedStyle(img).right === '0px';
+        });
+
+        const iconsInline = rows.every(row => {
+          const brand = row.querySelector('.home-proposal-card__brand');
+          const crop = row.querySelector('.home-proposal-card__logo-crop');
+          if (!brand || !crop) return false;
+          const a = brand.getBoundingClientRect();
+          const b = crop.getBoundingClientRect();
+          const gap = b.left - a.right;
+          const midA = (a.top + a.bottom) / 2;
+          const midB = (b.top + b.bottom) / 2;
+          const clippedFromLegacyWordmark = getComputedStyle(crop).clipPath !== 'none';
+          return gap > -12 && gap < 20 &&
+            Math.abs(midA - midB) < 18 &&
+            clippedFromLegacyWordmark;
         });
 
         const cardIsLight = cardBg.length >= 3 && cardBg[0] > 240 && cardBg[1] > 240 && cardBg[2] > 240;
@@ -201,15 +232,16 @@ for (const [vpName, vp] of Object.entries(viewports)) {
         const responsiveGrid = columns === expectedColumns;
 
         return cardIsLight && pillUsesAccent && studioIsBlackFiltered &&
-          cropsHidden && imagesRightAligned && tightCrops && responsiveGrid;
+          cropsHidden && imagesRightAligned && iconsInline && tightCrops && responsiveGrid;
       }, vpName);
 
       extraOk = cards === 3 && realTextBrands === 3 && croppedLogos === 3 &&
-        bullets === 6 && ctas === 3 && visualStyleOk;
+        brandRows === 3 && bullets === 6 && ctas === 3 && visualStyleOk;
       extra.push(
         `proposalCards=${cards}`,
         `realTextBrands=${realTextBrands}`,
         `croppedLogos=${croppedLogos}`,
+        `brandRows=${brandRows}`,
         `bullets=${bullets}`,
         `ctas=${ctas}`,
         `homeStyle=${visualStyleOk}`
