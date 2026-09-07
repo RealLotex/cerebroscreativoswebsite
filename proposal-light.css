@@ -954,3 +954,57 @@ body.detail-light section [class*="bg-indigo-"] {
 body.detail-light section .border-brand-dark {
   border-color: var(--cc-surface) !important;
 }
+
+
+/* Home class access control */
+body.home-light nav .text-brand-accent {
+  color: var(--cc-teal-strong) !important;
+}
+
+body.home-light acceso-a-clases > div > div {
+  background: transparent !important;
+  border-color: var(--cc-line) !important;
+  border-radius: 6px !important;
+}
+
+body.home-light acceso-a-clases input {
+  background: var(--cc-surface) !important;
+  color: var(--cc-ink) !important;
+  border: 1px solid var(--cc-line) !important;
+  border-radius: 5px !important;
+  box-shadow: none !important;
+}
+
+body.home-light acceso-a-clases input::placeholder {
+  color: #7b8984 !important;
+  opacity: 1;
+}
+
+body.home-light acceso-a-clases button {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+  border: 1px solid var(--cc-teal) !important;
+  border-radius: 5px !important;
+  box-shadow: none !important;
+}
+
+body.home-light acceso-a-clases button:hover {
+  background: var(--cc-teal-strong) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 767px) {
+  body.home-light acceso-a-clases {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  body.home-light acceso-a-clases > div > div {
+    width: 100%;
+  }
+
+  body.home-light acceso-a-clases input,
+  body.home-light acceso-a-clases button {
+    min-width: 0;
+  }
+}
