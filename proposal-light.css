@@ -921,3 +921,36 @@ body.detail-light custom-footer footer {
     width: 100%;
   }
 }
+
+
+/* Detailed pages: remove remaining legacy dark/blue surfaces */
+body.detail-light section.bg-brand-footer,
+body.detail-light section.bg-brand-dark,
+body.detail-light section.bg-brand-primary {
+  background: #eef3f1 !important;
+}
+
+body.detail-light section .bg-brand-dark,
+body.detail-light section .bg-brand-footer,
+body.detail-light section .bg-black\/20 {
+  background: var(--cc-surface) !important;
+  border-color: var(--cc-line) !important;
+}
+
+body.detail-light section .text-blue-300,
+body.detail-light section .text-blue-200,
+body.detail-light section .text-blue-100,
+body.detail-light section [class*="text-purple-"],
+body.detail-light section [class*="text-indigo-"] {
+  color: var(--cc-teal-strong) !important;
+}
+
+body.detail-light section [class*="bg-blue-"],
+body.detail-light section [class*="bg-purple-"],
+body.detail-light section [class*="bg-indigo-"] {
+  background: var(--cc-teal-soft) !important;
+}
+
+body.detail-light section .border-brand-dark {
+  border-color: var(--cc-surface) !important;
+}
