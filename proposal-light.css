@@ -541,3 +541,383 @@ body.proposal-light #cookie-banner button {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
+
+
+/* Certification track inside proposal pages */
+body.proposal-light #modalidad .space-y-8 > .flex {
+  background: var(--cc-surface) !important;
+  border: 1px solid var(--cc-line) !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+  gap: 0.75rem !important;
+}
+
+body.proposal-light #modalidad .space-y-8 > .flex > .flex-1 {
+  background: #f8fbfa !important;
+  border: 1px solid var(--cc-line) !important;
+  border-radius: 6px !important;
+  color: var(--cc-ink) !important;
+}
+
+body.proposal-light #modalidad .space-y-8 > .flex > .flex-1:last-of-type {
+  background: var(--cc-teal-soft) !important;
+  border-color: #88c9be !important;
+}
+
+body.proposal-light #modalidad .space-y-8 > .flex > .flex-1 > span {
+  color: var(--cc-muted) !important;
+  opacity: 1 !important;
+}
+
+body.proposal-light #modalidad .space-y-8 > .flex > .flex-1 > p.font-bold {
+  color: var(--cc-ink) !important;
+}
+
+body.proposal-light #modalidad .space-y-8 > .flex > .flex-1 > p:last-child {
+  color: var(--cc-teal-strong) !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+}
+
+body.proposal-light #modalidad .space-y-8 > .flex svg[data-lucide="award"] {
+  color: #a16207 !important;
+  filter: none !important;
+}
+
+body.proposal-light #modalidad .space-y-8 > .flex > svg[data-lucide="chevron-right"] {
+  color: #6b7c76 !important;
+}
+
+/* Final CTA: flat surface, no blue radial light */
+body.proposal-light .final-cta {
+  background: #eef3f1 !important;
+  border-top: 1px solid var(--cc-line);
+}
+
+body.proposal-light .final-cta > .absolute.inset-0 {
+  display: none !important;
+}
+
+/* Home */
+body.home-light {
+  background: var(--cc-bg) !important;
+  color: var(--cc-ink) !important;
+  font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif !important;
+  overflow-x: hidden;
+}
+
+body.home-light nav {
+  background: rgba(250, 252, 250, 0.98) !important;
+  border-color: var(--cc-line) !important;
+  backdrop-filter: none !important;
+  color: var(--cc-ink) !important;
+}
+
+body.home-light nav a,
+body.home-light nav button {
+  color: var(--cc-ink) !important;
+}
+
+body.home-light nav a:hover,
+body.home-light nav button:hover {
+  color: var(--cc-teal-strong) !important;
+  background: var(--cc-surface-soft) !important;
+}
+
+body.home-light main {
+  background: var(--cc-bg) !important;
+  color: var(--cc-ink) !important;
+  min-height: 100vh;
+}
+
+body.home-light main > .absolute.inset-0.z-0 img {
+  opacity: 0.15 !important;
+  filter: saturate(0.7) contrast(0.9);
+}
+
+body.home-light main > .absolute.inset-0.z-0 > div {
+  background: rgba(245, 247, 244, 0.84) !important;
+  background-image: none !important;
+}
+
+body.home-light main > .absolute.top-0.right-0,
+body.home-light main > .absolute.inset-0.overflow-hidden {
+  display: none !important;
+}
+
+body.home-light main h1,
+body.home-light main h2,
+body.home-light main h3,
+body.home-light main h4 {
+  color: var(--cc-ink) !important;
+  letter-spacing: -0.025em;
+}
+
+body.home-light main .text-blue-100,
+body.home-light main .text-white\/60 {
+  color: var(--cc-muted) !important;
+}
+
+body.home-light main .grid > .group {
+  background: var(--cc-surface) !important;
+  border: 1px solid var(--cc-line) !important;
+  border-radius: 8px !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.home-light main .grid > .group:hover {
+  border-color: var(--cc-teal) !important;
+  transform: none !important;
+}
+
+body.home-light main .grid > .group > div:first-child {
+  background: #eef4f2 !important;
+  background-image: none !important;
+}
+
+body.home-light main .grid > .group img {
+  filter: none !important;
+}
+
+body.home-light main .grid > .group span[class*="bg-"],
+body.home-light main .grid > .group [class*="bg-purple-"],
+body.home-light main .grid > .group [class*="bg-emerald-"],
+body.home-light main .grid > .group [class*="bg-brand-accent"] {
+  background: var(--cc-teal-soft) !important;
+  color: var(--cc-teal-strong) !important;
+}
+
+body.home-light main .grid > .group [class*="text-purple-"],
+body.home-light main .grid > .group [class*="text-emerald-"],
+body.home-light main .grid > .group [class*="text-brand-accent"] {
+  color: var(--cc-teal-strong) !important;
+}
+
+body.home-light main .grid > .group > div:last-child > a {
+  background: var(--cc-surface) !important;
+  color: var(--cc-teal-strong) !important;
+  border: 1px solid var(--cc-teal) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+body.home-light main .grid > .group > div:last-child > a:hover {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+}
+
+body.home-light main > .max-w-7xl > .mt-16 a {
+  color: var(--cc-teal-strong) !important;
+  font-weight: 700;
+}
+
+body.home-light custom-footer footer {
+  background: #e7efec !important;
+  color: var(--cc-ink) !important;
+  border-color: var(--cc-line) !important;
+}
+
+body.home-light custom-footer footer a {
+  color: var(--cc-muted) !important;
+}
+
+body.home-light #cookie-banner {
+  background: #fff !important;
+  color: var(--cc-ink) !important;
+  border-color: var(--cc-line) !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 -2px 0 rgba(15,118,110,0.12) !important;
+}
+
+body.home-light #cookie-banner button {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+/* Detailed course pages */
+body.detail-light {
+  background: var(--cc-bg) !important;
+  color: var(--cc-ink) !important;
+  font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif !important;
+  overflow-x: hidden;
+}
+
+body.detail-light header {
+  background: var(--cc-surface-soft) !important;
+  color: var(--cc-ink) !important;
+  min-height: 320px;
+  display: flex;
+  align-items: end;
+}
+
+body.detail-light header img {
+  opacity: 0.18 !important;
+  filter: saturate(0.72) contrast(0.9);
+}
+
+body.detail-light header .bg-gradient-to-b,
+body.detail-light header [class*="bg-gradient"] {
+  background: rgba(245, 247, 244, 0.8) !important;
+  background-image: none !important;
+}
+
+body.detail-light header > .absolute[class*="blur-"] {
+  display: none !important;
+}
+
+body.detail-light header h1,
+body.detail-light header h2,
+body.detail-light header h3,
+body.detail-light section h1,
+body.detail-light section h2,
+body.detail-light section h3,
+body.detail-light section h4 {
+  color: var(--cc-ink) !important;
+  letter-spacing: -0.025em;
+}
+
+body.detail-light header p,
+body.detail-light section p {
+  color: var(--cc-muted);
+}
+
+body.detail-light header .inline-block {
+  background: rgba(255,255,255,0.9) !important;
+  color: var(--cc-teal-strong) !important;
+  border-color: var(--cc-teal) !important;
+  border-radius: 5px !important;
+  box-shadow: none !important;
+}
+
+body.detail-light .text-brand-accent {
+  color: var(--cc-teal-strong) !important;
+}
+
+body.detail-light section {
+  color: var(--cc-ink) !important;
+}
+
+body.detail-light section.bg-black\/20 {
+  background: #eef3f1 !important;
+}
+
+body.detail-light section .backdrop-blur-sm,
+body.detail-light section .bg-brand-darker,
+body.detail-light section [class*="bg-[rgba(0,74,173"] {
+  background: var(--cc-surface) !important;
+  border-color: var(--cc-line) !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+body.detail-light section [class*="border-white"] {
+  border-color: var(--cc-line) !important;
+}
+
+body.detail-light section .border-dashed {
+  border-color: #91aaa2 !important;
+}
+
+body.detail-light section [class*="bg-brand-accent"] {
+  background: var(--cc-teal-soft) !important;
+}
+
+body.detail-light section [class*="text-yellow-"] {
+  color: #a16207 !important;
+}
+
+body.detail-light section [class*="text-white"] {
+  color: var(--cc-ink) !important;
+}
+
+body.detail-light section span.bg-white {
+  background: #eef4f2 !important;
+  color: var(--cc-ink) !important;
+  border: 1px solid var(--cc-line);
+}
+
+body.detail-light section [class*="rounded-xl"],
+body.detail-light section [class*="rounded-2xl"] {
+  border-radius: 6px !important;
+}
+
+body.detail-light section [class*="shadow"] {
+  box-shadow: none !important;
+}
+
+body.detail-light .final-cta {
+  background: #eef3f1 !important;
+  border-top: 1px solid var(--cc-line);
+}
+
+body.detail-light .final-cta > .absolute.inset-0 {
+  display: none !important;
+}
+
+body.detail-light .final-cta a,
+body.detail-light section a.bg-brand-accent {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+  border: 1px solid var(--cc-teal) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.detail-light .final-cta a:hover,
+body.detail-light section a.bg-brand-accent:hover {
+  background: var(--cc-teal-strong) !important;
+  color: #fff !important;
+}
+
+body.detail-light custom-footer footer {
+  background: #e7efec !important;
+  color: var(--cc-ink) !important;
+  border-color: var(--cc-line) !important;
+}
+
+@media (max-width: 767px) {
+  body.home-light main {
+    padding-top: 8.5rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  body.home-light main .grid {
+    gap: 0.8rem !important;
+  }
+
+  body.home-light main .grid > .group {
+    min-width: 0;
+  }
+
+  body.detail-light header {
+    min-height: 280px;
+    padding: 2.5rem 1rem 2rem !important;
+    text-align: left !important;
+  }
+
+  body.detail-light header h1 {
+    font-size: 2.25rem !important;
+  }
+
+  body.detail-light section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  body.detail-light .final-cta h2 {
+    font-size: 2rem !important;
+  }
+
+  body.proposal-light #modalidad .space-y-8 > .flex {
+    align-items: stretch !important;
+  }
+
+  body.proposal-light #modalidad .space-y-8 > .flex > .flex-1 {
+    width: 100%;
+  }
+}
