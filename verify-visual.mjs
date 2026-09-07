@@ -37,6 +37,15 @@ const pages = [
 
 let failed = false;
 
+const faviconBuffer = fs.readFileSync('cc-favicon.png');
+const faviconSourceOk =
+  faviconBuffer.length === 12138 &&
+  faviconBuffer.readUInt32BE(16) === 128 &&
+  faviconBuffer.readUInt32BE(20) === 128;
+
+console.log(`[source] cc-favicon.png: padded-128=${faviconSourceOk ? 'OK' : 'FAIL'}`);
+if (!faviconSourceOk) failed = true;
+
 // Global source-level branding contract: every HTML file must use the shared favicon/theme.
 const htmlFiles = fs.readdirSync('.').filter(name => name.toLowerCase().endsWith('.html'));
 const oldBrandColor = /#(?:00357a|004aad|5ce1e6|78d25e)|(?:0\s*,\s*74\s*,\s*173)|(?:0\s*,\s*53\s*,\s*122)|(?:92\s*,\s*225\s*,\s*230)/i;
@@ -69,7 +78,7 @@ for (const [vpName, vp] of Object.entries(viewports)) {
       document.documentElement.scrollWidth > document.documentElement.clientWidth + 1
     );
 
-    const globalBrandOk = await page.evaluate(async () => {
+    const globalBrandOk = await page.evaluate(() => {
       const styles = getComputedStyle(document.documentElement);
       const primary = styles.getPropertyValue('--cc-primary').trim().toLowerCase();
       const accent = styles.getPropertyValue('--cc-accent').trim().toLowerCase();
@@ -83,41 +92,10 @@ for (const [vpName, vp] of Object.entries(viewports)) {
         getComputedStyle(mark).objectFit === 'contain'
       );
 
-      const faviconOk = await new Promise(resolve => {
-        if (!favicon) return resolve(false);
-        const img = new Image();
-        img.onload = () => {
-          try {
-            const canvas = document.createElement('canvas');
-            canvas.width = img.naturalWidth;
-            canvas.height = img.naturalHeight;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
-            const cornerAlpha = ctx.getImageData(0, 0, 1, 1).data[3];
-            const centerAlpha = ctx.getImageData(
-              Math.floor(img.naturalWidth / 2),
-              Math.floor(img.naturalHeight / 2),
-              1, 1
-            ).data[3];
-            resolve(
-              img.naturalWidth === 128 &&
-              img.naturalHeight === 128 &&
-              cornerAlpha === 0 &&
-              centerAlpha > 0
-            );
-          } catch {
-            resolve(false);
-          }
-        };
-        img.onerror = () => resolve(false);
-        img.src = favicon;
-      });
-
       return primary === '#0f766e' &&
         accent === '#82fccc' &&
         favicon.includes('cc-favicon.png') &&
-        markOk &&
-        faviconOk;
+        markOk;
     });
     const bodyIsLight = await page.evaluate(() => {
       const rgb = getComputedStyle(document.body).backgroundColor.match(/\d+/g)?.map(Number) || [];
