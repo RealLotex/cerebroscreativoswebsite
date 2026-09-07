@@ -134,9 +134,38 @@ for (const [vpName, vp] of Object.entries(viewports)) {
     }
 
     if (p.theme === 'home-light') {
-      const cards = await page.locator('main .grid > .group').count();
-      extraOk = cards === 3;
-      extra.push(`proposalCards=${cards}`);
+      const cards = await page.locator('.home-proposal-card').count();
+      const realTextBrands = await page.locator('.home-proposal-card__brand').count();
+      const croppedLogos = await page.locator('.home-proposal-card__logo-crop').count();
+      const oldLogoBanners = await page.locator('main img[alt^="Cerebros Creativos"]').count();
+      const visualStyleOk = await page.evaluate(() => {
+        const card = document.querySelector('.home-proposal-card');
+        const pill = document.querySelector('.home-proposal-card__pill');
+        const studio = document.querySelector('.home-proposal-card__logo-crop--studio img');
+        const jrCrop = document.querySelector('.home-proposal-card__logo-crop--jr');
+        if (!card || !pill || !studio || !jrCrop) return false;
+
+        const cardBg = getComputedStyle(card).backgroundColor.match(/\d+/g)?.map(Number) || [];
+        const pillBg = getComputedStyle(pill).backgroundColor.match(/\d+/g)?.map(Number) || [];
+        const studioFilter = getComputedStyle(studio).filter;
+        const jrOverflow = getComputedStyle(jrCrop).overflow;
+
+        const cardIsLight = cardBg.length >= 3 && cardBg[0] > 240 && cardBg[1] > 240 && cardBg[2] > 240;
+        const pillIsLightBlue = pillBg.length >= 3 && pillBg[2] >= pillBg[0] && pillBg[1] >= pillBg[0];
+        const studioIsBlackFiltered = studioFilter !== 'none' && studioFilter.includes('brightness(0');
+        const jrIsCropped = jrOverflow === 'hidden';
+
+        return cardIsLight && pillIsLightBlue && studioIsBlackFiltered && jrIsCropped;
+      });
+
+      extraOk = cards === 3 && realTextBrands === 3 && croppedLogos === 3 && oldLogoBanners === 0 && visualStyleOk;
+      extra.push(
+        `proposalCards=${cards}`,
+        `realTextBrands=${realTextBrands}`,
+        `croppedLogos=${croppedLogos}`,
+        `oldLogoBanners=${oldLogoBanners}`,
+        `homeStyle=${visualStyleOk}`
+      );
     }
 
     if (p.theme === 'legal-light') {
