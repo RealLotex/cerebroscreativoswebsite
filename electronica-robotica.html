@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Electrónica y Robótica para niños</title>
+      <link rel="icon" type="image/png" href="./cc-favicon.png">
+<title>Curso de Electrónica y Robótica para niños</title>
     <meta name="description"
     content="Cerebros Creativos: Curso de robótica y electrónica para niños. Aprendé a crear tus propios circuitos y robots en Argentina.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" href="favicon.ico">
-
   <link href="./dist/output.css" rel="stylesheet">
     <link href="./proposal-light.css" rel="stylesheet">
   <script>
@@ -17,10 +15,10 @@
         extend: {
           colors: {
             brand: {
-              bg: '#00357a',      // Fondo Principal
-              primary: '#00357a', // Azul Brillante
-              accent: '#5ce1e6',  // Cian/Turquesa
-              secondary: '#78d25e'
+              bg: '#0f766e',      // Fondo Principal
+              primary: '#0f766e', // Azul Brillante
+              accent: '#82FCCC',  // Cian/Turquesa
+              secondary: '#82FCCC'
             }
           },
           fontFamily: {
@@ -38,11 +36,11 @@
             glow: {
               '0%, 100%': {
                 opacity: '1',
-                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)'
+                'box-shadow': '0 0 0px rgba(130,252,204, 0)'
               },
               '50%': {
                 opacity: '1',
-                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)'
+                'box-shadow': '0 0 15px rgba(130,252,204, 1)'
               },
             }
           }
@@ -77,11 +75,12 @@
     .text-shadow-lg { text-shadow: 1px 1px 8px rgba(0, 0, 0); }
     .text-shadow-md { text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); }
   </style>
+  <link href="./brand-theme.css?v=20260907-2" rel="stylesheet">
 </head>
 
 <body class="detail-light bg-brand-primary text-white min-h-screen font-sans selection:bg-brand-accent selection:text-brand-primary">
   
-  <nav class="fixed w-full z-50 bg-brand-bg/10 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
+  <nav class="fixed w-full z-50 bg-brand-bg/10 backdrop-blur-md border-b border-white/10 bg-[rgba(15,118,110,0.1)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center flex-col gap-2 md:flex-row md:justify-between py-2 md:h-20">
         <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
@@ -107,7 +106,7 @@
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none bg-brand-accent"></div>
       
     <div class="relative z-10">
-        <span class="inline-block py-1 px-3 rounded-full border text-xs font-bold tracking-wider uppercase mb-4 shadow-[0_0_10px_rgba(92,225,230,0.3)] bg-[rgba(0,74,173,0.5)] border-brand-accent text-brand-accent">
+        <span class="inline-block py-1 px-3 rounded-full border text-xs font-bold tracking-wider uppercase mb-4 shadow-[0_0_10px_rgba(130,252,204,0.3)] bg-[rgba(15,118,110,0.5)] border-brand-accent text-brand-accent">
             Trayecto Tecnológico 2026
         </span>
         <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight text-shadow-md">
@@ -123,28 +122,28 @@
       <h2 class="text-2xl font-bold mb-6 text-center">Habilidades del Futuro</h2>
       <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
           
-          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(15,118,110,0.4)] border-[rgba(130,252,204,0.3)]">
               <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
                   <i data-lucide="zap" class="w-5 h-5"></i> Circuitos Eléctricos
               </h3>
               <p class="text-sm opacity-80">Aprenderemos cómo viaja la energía para encender luces, motores y sonidos de forma segura.</p>
           </div>
 
-          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(15,118,110,0.4)] border-[rgba(130,252,204,0.3)]">
               <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
                   <i data-lucide="cpu" class="w-5 h-5"></i> Cerebros Robóticos
               </h3>
               <p class="text-sm opacity-80">Descubriremos los microcontroladores y cómo programarlos para que nuestro robot tome decisiones.</p>
           </div>
 
-          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(15,118,110,0.4)] border-[rgba(130,252,204,0.3)]">
               <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
                   <i data-lucide="eye" class="w-5 h-5"></i> Sensores y Acción
               </h3>
               <p class="text-sm opacity-80">Haremos que nuestros inventos "vean" la distancia o "sientan" la luz usando sensores inteligentes.</p>
           </div>
 
-          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(0,74,173,0.4)] border-[rgba(92,225,230,0.3)]">
+          <div class="p-5 rounded-xl border shadow-sm backdrop-blur-sm bg-[rgba(15,118,110,0.4)] border-[rgba(130,252,204,0.3)]">
               <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-brand-accent">
                   <i data-lucide="wrench" class="w-5 h-5"></i> Construcción Maker
               </h3>
@@ -163,9 +162,9 @@
           
           <div class="relative pl-8 md:pl-12">
               <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
-              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
+              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(130,252,204,0.2)]">
                   <div class="flex justify-between items-start mb-2">
-                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(130,252,204,0.1)] text-brand-accent">
                           <i data-lucide="battery-charging" class="w-5 h-5"></i>
                       </div>
                       <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Primeras 20 clases</span>
@@ -187,7 +186,7 @@
                       </div>
                   </div>
 
-                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(15,118,110,0.3)] border-brand-accent">
                       <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
                           <i data-lucide="sparkles" class="w-5 h-5 text-yellow-400"></i>
                       </div>
@@ -202,9 +201,9 @@
 
           <div class="relative pl-8 md:pl-12">
               <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
-              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
+              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(130,252,204,0.2)]">
                   <div class="flex justify-between items-start mb-2">
-                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(130,252,204,0.1)] text-brand-accent">
                           <i data-lucide="bot" class="w-5 h-5"></i>
                       </div>
                       <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Siguientes 20 clases</span>
@@ -224,7 +223,7 @@
                         <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">Kit Intermedio</span>
                     </div>
                   </div>
-                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(15,118,110,0.3)] border-brand-accent">
                       <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
                           <i data-lucide="award" class="w-5 h-5 text-yellow-400"></i>
                       </div>
@@ -238,9 +237,9 @@
 
           <div class="relative pl-8 md:pl-12">
               <div class="absolute -left-[11px] top-0 w-6 h-6 rounded-full border-4 flex items-center justify-center z-10 border-brand-primary bg-brand-accent"></div>
-              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(92,225,230,0.2)]">
+              <div class="rounded-2xl p-5 shadow-xl relative overflow-hidden border transition-colors bg-brand-bg border-[rgba(130,252,204,0.2)]">
                   <div class="flex justify-between items-start mb-2">
-                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(92,225,230,0.1)] text-brand-accent">
+                      <div class="p-2 rounded-lg mb-3 inline-block bg-[rgba(130,252,204,0.1)] text-brand-accent">
                           <i data-lucide="circuit-board" class="w-5 h-5"></i>
                       </div>
                       <span class="text-xs font-mono uppercase tracking-widest text-right opacity-60">Últimas 20 Clases</span>
@@ -260,7 +259,7 @@
                         <span class="text-xs px-2 py-1 rounded font-semibold bg-white text-brand-primary">Kit Arduino</span>
                     </div>
                   </div>
-                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(0,74,173,0.3)] border-brand-accent">
+                  <div class="mt-4 rounded-xl p-3 border flex items-center gap-3 bg-[rgba(15,118,110,0.3)] border-brand-accent">
                       <div class="p-2 rounded-full bg-[rgba(255,215,0,0.1)]">
                           <i data-lucide="crown" class="w-5 h-5 text-yellow-400"></i>
                       </div>
@@ -273,7 +272,7 @@
           </div>
 
           <div class="relative pl-8 md:pl-12 pt-4">
-              <div class="absolute -left-[15px] top-4 w-8 h-8 rounded-full flex items-center justify-center border-4 z-10 shadow-[0_0_15px_rgba(92,225,230,0.6)] bg-brand-accent border-brand-primary">
+              <div class="absolute -left-[15px] top-4 w-8 h-8 rounded-full flex items-center justify-center border-4 z-10 shadow-[0_0_15px_rgba(130,252,204,0.6)] bg-brand-accent border-brand-primary">
                   <i data-lucide="circle-check-big" class="w-4 h-4 font-bold text-brand-primary"></i>
               </div>
               <div class="font-bold text-lg animate-pulse-custom text-brand-accent">
@@ -377,5 +376,6 @@
   <script>
       lucide.createIcons();
   </script>
+  <script src="./brand-theme.js?v=20260907-2"></script>
 </body>
 </html>
