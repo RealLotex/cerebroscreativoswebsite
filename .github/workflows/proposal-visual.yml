@@ -1,0 +1,43 @@
+name: Proposal visual checks
+
+on:
+  pull_request:
+    paths:
+      - 'propuesta.html'
+      - 'propuestajr.html'
+      - 'propuestastudio.html'
+      - 'proposal-light.css'
+      - 'verify-visual.mjs'
+      - '.github/workflows/proposal-visual.yml'
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start static server
+        run: |
+          python3 -m http.server 8333 >/tmp/cerebros-http.log 2>&1 &
+          echo $! > /tmp/cerebros-http.pid
+
+      - name: Run visual layout checks
+        run: node verify-visual.mjs
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: proposal-screenshots
+          path: screenshots/*.png
+          if-no-files-found: ignore
