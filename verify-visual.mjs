@@ -36,6 +36,22 @@ const pages = [
 
 let failed = false;
 
+// Global source-level branding contract: every HTML file must use the shared favicon/theme.
+const htmlFiles = fs.readdirSync('.').filter(name => name.toLowerCase().endsWith('.html'));
+const oldBrandColor = /#(?:00357a|004aad|5ce1e6|78d25e)|(?:0\s*,\s*74\s*,\s*173)|(?:0\s*,\s*53\s*,\s*122)|(?:92\s*,\s*225\s*,\s*230)/i;
+
+for (const file of htmlFiles) {
+  const source = fs.readFileSync(file, 'utf8');
+  const sourceOk =
+    source.includes('cc-favicon.png') &&
+    source.includes('brand-theme.css') &&
+    source.includes('brand-theme.js') &&
+    !oldBrandColor.test(source);
+
+  console.log(`[source] ${file}: favicon/theme=${sourceOk ? 'OK' : 'FAIL'}`);
+  if (!sourceOk) failed = true;
+}
+
 function logResult(ok, vpName, p, details) {
   console.log(`[${vpName}] ${p.label}: ${details} | ${ok ? 'OK' : 'FAIL'}`);
   if (!ok) failed = true;
@@ -51,6 +67,21 @@ for (const [vpName, vp] of Object.entries(viewports)) {
     const horizontalOverflow = await page.evaluate(() =>
       document.documentElement.scrollWidth > document.documentElement.clientWidth + 1
     );
+
+    const globalBrandOk = await page.evaluate(() => {
+      const styles = getComputedStyle(document.documentElement);
+      const primary = styles.getPropertyValue('--cc-primary').trim().toLowerCase();
+      const accent = styles.getPropertyValue('--cc-accent').trim().toLowerCase();
+      const favicon = document.querySelector('link[rel="icon"]')?.getAttribute('href') || '';
+      const chrome = document.querySelector('nav, header');
+      const hasBrandName = /Cerebros\s*Creativos|CerebrosCreativos/i.test(chrome?.textContent || '');
+      const hasMark = !!chrome?.querySelector('.cc-navbar-mark');
+
+      return primary === '#0f766e' &&
+        accent === '#82fccc' &&
+        favicon.includes('cc-favicon.png') &&
+        (!hasBrandName || hasMark);
+    });
     const bodyIsLight = await page.evaluate(() => {
       const rgb = getComputedStyle(document.body).backgroundColor.match(/\d+/g)?.map(Number) || [];
       return rgb.length >= 3 && rgb[0] > 220 && rgb[1] > 220 && rgb[2] > 220;
@@ -180,11 +211,12 @@ for (const [vpName, vp] of Object.entries(viewports)) {
       extra.push(`main=${mainCount}`, `tealHeadings=${tealHeadings}`);
     }
 
-    const ok = hasTheme && bodyIsLight && !horizontalOverflow && extraOk;
+    const ok = hasTheme && bodyIsLight && !horizontalOverflow && globalBrandOk && extraOk;
     logResult(ok, vpName, p, [
       `theme=${hasTheme}`,
       `light=${bodyIsLight}`,
       `overflow=${horizontalOverflow}`,
+      `brand=${globalBrandOk}`,
       ...extra
     ].join(' | '));
 
