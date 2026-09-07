@@ -24,12 +24,14 @@ html {
 }
 
 .cc-navbar-mark {
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
   display: block;
-  object-fit: cover;
-  border-radius: 8px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  overflow: visible;
 }
 
 .text-brand-primary,
@@ -106,9 +108,9 @@ textarea:focus-visible {
 
 @media (max-width: 767px) {
   .cc-navbar-mark {
-    width: 30px;
-    height: 30px;
-    flex-basis: 30px;
-    border-radius: 7px;
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+    border-radius: 0;
   }
 }
