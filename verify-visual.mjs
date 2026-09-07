@@ -10,6 +10,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const browser = await chromium.launch();
 const viewports = {
   desktop: { width: 1280, height: 800 },
+  tablet: { width: 1024, height: 768 },
   mobile: { width: 390, height: 844 },
 };
 
@@ -168,33 +169,49 @@ for (const [vpName, vp] of Object.entries(viewports)) {
       const cards = await page.locator('.home-proposal-card').count();
       const realTextBrands = await page.locator('.home-proposal-card__brand').count();
       const croppedLogos = await page.locator('.home-proposal-card__logo-crop').count();
-      const oldLogoBanners = await page.locator('main img[alt^="Cerebros Creativos"]').count();
-      const visualStyleOk = await page.evaluate(() => {
+      const bullets = await page.locator('.home-proposal-card__bullets li').count();
+      const ctas = await page.locator('.home-proposal-card__cta').count();
+      const visualStyleOk = await page.evaluate((vpName) => {
         const card = document.querySelector('.home-proposal-card');
         const pill = document.querySelector('.home-proposal-card__pill');
         const studio = document.querySelector('.home-proposal-card__logo-crop--studio img');
-        const jrCrop = document.querySelector('.home-proposal-card__logo-crop--jr');
-        if (!card || !pill || !studio || !jrCrop) return false;
+        const crops = [...document.querySelectorAll('.home-proposal-card__logo-crop')];
+        const grid = document.querySelector('.home-proposal-grid');
+        if (!card || !pill || !studio || crops.length !== 3 || !grid) return false;
 
         const cardBg = getComputedStyle(card).backgroundColor.match(/\d+/g)?.map(Number) || [];
         const pillBg = getComputedStyle(pill).backgroundColor.match(/\d+/g)?.map(Number) || [];
         const studioFilter = getComputedStyle(studio).filter;
-        const jrOverflow = getComputedStyle(jrCrop).overflow;
+        const cropWidths = crops.map(el => el.getBoundingClientRect().width);
+        const cropsHidden = crops.every(el => getComputedStyle(el).overflow === 'hidden');
+        const imagesRightAligned = crops.every(el => {
+          const img = el.querySelector('img');
+          return img && getComputedStyle(img).right === '0px';
+        });
 
         const cardIsLight = cardBg.length >= 3 && cardBg[0] > 240 && cardBg[1] > 240 && cardBg[2] > 240;
-        const pillIsLightBlue = pillBg.length >= 3 && pillBg[2] >= pillBg[0] && pillBg[1] >= pillBg[0];
+        const pillUsesAccent = pillBg.length >= 3 && pillBg[1] > pillBg[0] && pillBg[2] >= pillBg[0];
         const studioIsBlackFiltered = studioFilter !== 'none' && studioFilter.includes('brightness(0');
-        const jrIsCropped = jrOverflow === 'hidden';
 
-        return cardIsLight && pillIsLightBlue && studioIsBlackFiltered && jrIsCropped;
-      });
+        const maxCrop = vpName === 'desktop' ? 106 : vpName === 'tablet' ? 96 : 82;
+        const tightCrops = cropWidths.every(width => width <= maxCrop + 1);
 
-      extraOk = cards === 3 && realTextBrands === 3 && croppedLogos === 3 && oldLogoBanners === 0 && visualStyleOk;
+        const columns = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
+        const expectedColumns = vpName === 'desktop' ? 3 : vpName === 'tablet' ? 2 : 1;
+        const responsiveGrid = columns === expectedColumns;
+
+        return cardIsLight && pillUsesAccent && studioIsBlackFiltered &&
+          cropsHidden && imagesRightAligned && tightCrops && responsiveGrid;
+      }, vpName);
+
+      extraOk = cards === 3 && realTextBrands === 3 && croppedLogos === 3 &&
+        bullets === 6 && ctas === 3 && visualStyleOk;
       extra.push(
         `proposalCards=${cards}`,
         `realTextBrands=${realTextBrands}`,
         `croppedLogos=${croppedLogos}`,
-        `oldLogoBanners=${oldLogoBanners}`,
+        `bullets=${bullets}`,
+        `ctas=${ctas}`,
         `homeStyle=${visualStyleOk}`
       );
     }
