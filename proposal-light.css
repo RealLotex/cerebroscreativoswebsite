@@ -1895,3 +1895,160 @@ body.home-light .home-proposal-card__logo-crop--studio {
     font-size: 0.84rem;
   }
 }
+
+
+/* Home card brand lockup: text + legacy icon behave as one inline mark */
+body.home-light .home-proposal-card__header {
+  justify-content: flex-start !important;
+}
+
+body.home-light .home-proposal-card__identity {
+  width: 100%;
+  min-width: 0;
+}
+
+body.home-light .home-proposal-card__brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.45rem;
+  width: 100%;
+  min-width: 0;
+}
+
+body.home-light .home-proposal-card__brand {
+  flex: 0 1 auto;
+  white-space: nowrap;
+}
+
+body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop {
+  position: relative;
+  flex: 0 0 auto !important;
+  overflow: hidden !important;
+  margin-left: -0.35rem;
+  clip-path: inset(0 0 0 8px);
+}
+
+body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: initial !important;
+  transform: translateY(-50%) !important;
+}
+
+body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--kids {
+  width: 84px !important;
+  height: 64px !important;
+  flex-basis: 84px !important;
+}
+
+body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--kids img {
+  height: 64px !important;
+}
+
+body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--jr {
+  width: 74px !important;
+  height: 60px !important;
+  flex-basis: 74px !important;
+}
+
+body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--jr img {
+  height: 58px !important;
+  filter: none !important;
+}
+
+body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--studio {
+  width: 82px !important;
+  height: 60px !important;
+  flex-basis: 82px !important;
+}
+
+body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--studio img {
+  height: 60px !important;
+  filter: brightness(0) saturate(100%) !important;
+}
+
+body.home-light .home-proposal-card__brand-row + .home-proposal-card__pill {
+  margin-top: 0.55rem !important;
+}
+
+@media (max-width: 760px) {
+  body.home-light .home-proposal-card__brand-row {
+    gap: 0.3rem;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop {
+    margin-left: -0.25rem;
+    clip-path: inset(0 0 0 7px);
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--kids {
+    width: 72px !important;
+    height: 56px !important;
+    flex-basis: 72px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--kids img {
+    height: 56px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--jr {
+    width: 64px !important;
+    height: 54px !important;
+    flex-basis: 64px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--jr img {
+    height: 52px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--studio {
+    width: 70px !important;
+    height: 54px !important;
+    flex-basis: 70px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--studio img {
+    height: 54px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.home-light .home-proposal-card__brand {
+    font-size: 1.16rem !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--kids {
+    width: 66px !important;
+    height: 52px !important;
+    flex-basis: 66px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--kids img {
+    height: 52px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--jr {
+    width: 58px !important;
+    height: 50px !important;
+    flex-basis: 58px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--jr img {
+    height: 48px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--studio {
+    width: 64px !important;
+    height: 50px !important;
+    flex-basis: 64px !important;
+  }
+
+  body.home-light .home-proposal-card__brand-row .home-proposal-card__logo-crop--studio img {
+    height: 50px !important;
+  }
+}
