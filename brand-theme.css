@@ -1,0 +1,114 @@
+:root {
+  --cc-primary: #0f766e;
+  --cc-primary-strong: #115e59;
+  --cc-accent: #82FCCC;
+  --cc-accent-soft: #ecfff7;
+  --cc-ink: #17211e;
+  --cc-muted: #52615c;
+  --cc-line: #cbd8d4;
+}
+
+html {
+  accent-color: var(--cc-primary);
+}
+
+::selection {
+  background: var(--cc-accent);
+  color: var(--cc-ink);
+}
+
+.cc-brand-lockup {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+}
+
+.cc-navbar-mark {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.text-brand-primary,
+.text-brand-bg,
+.text-brand-dark,
+.text-brand-darker {
+  color: var(--cc-primary) !important;
+}
+
+.text-brand-accent {
+  color: var(--cc-accent) !important;
+}
+
+.bg-brand-primary,
+.bg-brand-bg,
+.bg-brand-dark,
+.bg-brand-darker,
+.bg-brand-footer {
+  background-color: var(--cc-primary) !important;
+}
+
+.bg-brand-accent {
+  background-color: var(--cc-accent) !important;
+}
+
+.border-brand-primary,
+.border-brand-bg,
+.border-brand-dark {
+  border-color: var(--cc-primary) !important;
+}
+
+.border-brand-accent {
+  border-color: var(--cc-accent) !important;
+}
+
+[class*="text-blue-"],
+[class*="text-cyan-"],
+[class*="text-indigo-"],
+[class*="text-purple-"] {
+  color: var(--cc-primary) !important;
+}
+
+[class*="bg-blue-"],
+[class*="bg-indigo-"],
+[class*="bg-purple-"] {
+  background-color: var(--cc-accent-soft) !important;
+}
+
+[class*="border-blue-"],
+[class*="border-indigo-"],
+[class*="border-purple-"] {
+  border-color: var(--cc-accent) !important;
+}
+
+[class*="bg-[rgba(0,74,173"],
+[class*="bg-[rgba(0,53,122"] {
+  background-color: var(--cc-primary) !important;
+}
+
+[class*="shadow-cyan-"],
+[class*="shadow-blue-"],
+[class*="shadow-purple-"] {
+  --tw-shadow-color: rgba(15, 118, 110, 0.18) !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cc-accent) !important;
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px) {
+  .cc-navbar-mark {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+    border-radius: 7px;
+  }
+}
