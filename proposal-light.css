@@ -1149,3 +1149,52 @@ body.legal-light footer {
     margin: 0 !important;
   }
 }
+
+
+/* Explicit modality/certification surfaces: no legacy dark blue */
+body.proposal-light #modalidad .modality-auto-card,
+body.proposal-light #modalidad .modality-auto-surface {
+  background: #ffffff !important;
+  background-image: none !important;
+  border-color: var(--cc-line) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+body.proposal-light #modalidad .modality-auto-card [class*="bg-brand-accent"] {
+  background: var(--cc-teal-soft) !important;
+}
+
+body.proposal-light #modalidad .modality-auto-card [class*="text-brand-accent"] {
+  color: var(--cc-teal-strong) !important;
+}
+
+body.proposal-light #modalidad .modality-auto-card a {
+  background: #ffffff !important;
+  color: var(--cc-teal-strong) !important;
+  border-color: var(--cc-teal) !important;
+}
+
+body.proposal-light #modalidad .certification-track,
+body.proposal-light #modalidad .certification-stage {
+  background: #ffffff !important;
+  background-image: none !important;
+  color: var(--cc-ink) !important;
+  border-color: var(--cc-line) !important;
+  box-shadow: none !important;
+}
+
+body.proposal-light #modalidad .certification-stage--advanced {
+  background: var(--cc-teal-soft) !important;
+  border-color: #88c9be !important;
+}
+
+body.proposal-light #modalidad .certification-stage > span {
+  color: var(--cc-muted) !important;
+  opacity: 1 !important;
+}
+
+body.proposal-light #modalidad .certification-stage > p:last-child {
+  color: var(--cc-teal-strong) !important;
+  opacity: 1 !important;
+}
