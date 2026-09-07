@@ -3,9 +3,7 @@ name: Proposal visual checks
 on:
   pull_request:
     paths:
-      - 'propuesta.html'
-      - 'propuestajr.html'
-      - 'propuestastudio.html'
+      - '*.html'
       - 'proposal-light.css'
       - 'verify-visual.mjs'
       - '.github/workflows/proposal-visual.yml'
