@@ -80,8 +80,30 @@ for (const [vpName, vp] of Object.entries(viewports)) {
         : 0;
       const haloCount = await page.locator('.final-cta [class*="from-blue-500"]').count();
 
-      extraOk = detailLinks === p.detailLinks && overlaps === 0 && touchFailures === 0 && haloCount === 0;
-      extra.push(`links=${detailLinks}/${p.detailLinks}`, `overlaps=${overlaps}`, `touch<44=${touchFailures}`, `ctaHalo=${haloCount}`);
+      const lightCertificationSurfaces = await page.evaluate(() => {
+        const stages = [...document.querySelectorAll('#modalidad .certification-stage')];
+        if (!stages.length) return false;
+        return stages.every(stage => {
+          const rgb = getComputedStyle(stage).backgroundColor.match(/\d+/g)?.map(Number) || [];
+          return rgb.length >= 3 && rgb[0] > 190 && rgb[1] > 190 && rgb[2] > 190;
+        });
+      });
+
+      const autoLearningLight = p.label === 'jr' || p.label === 'studio'
+        ? await page.evaluate(() => {
+            const card = document.querySelector('#modalidad .modality-auto-card');
+            if (!card) return false;
+            const rgb = getComputedStyle(card).backgroundColor.match(/\d+/g)?.map(Number) || [];
+            const h3 = card.querySelector('h3');
+            const color = h3 ? getComputedStyle(h3).color.match(/\d+/g)?.map(Number) || [] : [];
+            const light = rgb.length >= 3 && rgb[0] > 230 && rgb[1] > 230 && rgb[2] > 230;
+            const darkText = color.length >= 3 && Math.max(...color.slice(0, 3)) < 100;
+            return light && darkText;
+          })
+        : true;
+
+      extraOk = detailLinks === p.detailLinks && overlaps === 0 && touchFailures === 0 && haloCount === 0 && lightCertificationSurfaces && autoLearningLight;
+      extra.push(`links=${detailLinks}/${p.detailLinks}`, `overlaps=${overlaps}`, `touch<44=${touchFailures}`, `ctaHalo=${haloCount}`, `certLight=${lightCertificationSurfaces}`, `autoLight=${autoLearningLight}`);
 
       if (p.label === 'kids') {
         const firstCardText = await page.locator('#trayectos-grid .course-card').first().innerText();
