@@ -1646,3 +1646,252 @@ body.home-light .home-showcase__help a {
     width: 82px;
   }
 }
+
+
+/* Home proposal cards — content restored + robust logo crop */
+body.home-light .home-proposal-card__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+}
+
+body.home-light .home-proposal-card__intro {
+  margin: 0 0 1.35rem !important;
+}
+
+body.home-light .home-proposal-card__bullets {
+  margin: 0 0 1.6rem;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+  list-style: none;
+}
+
+body.home-light .home-proposal-card__bullets li {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+}
+
+body.home-light .home-proposal-card__bullet-dot {
+  width: 8px;
+  height: 8px;
+  margin-top: 0.42rem;
+  display: block;
+  border-radius: 50%;
+  background: var(--cc-lightblue, #82FCCC);
+  box-shadow: 0 0 0 3px rgba(130, 252, 204, 0.2);
+}
+
+body.home-light .home-proposal-card__bullets strong {
+  display: block;
+  color: var(--cc-ink) !important;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+body.home-light .home-proposal-card__bullets span:not(.home-proposal-card__bullet-dot) {
+  display: block;
+  margin-top: 0.18rem;
+  color: var(--cc-muted) !important;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+body.home-light .home-proposal-card__cta {
+  min-height: 48px;
+  margin-top: auto;
+  padding: 0.78rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  color: #fff !important;
+  background: #0f766e !important;
+  border: 1px solid #0f766e !important;
+  border-radius: 6px !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+body.home-light .home-proposal-card__cta:hover,
+body.home-light .home-proposal-card__cta:focus-visible {
+  background: #115e59 !important;
+  border-color: #115e59 !important;
+  color: #fff !important;
+}
+
+/* Crop only the right-hand icon from legacy wordmark PNGs. */
+body.home-light .home-proposal-card__logo-crop {
+  overflow: hidden !important;
+}
+
+body.home-light .home-proposal-card__logo-crop--kids {
+  flex-basis: 102px !important;
+  width: 102px !important;
+}
+
+body.home-light .home-proposal-card__logo-crop--jr {
+  flex-basis: 94px !important;
+  width: 94px !important;
+}
+
+body.home-light .home-proposal-card__logo-crop--studio {
+  flex-basis: 106px !important;
+  width: 106px !important;
+}
+
+@media (max-width: 1180px) {
+  body.home-light .home-proposal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  body.home-light .home-proposal-card:nth-child(3) {
+    grid-column: 1 / -1;
+    width: calc(50% - 9px);
+    justify-self: center;
+  }
+
+  body.home-light .home-proposal-card__header {
+    min-height: 142px;
+  }
+
+  body.home-light .home-proposal-card__body {
+    min-height: 372px;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--kids {
+    flex-basis: 92px !important;
+    width: 92px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--kids img {
+    height: 86px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--jr {
+    flex-basis: 84px !important;
+    width: 84px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--jr img {
+    height: 80px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--studio {
+    flex-basis: 96px !important;
+    width: 96px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--studio img {
+    height: 86px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-light .home-proposal-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.home-light .home-proposal-card:nth-child(3) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  body.home-light .home-proposal-card__header {
+    min-height: 122px;
+    padding: 18px 18px 16px !important;
+  }
+
+  body.home-light .home-proposal-card__body {
+    min-height: 0;
+    padding: 22px 18px 20px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--kids {
+    flex-basis: 88px !important;
+    width: 88px !important;
+    height: 78px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--kids img {
+    height: 82px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--jr {
+    flex-basis: 80px !important;
+    width: 80px !important;
+    height: 74px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--jr img {
+    height: 76px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--studio {
+    flex-basis: 90px !important;
+    width: 90px !important;
+    height: 78px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--studio img {
+    height: 82px !important;
+  }
+
+  body.home-light .home-proposal-card__bullets {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 430px) {
+  body.home-light .home-proposal-card__header {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  body.home-light .home-proposal-card__brand {
+    font-size: 1.18rem !important;
+  }
+
+  body.home-light .home-proposal-card__pill {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: 0.68rem !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--kids {
+    flex-basis: 78px !important;
+    width: 78px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--kids img {
+    height: 74px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--jr {
+    flex-basis: 72px !important;
+    width: 72px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--jr img {
+    height: 68px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--studio {
+    flex-basis: 82px !important;
+    width: 82px !important;
+  }
+
+  body.home-light .home-proposal-card__logo-crop--studio img {
+    height: 74px !important;
+  }
+
+  body.home-light .home-proposal-card__cta {
+    font-size: 0.84rem;
+  }
+}
