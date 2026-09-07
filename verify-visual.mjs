@@ -39,11 +39,11 @@ let failed = false;
 
 const faviconBuffer = fs.readFileSync('cc-favicon.png');
 const faviconSourceOk =
-  faviconBuffer.length === 1564 &&
-  faviconBuffer.readUInt32BE(16) === 128 &&
-  faviconBuffer.readUInt32BE(20) === 128;
+  faviconBuffer.length === 827 &&
+  faviconBuffer.readUInt32BE(16) === 64 &&
+  faviconBuffer.readUInt32BE(20) === 64;
 
-console.log(`[source] cc-favicon.png: padded-128=${faviconSourceOk ? 'OK' : 'FAIL'}`);
+console.log(`[source] cc-favicon.png: padded-64=${faviconSourceOk ? 'OK' : 'FAIL'}`);
 if (!faviconSourceOk) failed = true;
 
 // Global source-level branding contract: every HTML file must use the shared favicon/theme.
