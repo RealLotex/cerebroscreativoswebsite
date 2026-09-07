@@ -103,9 +103,10 @@ for (const [vpName, vp] of Object.entries(viewports)) {
 
     if (p.theme === 'detail-light') {
       const haloCount = await page.locator('.final-cta [class*="from-blue-500"]').count();
+      const rawBlueHalos = await page.locator('[class*="from-blue-500"][class*="radial-gradient"]').count();
       const finalCta = await page.locator('.final-cta').count();
-      extraOk = haloCount === 0 && finalCta === 1;
-      extra.push(`finalCTA=${finalCta}`, `ctaHalo=${haloCount}`);
+      extraOk = haloCount === 0 && rawBlueHalos === 0;
+      extra.push(`finalCTA=${finalCta}`, `ctaHalo=${haloCount}`, `rawBlueHalo=${rawBlueHalos}`);
     }
 
     if (p.theme === 'home-light') {
