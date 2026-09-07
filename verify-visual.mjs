@@ -30,6 +30,8 @@ const pages = [
   { file: 'programacion-de-videojuegos-12-14.html', label: 'videojuegos-12-14', theme: 'detail-light' },
   { file: 'programacion-de-videojuegos-15.html', label: 'videojuegos-15', theme: 'detail-light' },
   { file: 'programación-en-roblox.html', label: 'roblox', theme: 'detail-light' },
+  { file: 'privacy-policy.html', label: 'privacy', theme: 'legal-light' },
+  { file: 'terms-of-use.html', label: 'terms', theme: 'legal-light' },
 ];
 
 let failed = false;
@@ -113,6 +115,18 @@ for (const [vpName, vp] of Object.entries(viewports)) {
       const cards = await page.locator('main .grid > .group').count();
       extraOk = cards === 3;
       extra.push(`proposalCards=${cards}`);
+    }
+
+    if (p.theme === 'legal-light') {
+      const mainCount = await page.locator('main').count();
+      const tealHeadings = await page.evaluate(() => {
+        const h2 = document.querySelector('.legal-content h2');
+        if (!h2) return false;
+        const border = getComputedStyle(h2).borderLeftColor.match(/\d+/g)?.map(Number) || [];
+        return border.length >= 3 && border[1] > border[0] && border[1] > border[2];
+      });
+      extraOk = mainCount === 1 && tealHeadings;
+      extra.push(`main=${mainCount}`, `tealHeadings=${tealHeadings}`);
     }
 
     const ok = hasTheme && bodyIsLight && !horizontalOverflow && extraOk;
