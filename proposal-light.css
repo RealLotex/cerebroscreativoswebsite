@@ -1,0 +1,543 @@
+:root {
+  --cc-bg: #f5f7f4;
+  --cc-surface: #ffffff;
+  --cc-surface-soft: #eaf4f1;
+  --cc-ink: #17211e;
+  --cc-muted: #52615c;
+  --cc-line: #cbd8d4;
+  --cc-teal: #0f766e;
+  --cc-teal-strong: #115e59;
+  --cc-teal-soft: #ccfbf1;
+  --cc-green: #4d7c0f;
+}
+
+body.proposal-light {
+  background: var(--cc-bg) !important;
+  color: var(--cc-ink) !important;
+  font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif !important;
+  overflow-x: hidden;
+}
+
+body.proposal-light h1,
+body.proposal-light h2,
+body.proposal-light h3,
+body.proposal-light h4 {
+  color: var(--cc-ink);
+  letter-spacing: -0.025em;
+}
+
+body.proposal-light .text-shadow-lg,
+body.proposal-light .text-shadow-md {
+  text-shadow: none !important;
+}
+
+body.proposal-light .text-brand-accent,
+body.proposal-light .text-blue-100,
+body.proposal-light .text-blue-100\/70,
+body.proposal-light .text-blue-100\/80,
+body.proposal-light .text-blue-100\/90 {
+  color: var(--cc-teal-strong) !important;
+}
+
+body.proposal-light .text-brand-secondary {
+  color: var(--cc-green) !important;
+}
+
+/* Navigation */
+body.proposal-light nav {
+  background: rgba(250, 252, 250, 0.98) !important;
+  border-color: var(--cc-line) !important;
+  backdrop-filter: none !important;
+  color: var(--cc-ink) !important;
+}
+
+body.proposal-light nav button,
+body.proposal-light nav a:not(.meta-lead-btn) {
+  color: var(--cc-ink) !important;
+  border-color: var(--cc-line) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.proposal-light nav button:hover,
+body.proposal-light nav a:not(.meta-lead-btn):hover {
+  color: var(--cc-teal-strong) !important;
+  background: var(--cc-surface-soft) !important;
+}
+
+body.proposal-light nav .meta-lead-btn {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+  border-color: var(--cc-teal) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.proposal-light #mobile-menu {
+  background: var(--cc-surface) !important;
+  border-color: var(--cc-line) !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Hero */
+body.proposal-light header {
+  background: var(--cc-surface-soft);
+  color: var(--cc-ink);
+  padding-top: 7rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+body.proposal-light header > .absolute.inset-0 img {
+  opacity: 0.18 !important;
+  filter: saturate(0.75) contrast(0.9);
+}
+
+body.proposal-light header .bg-gradient-to-b,
+body.proposal-light header .bg-gradient-to-br {
+  background-image: none !important;
+}
+
+body.proposal-light header > .absolute.inset-0 > div {
+  background: rgba(245, 247, 244, 0.78) !important;
+}
+
+body.proposal-light header > .absolute.top-0.right-0 {
+  display: none !important;
+}
+
+body.proposal-light header h1 {
+  color: var(--cc-ink) !important;
+  font-size: clamp(2.35rem, 5vw, 4rem) !important;
+  line-height: 1.02 !important;
+  max-width: 13ch;
+}
+
+body.proposal-light header p {
+  color: var(--cc-muted) !important;
+}
+
+body.proposal-light header .inline-flex.items-center {
+  background: rgba(255,255,255,0.82) !important;
+  border-color: var(--cc-line) !important;
+  border-radius: 5px !important;
+}
+
+body.proposal-light header .inline-flex.items-center span:last-child {
+  color: var(--cc-ink) !important;
+  font-size: 1rem !important;
+}
+
+body.proposal-light header a {
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.proposal-light header a.bg-brand-primary {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+}
+
+body.proposal-light header a.text-brand-accent {
+  background: var(--cc-surface) !important;
+  color: var(--cc-teal-strong) !important;
+  border-color: var(--cc-teal) !important;
+}
+
+body.proposal-light .proposal-carousel {
+  height: 360px !important;
+  max-width: 420px !important;
+  max-height: none !important;
+  background: rgba(255,255,255,0.92) !important;
+  border: 1px solid var(--cc-line) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+body.proposal-light .proposal-carousel .absolute.inset-0[style*="radial-gradient"] {
+  background-image: radial-gradient(rgba(15,118,110,0.18) 1px, transparent 1px) !important;
+}
+
+body.proposal-light .proposal-carousel .bg-brand-primary {
+  background: var(--cc-teal-soft) !important;
+  color: var(--cc-teal-strong) !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+}
+
+body.proposal-light #carousel-indicators button {
+  background: #b7cac4 !important;
+}
+
+body.proposal-light #carousel-indicators button.bg-brand-accent {
+  background: var(--cc-teal) !important;
+}
+
+/* Course grid */
+body.proposal-light #trayectos {
+  background: var(--cc-surface) !important;
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+body.proposal-light #trayectos > .absolute {
+  display: none !important;
+}
+
+body.proposal-light #trayectos h2 {
+  color: var(--cc-ink) !important;
+}
+
+body.proposal-light #trayectos h2 .text-transparent {
+  color: var(--cc-teal-strong) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+body.proposal-light #trayectos p {
+  color: var(--cc-muted) !important;
+}
+
+body.proposal-light #trayectos-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+}
+
+body.proposal-light .course-card {
+  --course-accent: var(--cc-teal);
+  min-width: 0;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  background: var(--cc-surface);
+  border: 1px solid var(--cc-line);
+  border-top: 3px solid var(--course-accent);
+  border-radius: 8px;
+  box-shadow: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+body.proposal-light .course-card:hover {
+  background: #fbfdfc;
+  border-color: var(--course-accent);
+}
+
+body.proposal-light .course-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  color: var(--course-accent);
+  background: var(--cc-surface-soft);
+  border: 1px solid var(--cc-line);
+  border-radius: 6px;
+}
+
+body.proposal-light .course-card h3 {
+  margin: 0 0 0.55rem;
+  color: var(--cc-ink) !important;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+body.proposal-light .course-card > p:not(.course-meta) {
+  margin: 0;
+  color: var(--cc-muted) !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+body.proposal-light .course-meta {
+  margin: -0.4rem 0 0.7rem !important;
+  color: var(--cc-teal-strong) !important;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+body.proposal-light .course-detail-link {
+  min-height: 44px;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--cc-teal-strong) !important;
+  border-top: 1px solid var(--cc-line);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+body.proposal-light .course-detail-link:hover {
+  color: var(--cc-teal) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Modalities */
+body.proposal-light #modalidad {
+  background: var(--cc-surface-soft) !important;
+  border-color: var(--cc-line) !important;
+  color: var(--cc-ink) !important;
+}
+
+body.proposal-light #modalidad .grid > div {
+  background: var(--cc-surface) !important;
+  border: 1px solid var(--cc-line) !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.proposal-light #modalidad .grid > div > .relative.h-full {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  backdrop-filter: none !important;
+}
+
+body.proposal-light #modalidad [class*="text-purple-"],
+body.proposal-light #modalidad [class*="text-pink-"],
+body.proposal-light #modalidad [class*="text-blue-"],
+body.proposal-light #modalidad [class*="text-brand-accent"] {
+  color: var(--cc-teal-strong) !important;
+}
+
+body.proposal-light #modalidad [class*="bg-purple-"],
+body.proposal-light #modalidad [class*="bg-pink-"],
+body.proposal-light #modalidad [class*="bg-brand-accent"] {
+  background: var(--cc-teal-soft) !important;
+}
+
+body.proposal-light #modalidad h3,
+body.proposal-light #modalidad h4 {
+  color: var(--cc-ink) !important;
+}
+
+body.proposal-light #modalidad p {
+  color: var(--cc-muted) !important;
+}
+
+body.proposal-light #modalidad .grid > div a {
+  background: transparent !important;
+  color: var(--cc-teal-strong) !important;
+  border: 1px solid var(--cc-teal) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.proposal-light #modalidad .grid > div:nth-child(2) a {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+}
+
+body.proposal-light #modalidad .absolute.-top-3 {
+  background: var(--cc-teal-strong) !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+/* Remaining content */
+body.proposal-light section:not(#trayectos):not(#modalidad) {
+  color: var(--cc-ink);
+}
+
+body.proposal-light section.bg-black\/20,
+body.proposal-light #metodo {
+  background: #eef3f1 !important;
+}
+
+body.proposal-light section .bg-white\/5,
+body.proposal-light section .bg-brand-darker {
+  background: var(--cc-surface) !important;
+  border-color: var(--cc-line) !important;
+  box-shadow: none !important;
+}
+
+body.proposal-light section .text-white {
+  color: var(--cc-ink) !important;
+}
+
+body.proposal-light section p.opacity-70,
+body.proposal-light section p.opacity-80,
+body.proposal-light section .opacity-70,
+body.proposal-light section .opacity-80 {
+  color: var(--cc-muted) !important;
+  opacity: 1 !important;
+}
+
+body.proposal-light #metodo .grid > div > div:first-child {
+  width: 42px !important;
+  height: 42px !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+}
+
+body.proposal-light section a.bg-brand-accent,
+body.proposal-light section a.bg-brand-primary,
+body.proposal-light section .meta-lead-btn {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+  border-color: var(--cc-teal) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.proposal-light section [class*="rounded-xl"],
+body.proposal-light section [class*="rounded-2xl"] {
+  border-radius: 6px !important;
+}
+
+/* Footer + cookies use light DOM, so proposal theme reaches them */
+body.proposal-light custom-footer footer {
+  background: #e7efec !important;
+  color: var(--cc-ink) !important;
+  border-color: var(--cc-line) !important;
+}
+
+body.proposal-light custom-footer footer a {
+  color: var(--cc-muted) !important;
+}
+
+body.proposal-light custom-footer footer a:hover {
+  color: var(--cc-teal-strong) !important;
+}
+
+body.proposal-light #cookie-banner {
+  background: #fff !important;
+  color: var(--cc-ink) !important;
+  border-color: var(--cc-line) !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 -2px 0 rgba(15,118,110,0.12) !important;
+}
+
+body.proposal-light #cookie-banner button {
+  background: var(--cc-teal) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+/* Mobile */
+@media (max-width: 1099px) {
+  body.proposal-light #trayectos-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.proposal-light nav .flex.items-center.justify-between {
+    position: relative;
+    min-height: 58px;
+  }
+
+  body.proposal-light nav .flex-shrink-0 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 64vw;
+  }
+
+  body.proposal-light nav .flex-shrink-0 .text-2xl {
+    font-size: 1rem !important;
+    white-space: nowrap;
+  }
+
+  body.proposal-light nav button[aria-label="Volver"] {
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    justify-content: center;
+    gap: 0 !important;
+    font-size: 0 !important;
+    border-radius: 6px !important;
+  }
+
+  body.proposal-light nav button[aria-label="Volver"] svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  body.proposal-light header {
+    padding-top: 5.6rem !important;
+    padding-bottom: 2.5rem !important;
+    text-align: left !important;
+  }
+
+  body.proposal-light header h1 {
+    max-width: none;
+    font-size: clamp(2.1rem, 10vw, 3rem) !important;
+  }
+
+  body.proposal-light header h1 br {
+    display: none;
+  }
+
+  body.proposal-light header .flex.flex-col.sm\:flex-row {
+    align-items: stretch;
+  }
+
+  body.proposal-light .proposal-carousel {
+    height: 310px !important;
+    max-width: 100% !important;
+    padding: 1.25rem !important;
+  }
+
+  body.proposal-light #trayectos {
+    padding: 3rem 1rem !important;
+  }
+
+  body.proposal-light #trayectos .text-center.mb-16 {
+    margin-bottom: 2rem !important;
+    text-align: left !important;
+  }
+
+  body.proposal-light #trayectos h2 {
+    font-size: 2rem !important;
+  }
+
+  body.proposal-light #trayectos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+  }
+
+  body.proposal-light .course-card {
+    min-height: 0;
+  }
+
+  body.proposal-light #modalidad {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  body.proposal-light #modalidad .grid {
+    gap: 0.8rem !important;
+  }
+
+  body.proposal-light #modalidad .grid > div {
+    margin: 0 !important;
+  }
+
+  body.proposal-light section {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+  body.proposal-light #trayectos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
