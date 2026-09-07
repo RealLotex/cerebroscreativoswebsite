@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerebros Creativos - Clases online en vivo para niños y jóvenes</title>
+      <link rel="icon" type="image/png" href="./cc-favicon.png">
+<title>Cerebros Creativos - Clases online en vivo para niños y jóvenes</title>
     <meta name="description" content="Cerebros Creativos es una comunidad de educación en línea para niños y jóvenes, enfocada en habilidades del futuro.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" href="favicon.ico">
-
     <!-- Tailwind CSS (Estilos) -->
     <link href="./dist/output.css" rel="stylesheet">    
     <!-- Configuración de Colores de Marca -->
@@ -17,10 +15,10 @@
                 extend: {
                     colors: {
                         brand: {
-                            bg: '#00357a',      // Fondo Principal
-                            primary: '#004aad', // Azul Brillante
-                            accent: '#5ce1e6',  // Cian/Turquesa
-                            secondary: '#78d25e'
+                            bg: '#0f766e',      // Fondo Principal
+                            primary: '#0f766e', // Azul Brillante
+                            accent: '#82FCCC',  // Cian/Turquesa
+                            secondary: '#82FCCC'
                         }
                     },
                     fontFamily: {
@@ -39,11 +37,11 @@
                         glow: {
                             '0%, 100%': { 
                                 opacity: '1', 
-                                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)' // Sin sombra
+                                'box-shadow': '0 0 0px rgba(130,252,204, 0)' // Sin sombra
                             },
                             '50%': { 
                                 opacity: '1', 
-                                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)' // Sombra brillante
+                                'box-shadow': '0 0 15px rgba(130,252,204, 1)' // Sombra brillante
                             },
                         }
                     }
@@ -64,12 +62,13 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
+  <link href="./brand-theme.css?v=20260907-2" rel="stylesheet">
 </head>
 <body class="bg-brand-bg text-white min-h-screen">
     <div id="texto-compartido"></div>
     <script src="contenido-landpage.js"></script>
     <!-- --- NAVBAR --- -->
-    <nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
+    <nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(15,118,110,0.1)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
@@ -209,7 +208,7 @@
                       El sistema actual no está diseñado para el potencial que nuestros hijos tienen. <br> La curiosidad por la tecnología es natural, pero esa energía se pierde consumiendo contenido pasivamente, mientras el mundo avanza.
                     </p>
                 </div>
-                <div class="p-6 rounded-2xl border transition-colors shadow-lg bg-[rgba(92,225,230,0.05)] border-brand-accent">
+                <div class="p-6 rounded-2xl border transition-colors shadow-lg bg-[rgba(130,252,204,0.05)] border-brand-accent">
                     <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-brand-accent">
                         <i data-lucide="sprout" class="w-5 h-5"></i> Nutrimos su potencial
                     </h3>
@@ -434,7 +433,7 @@
                 slide.style.minHeight = "250px"; // Ensure height consistency
                 
                 slide.innerHTML = `
-                    <div class="w-24 h-24 mb-6 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(92,225,230,0.3)] bg-brand-primary text-brand-accent transition-transform transform ${index === currentSlide ? 'scale-110' : 'scale-90'}">
+                    <div class="w-24 h-24 mb-6 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(130,252,204,0.3)] bg-brand-primary text-brand-accent transition-transform transform ${index === currentSlide ? 'scale-110' : 'scale-90'}">
                         <i data-lucide="${item.icon}" width="48" height="48"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-2 animate-fade-in">${item.title}</h3>
@@ -499,5 +498,6 @@
         // 4. Initialize Icons
         lucide.createIcons();
     </script>
+  <script src="./brand-theme.js?v=20260907-2"></script>
 </body>
 </html>

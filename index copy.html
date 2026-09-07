@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerebros Creativos - Clases online en vivo para niños y jóvenes</title>
+      <link rel="icon" type="image/png" href="./cc-favicon.png">
+<title>Cerebros Creativos - Clases online en vivo para niños y jóvenes</title>
     <meta name="description" content="Cerebros Creativos es una comunidad de educación en línea para niños y jóvenes, enfocada en habilidades del futuro.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" href="favicon.ico">
-
     <!-- Tailwind CSS (Estilos) -->
     <link href="./dist/output.css" rel="stylesheet">    
     <!-- Configuración de Colores de Marca -->
@@ -17,10 +15,10 @@
                 extend: {
                     colors: {
                         brand: {
-                            bg: '#00357a',      // Fondo Principal
-                            primary: '#004aad', // Azul Brillante
-                            accent: '#5ce1e6',  // Cian/Turquesa
-                            secondary: '#78d25e'
+                            bg: '#0f766e',      // Fondo Principal
+                            primary: '#0f766e', // Azul Brillante
+                            accent: '#82FCCC',  // Cian/Turquesa
+                            secondary: '#82FCCC'
                         }
                     },
                     fontFamily: {
@@ -39,11 +37,11 @@
                         glow: {
                             '0%, 100%': { 
                                 opacity: '1', 
-                                'box-shadow': '0 0 0px rgba(92, 225, 230, 0)' // Sin sombra
+                                'box-shadow': '0 0 0px rgba(130,252,204, 0)' // Sin sombra
                             },
                             '50%': { 
                                 opacity: '1', 
-                                'box-shadow': '0 0 15px rgba(92, 225, 230, 1)' // Sombra brillante
+                                'box-shadow': '0 0 15px rgba(130,252,204, 1)' // Sombra brillante
                             },
                         }
                     }
@@ -81,11 +79,12 @@
 
 
     </style>
+  <link href="./brand-theme.css?v=20260907-2" rel="stylesheet">
 </head>
 <body class="bg-brand-bg text-white min-h-screen">
 
   <!-- --- NAVBAR --- -->
-<nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(0,53,122,0.1)]">
+<nav class="fixed w-full z-50 backdrop-blur-md border-b border-white/10 bg-[rgba(15,118,110,0.1)]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
           <!-- Logo -->
@@ -246,5 +245,6 @@
 
     <script src="footer-loader.js"></script>
     <custom-footer></custom-footer>
+  <script src="./brand-theme.js?v=20260907-2"></script>
 </body>
 </html>

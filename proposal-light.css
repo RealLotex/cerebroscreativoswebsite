@@ -8,10 +8,10 @@
   --cc-teal: #0f766e;
   --cc-teal-strong: #115e59;
   --cc-teal-soft: #ccfbf1;
-  --cc-lightblue: #5ce1e6;
-  --cc-lightblue-soft: #e8fbfc;
+  --cc-lightblue: #82FCCC;
+  --cc-lightblue-soft: #ecfff7;
   --cc-lightblue-ink: #0e7490;
-  --cc-green: #0e7490;
+  --cc-green: #82FCCC;
 }
 
 body.proposal-light {
@@ -810,7 +810,7 @@ body.detail-light section.bg-black\/20 {
 
 body.detail-light section .backdrop-blur-sm,
 body.detail-light section .bg-brand-darker,
-body.detail-light section [class*="bg-[rgba(0,74,173"] {
+body.detail-light section [class*="bg-[rgba(15,118,110"] {
   background: var(--cc-surface) !important;
   border-color: var(--cc-line) !important;
   backdrop-filter: none !important;
@@ -1255,7 +1255,7 @@ body.home-light acceso-a-clases input {
 
 body.home-light acceso-a-clases input:focus {
   border-color: var(--cc-lightblue) !important;
-  outline: 2px solid rgba(92,225,230,0.2) !important;
+  outline: 2px solid rgba(130,252,204,0.2) !important;
   outline-offset: 1px;
 }
 
@@ -1351,7 +1351,7 @@ body.home-light .home-proposal-card:focus-visible {
   background: #fff !important;
   outline: none;
   transform: none !important;
-  box-shadow: 0 0 0 3px rgba(92,225,230,0.16) !important;
+  box-shadow: 0 0 0 3px rgba(130,252,204,0.16) !important;
 }
 
 body.home-light .home-proposal-card__header {
@@ -1389,7 +1389,7 @@ body.home-light .home-proposal-card__pill {
   padding: 6px 16px;
   color: var(--cc-teal-strong) !important;
   background: var(--cc-lightblue-soft) !important;
-  border: 1px solid rgba(92,225,230,0.38);
+  border: 1px solid rgba(130,252,204,0.38);
   border-radius: 999px;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.78rem;

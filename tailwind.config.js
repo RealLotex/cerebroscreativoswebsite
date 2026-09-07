@@ -6,14 +6,14 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          bg: '#00357a',      // Fondo Principal
-          primary: '#004aad', // Azul Brillante
-          accent: '#5ce1e6',  // Cian/Turquesa
-          secondary: '#78d25e'
+          bg: '#0f766e',      // Fondo Principal
+          primary: '#0f766e', // Azul Brillante
+          accent: '#82FCCC',  // Cian/Turquesa
+          secondary: '#82FCCC'
         },
-	'brand-dark': '#00357a',
+	'brand-dark': '#0f766e',
 	'brand-darker': '#00285c',
-	'brand-accent': '#5ce1e6',
+	'brand-accent': '#82FCCC',
 	'brand-footer': '#002a60',
       },
       fontFamily: {
@@ -31,11 +31,11 @@ module.exports = {
         glow: {
           '0%, 100%': {
             opacity: '1',
-            'box-shadow': '0 0 0px rgba(92, 225, 230, 0)'
+            'box-shadow': '0 0 0px rgba(130,252,204, 0)'
           },
           '50%': {
             opacity: '1',
-            'box-shadow': '0 0 15px rgba(92, 225, 230, 1)'
+            'box-shadow': '0 0 15px rgba(130,252,204, 1)'
           },
         }
       }
