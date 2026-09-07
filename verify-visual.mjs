@@ -39,7 +39,7 @@ let failed = false;
 
 const faviconBuffer = fs.readFileSync('cc-favicon.png');
 const faviconSourceOk =
-  faviconBuffer.length === 12138 &&
+  faviconBuffer.length === 1564 &&
   faviconBuffer.readUInt32BE(16) === 128 &&
   faviconBuffer.readUInt32BE(20) === 128;
 
