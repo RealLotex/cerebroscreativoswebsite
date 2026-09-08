@@ -1,10 +1,12 @@
 {
-  "name": "webprevisional",
+  "name": "cerebroscreativoswebsite",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000c\u0000e\u0000r\u0000e\u0000b\u0000r\u0000o\u0000s\u0000c\u0000r\u0000e\u0000a\u0000t\u0000i\u0000v\u0000o\u0000s\u0000w\u0000e\u0000b\u0000s\u0000i\u0000t\u0000e\u0000\r\u0000 \u0000",
+  "description": "Sitio comercial est\u00e1tico de Cerebros Creativos",
   "main": "acceso-a-clases.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "catalog:generate": "node scripts/catalog.mjs --write",
+    "test": "node scripts/catalog.mjs",
+    "build": "npm test && tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "tracks": [
+    {
+      "slug": "kids",
+      "family": "kids",
+      "name": "Cerebros Creativos KIDS",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/propuesta.html",
+      "active": true
+    },
+    {
+      "slug": "jr",
+      "family": "junior",
+      "name": "Cerebros Creativos Jr_",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/propuestajr.html",
+      "active": true
+    },
+    {
+      "slug": "studio",
+      "family": "studio",
+      "name": "Cerebros Creativos Studio",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/propuestastudio.html",
+      "active": true
+    },
+    {
+      "slug": "programacion-de-videojuegos-10-11",
+      "family": "videojuegos",
+      "name": "Programación de Videojuegos (10-11)",
+      "ageMin": 10,
+      "ageMax": 11,
+      "url": "/programacion-de-videojuegos-10-11.html",
+      "active": true
+    },
+    {
+      "slug": "programacion-de-videojuegos-12-14",
+      "family": "videojuegos",
+      "name": "Programación de Videojuegos (12-14)",
+      "ageMin": 12,
+      "ageMax": 14,
+      "url": "/programacion-de-videojuegos-12-14.html",
+      "active": true
+    },
+    {
+      "slug": "programacion-de-videojuegos-15",
+      "family": "videojuegos",
+      "name": "Programación de Videojuegos AAA (15+)",
+      "ageMin": 15,
+      "ageMax": null,
+      "url": "/programacion-de-videojuegos-15.html",
+      "active": true
+    },
+    {
+      "slug": "programacion-en-roblox",
+      "family": "roblox",
+      "name": "Programación de Videojuegos Roblox",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/programación-en-roblox.html",
+      "active": true
+    },
+    {
+      "slug": "pequenos-programadores",
+      "family": "programadores",
+      "name": "Curso de programación para niños",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/pequeños-programadores.html",
+      "active": true
+    },
+    {
+      "slug": "produccion-musical",
+      "family": "musica",
+      "name": "Producción Musical",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/produccion-musical.html",
+      "active": true
+    },
+    {
+      "slug": "arte-digital",
+      "family": "arte-digital",
+      "name": "Arte y Dibujo Digital",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/arte-digital.html",
+      "active": true
+    },
+    {
+      "slug": "electronica-robotica",
+      "family": "robotica",
+      "name": "Electrónica y Robótica",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/electronica-robotica.html",
+      "active": true
+    },
+    {
+      "slug": "creador-de-contenidos",
+      "family": "creador-contenidos",
+      "name": "Creador en Redes Sociales",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/creador-de-contenidos.html",
+      "active": true
+    },
+    {
+      "slug": "modelado-y-animacion-3d",
+      "family": "modelado-3d",
+      "name": "Modelado y Animación 3D",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/modelado-y-animacion-3d.html",
+      "active": true
+    },
+    {
+      "slug": "contenidos-y-marketing",
+      "family": "productor-digital",
+      "name": "Productor Digital",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/contenidos-y-marketing.html",
+      "active": true
+    },
+    {
+      "slug": "lectura-critica-y-storytelling",
+      "family": "storytelling",
+      "name": "Lectura Crítica y Storytelling",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/lectura-critica-y-storytelling.html",
+      "active": true
+    }
+  ]
+}
