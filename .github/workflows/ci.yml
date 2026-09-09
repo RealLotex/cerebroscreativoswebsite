@@ -13,3 +13,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - run: node scripts/validate-site.mjs
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test

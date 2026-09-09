@@ -6,10 +6,10 @@ class AccesoAClases extends HTMLElement {
     <div class="block">
       <div
         class="text-white hover:bg-white/5 transition-all px-1 py-1 rounded-xl border border-white/20 text-sm font-medium flex justify-center items-center gap-2">
-        <input type="text" oninput="this.value = this.value.replace(/\\s+/g, '')" placeholder="Nombre de tu Profe"
+        <input type="text" oninput="this.value = this.value.replace(/\\s+/g, '')" aria-label="Nombre de tu Profe" placeholder="Nombre de tu Profe"
           class="user-input px-2 py-2 rounded-xl bg-black/20 border border-white/10 text-white placeholder-white/50 focus:outline-none focus:border-transparent ring-2 ring-black/10 focus:ring-brand-accent/10 w-full text-center md:w-40 md:mb-0">
 
-        <button id="btn-entrar"
+        <button type="button" id="btn-entrar"
           class="px-2 py-2 rounded-xl font-bold shadow-lg bg-brand-accent text-brand-bg hover:bg-transparent/50 hover:text-brand-accent transition-all w-full flex items-center gap-1 justify-center md:w-40 md:mb-0">
           Entrar a la clase
           <i data-lucide="mouse-pointer-click"></i>

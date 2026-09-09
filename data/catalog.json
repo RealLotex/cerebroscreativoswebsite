@@ -135,6 +135,96 @@
       "ageMax": null,
       "url": "/lectura-critica-y-storytelling.html",
       "active": true
+    },
+    {
+      "slug": "inteligencia-artificial-aplicada",
+      "family": "studio",
+      "name": "Inteligencia Artificial Aplicada",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/inteligencia-artificial-aplicada.html",
+      "active": true
+    },
+    {
+      "slug": "diseno-ux-ui-profesional",
+      "family": "studio",
+      "name": "Diseño UX/UI Profesional",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/diseno-ux-ui-profesional.html",
+      "active": true
+    },
+    {
+      "slug": "marketing-digital-seo",
+      "family": "studio",
+      "name": "Marketing Digital & SEO",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/marketing-digital-seo.html",
+      "active": true
+    },
+    {
+      "slug": "produccion-de-video-profesional",
+      "family": "studio",
+      "name": "Producción de Video Profesional",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/produccion-de-video-profesional.html",
+      "active": true
+    },
+    {
+      "slug": "data-analytics-business-intelligence",
+      "family": "studio",
+      "name": "Data Analytics & Business Intelligence",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/data-analytics-business-intelligence.html",
+      "active": true
+    },
+    {
+      "slug": "desarrollo-web-full-stack",
+      "family": "studio",
+      "name": "Desarrollo Web Full Stack",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/desarrollo-web-full-stack.html",
+      "active": true
+    },
+    {
+      "slug": "copywriting-comunicacion-digital",
+      "family": "studio",
+      "name": "Copywriting & Comunicación Digital",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/copywriting-comunicacion-digital.html",
+      "active": true
+    },
+    {
+      "slug": "gestion-de-proyectos-agiles",
+      "family": "studio",
+      "name": "Gestión de Proyectos Ágiles",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/gestion-de-proyectos-agiles.html",
+      "active": true
+    },
+    {
+      "slug": "e-commerce-monetizacion",
+      "family": "studio",
+      "name": "E-commerce & Monetización",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/e-commerce-monetizacion.html",
+      "active": true
+    },
+    {
+      "slug": "liderazgo-digital-transformacion",
+      "family": "studio",
+      "name": "Liderazgo Digital & Transformación",
+      "ageMin": null,
+      "ageMax": null,
+      "url": "/liderazgo-digital-transformacion.html",
+      "active": true
     }
   ]
 }

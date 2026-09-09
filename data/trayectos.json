@@ -118,5 +118,85 @@
     "edad_min": null,
     "edad_max": null,
     "url": "/lectura-critica-y-storytelling.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "inteligencia-artificial-aplicada",
+    "nombre": "Inteligencia Artificial Aplicada",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/inteligencia-artificial-aplicada.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "diseno-ux-ui-profesional",
+    "nombre": "Diseño UX/UI Profesional",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/diseno-ux-ui-profesional.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "marketing-digital-seo",
+    "nombre": "Marketing Digital & SEO",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/marketing-digital-seo.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "produccion-de-video-profesional",
+    "nombre": "Producción de Video Profesional",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/produccion-de-video-profesional.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "data-analytics-business-intelligence",
+    "nombre": "Data Analytics & Business Intelligence",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/data-analytics-business-intelligence.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "desarrollo-web-full-stack",
+    "nombre": "Desarrollo Web Full Stack",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/desarrollo-web-full-stack.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "copywriting-comunicacion-digital",
+    "nombre": "Copywriting & Comunicación Digital",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/copywriting-comunicacion-digital.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "gestion-de-proyectos-agiles",
+    "nombre": "Gestión de Proyectos Ágiles",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/gestion-de-proyectos-agiles.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "e-commerce-monetizacion",
+    "nombre": "E-commerce & Monetización",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/e-commerce-monetizacion.html"
+  },
+  {
+    "trayecto": "studio",
+    "slug": "liderazgo-digital-transformacion",
+    "nombre": "Liderazgo Digital & Transformación",
+    "edad_min": null,
+    "edad_max": null,
+    "url": "/liderazgo-digital-transformacion.html"
   }
 ]
