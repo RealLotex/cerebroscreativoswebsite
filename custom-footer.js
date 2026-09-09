@@ -7,7 +7,7 @@ class CustomFooter extends HTMLElement {
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex flex-col items-center md:items-start">
                 <div class="font-bold text-xl tracking-tighter mb-2">
-                    CerebrosCreativos<span class="text-brand-accent">.org</span>
+                    CerebrosCreativos<span class="text-brand-primary">.org</span>
                 </div>
                 <p class="opacity-50">© 2026 Todos los derechos reservados.</p>
             </div>

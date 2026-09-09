@@ -93,7 +93,7 @@ body.proposal-light header {
 }
 
 body.proposal-light header > .absolute.inset-0 img {
-  opacity: 0.18 !important;
+  opacity: 1 !important;
   filter: saturate(0.75) contrast(0.9);
 }
 
@@ -758,7 +758,7 @@ body.detail-light header {
 }
 
 body.detail-light header img {
-  opacity: 0.18 !important;
+  opacity: 1 !important;
   filter: saturate(0.72) contrast(0.9);
 }
 
@@ -819,6 +819,17 @@ body.detail-light section [class*="bg-[rgba(15,118,110"] {
 
 body.detail-light section [class*="border-white"] {
   border-color: var(--cc-line) !important;
+}
+
+body.detail-light section .bg-brand-bg {
+  background: var(--cc-surface) !important;
+  border-color: var(--cc-line) !important;
+  color: var(--cc-ink) !important;
+}
+
+body.detail-light section .bg-brand-bg .opacity-70,
+body.detail-light section .bg-brand-bg .opacity-90 {
+  opacity: 1 !important;
 }
 
 body.detail-light section .border-dashed {
