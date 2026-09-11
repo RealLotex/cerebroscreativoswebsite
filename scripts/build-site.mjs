@@ -6,7 +6,7 @@ const tracks = catalog.tracks.filter(t => t.active);
 const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const wa = name => 'https://wa.me/5493404564631?text=' + encodeURIComponent(`Hola, estuve viendo ${name}. Quería consultar por esta propuesta.`);
 await rm('site', {recursive:true,force:true}); await mkdir('site/dist', {recursive:true});
-for (const dir of ['images','guiajitsi']) await cp(dir, `site/${dir}`, {recursive:true});
+for (const dir of ['images','guiajitsi','clase']) await cp(dir, `site/${dir}`, {recursive:true});
 for (const f of await readdir('.')) if (/\.(png|ico|css)$/.test(f)) await cp(f, `site/${f}`);
 for (const f of ['dist/output.css','data/catalog.json','data/trayectos.json']) {
   await mkdir(`site/${f.split('/')[0]}`, {recursive:true}); await cp(f, `site/${f}`);
@@ -43,6 +43,8 @@ for (const file of files) {
   else $('body').append('<script src="/acceso-a-clases.js" defer></script>');
   $('a').each((_,el)=>{
     const a=$(el), href=a.attr('href')??'';
+    const linked=tracks.find(t=>t.url===href);
+    if(linked && a.hasClass('home-proposal-card__cta')) a.text('Ver '+linked.name);
     if (/inscripciones/.test(href)) { a.attr('href', wa(name)); if(!a.text().trim()) a.text('Consultar por WhatsApp'); }
     if (a.attr('target')==='_blank') a.attr('rel','noopener noreferrer');
   });
@@ -52,8 +54,9 @@ for (const file of files) {
   $('html').attr('lang','es');
   $('title').text(`${name} | Cerebros Creativos`.replace('Cerebros Creativos | Cerebros Creativos','Cerebros Creativos'));
   $('meta[http-equiv="refresh"],meta[name="description"],link[rel="canonical"]').remove();
-  $('head').append(`<meta name="description" content="${escape(`Conocé ${name}. Formación online y consultas por WhatsApp.`)}"><link rel="canonical" href="https://cerebroscreativos.org/${file==='index.html'?'':encodeURI(file)}"><link rel="stylesheet" href="/site.css">`);
+  $('head').append(`<meta name="description" content="${escape(`Conocé ${name}. Formación online y consultas por WhatsApp.`)}"><link rel="canonical" href="https://cerebroscreativos.org/${file==='index.html'?'':encodeURI(file)}">`);
   if(!$('link[href*="output.css"]').length) $('head').append('<link rel="stylesheet" href="/dist/output.css">');
+  $('head').append('<link rel="stylesheet" href="/site.css">');
   $('img').each((_,el)=>{const img=$(el); if(!img.attr('alt') || img.attr('alt')==='Background') img.attr('alt',''); img.attr('loading','lazy'); });
   $('button').attr('type','button');
   if(file==='inscripciones.html') $('main').html(`<h1>Consultá tu inscripción</h1><p>Te ayudamos a elegir una propuesta.</p><a href="${escape(wa('Cerebros Creativos'))}">Consultar por WhatsApp</a>`);
