@@ -7,3 +7,8 @@ body.home-light :is(p,span,div,h2,h3)[class*="opacity-"],body.proposal-light :is
 body.detail-light header>p,body.detail-light header>h1{min-width:0;overflow-wrap:anywhere}
 body.detail-light header:has(>h1){display:block;min-height:0;padding:2rem 1rem}
 body.detail-light header:has(>h1) h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin:1rem 0}
+body.detail-light section .bg-brand-bg{background:#fff!important;color:#17211e!important}
+main>p:first-child:has(>a[href$="catalogo.html"]){background:#f4faf8;color:#123d3a}
+main>p:first-child>a[href$="catalogo.html"]{color:#075d51!important}
+.badge{background:#075d51!important;color:#fff!important}
+p a{text-decoration:underline}
