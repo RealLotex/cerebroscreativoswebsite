@@ -26,15 +26,22 @@ https://cerebroscreativos.org/data/catalog.json; requiere publicar esta rama.
 
 ## CI y alojamiento
 
-Actions instala dependencias, valida catálogo y compila Tailwind. Esta primera
-comprobación no sustituye una auditoría de enlaces de todo el sitio, HTML,
-Playwright, accesibilidad ni SEO. Las páginas editoriales antiguas siguen en HTML.
+`npm run build` produce únicamente archivos públicos en `site/`. Publicar ese
+directorio, nunca la raíz del repositorio. Las 25 propuestas conservan sus URLs;
+el catálogo genera las tarjetas y sus enlaces de consulta con contexto.
 
-Destino propuesto: Cloudflare Pages, sin Functions. No se cambió el sitio publicado,
-DNS ni proyecto Cloudflare. Preparar un directorio de salida con assets públicos y
-configurar Direct Upload tras CI aprobado, o una política equivalente. Un build de
-Pages disparado independientemente no queda bloqueado por estos checks de Actions.
+Actions valida catálogo, HTML, enlaces locales, ausencia de precios y Meta Pixel,
+y ejecuta Playwright con navegación, SEO, tres anchos de pantalla y axe WCAG AA.
+Para repetir: `npm run build`, `node scripts/validate-site.mjs`,
+`npx playwright install chromium` y `npx playwright test`.
 
-Cloudflare Web Analytics es la opción prevista si no hay campañas Meta activas;
-el Pixel existente requiere confirmar ese uso antes de retirarlo. No agregar tokens
-ficticios. El portal familiar sigue fuera de esta web comercial inicial.
+Cloudflare Pages: proyecto `cerebroscreativoswebsite`, salida `site/`, sin Functions.
+El despliegue debe ejecutarse después de estas verificaciones. Requiere una sesión
+Wrangler o los secretos `CLOUDFLARE_API_TOKEN` (permiso Pages Edit de esta cuenta)
+y `CLOUDFLARE_ACCOUNT_ID`. El dominio se cambia solamente tras verificar la versión
+publicada; conservar los registros de correo.
+
+El build elimina Meta Pixel y los scripts de consentimiento que dependían de él.
+Cloudflare Web Analytics ya tiene instalación automática configurada en la zona;
+no agregar un segundo beacon. El acceso a clases conserva sus enlaces existentes.
+El portal familiar sigue fuera de esta web comercial inicial.

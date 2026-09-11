@@ -3,7 +3,7 @@ const AxeBuilder = require('@axe-core/playwright').default;
 const fs=require('node:fs');
 const files=fs.readdirSync('site').filter(f=>f.endsWith('.html')&&f!=='404.html');
 for(const file of files){
- test(`${file}: navegación, SEO y accesibilidad`,async({page})=>{
+ test(`${file}: navegación, SEO y accesibilidad`,async({page},testInfo)=>{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/'+file);
   await expect(page.getByRole('navigation',{name:'Principal'})).toBeVisible();
@@ -12,6 +12,9 @@ for(const file of files){
   for(const width of [320,390,1280]){
    await page.setViewportSize({width,height:900});
    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${file} ${width}px overflow`).toBe(true);
+  }
+  if(['index.html','catalogo.html','inteligencia-artificial-aplicada.html','arte-digital.html'].includes(file)){
+   for(const width of [390,1280]){await page.setViewportSize({width,height:900});await page.screenshot({path:testInfo.outputPath(`${width}.png`),fullPage:true});}
   }
   const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa']).analyze();
   expect(results.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);

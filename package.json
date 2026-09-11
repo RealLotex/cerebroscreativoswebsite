@@ -6,7 +6,8 @@
   "scripts": {
     "catalog:generate": "node scripts/catalog.mjs --write",
     "test": "node scripts/catalog.mjs",
-    "build": "npm test && tailwindcss -i ./src/input.css -o ./dist/output.css --minify && node scripts/build-site.mjs"
+    "build": "npm test && tailwindcss -i ./src/input.css -o ./dist/output.css --minify && node scripts/build-site.mjs",
+    "verify": "npm run build && node scripts/validate-site.mjs && playwright test"
   },
   "repository": {
     "type": "git",
