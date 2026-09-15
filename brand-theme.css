@@ -114,3 +114,68 @@ textarea:focus-visible {
     border-radius: 0;
   }
 }
+
+/* Dark hero only: proposals + every trajectory detail page */
+body.proposal-light header,
+body.detail-light header {
+  background: #0b1513 !important;
+}
+
+body.proposal-light header > .absolute.inset-0 img,
+body.detail-light header img {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+body.proposal-light header > .absolute.inset-0 > div,
+body.detail-light header .bg-gradient-to-b,
+body.detail-light header [class*="bg-gradient"] {
+  background: rgba(0, 0, 0, 0.30) !important;
+  background-image: none !important;
+}
+
+/* Proposal hero: keep the right-hand carousel light, lighten only the hero copy. */
+body.proposal-light header > .max-w-7xl > .relative.z-10,
+body.proposal-light header > .max-w-7xl > .relative.z-10 h1,
+body.proposal-light header > .max-w-7xl > .relative.z-10 p,
+body.proposal-light header > .max-w-7xl > .relative.z-10 .inline-flex.items-center span:last-child {
+  color: #f8fffc !important;
+}
+
+body.proposal-light header > .max-w-7xl > .relative.z-10 h1 .text-brand-accent,
+body.proposal-light header > .max-w-7xl > .relative.z-10 .text-brand-accent,
+body.proposal-light header > .max-w-7xl > .relative.z-10 .text-brand-secondary {
+  color: var(--cc-accent) !important;
+}
+
+body.proposal-light header > .max-w-7xl > .relative.z-10 .inline-flex.items-center {
+  background: rgba(0, 0, 0, 0.38) !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+body.proposal-light header > .max-w-7xl > .relative.z-10 .text-shadow-lg,
+body.proposal-light header > .max-w-7xl > .relative.z-10 .text-shadow-md {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Trajectory detail heroes: dark image treatment, light copy; sections below stay light. */
+body.detail-light header h1,
+body.detail-light header h2,
+body.detail-light header h3 {
+  color: #f8fffc !important;
+}
+
+body.detail-light header p {
+  color: rgba(248, 255, 252, 0.90) !important;
+}
+
+body.detail-light header .text-brand-accent {
+  color: var(--cc-accent) !important;
+}
+
+body.detail-light header .inline-block {
+  background: rgba(0, 0, 0, 0.38) !important;
+  color: var(--cc-accent) !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+  box-shadow: none !important;
+}
