@@ -159,14 +159,29 @@ body.proposal-light header > .max-w-7xl > .relative.z-10 .text-shadow-md {
 }
 
 /* Trajectory detail heroes: dark image treatment, light copy; sections below stay light. */
+body.detail-light header {
+  text-align: center !important;
+}
+
+body.detail-light header > .relative.z-10 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center !important;
+}
+
 body.detail-light header h1,
 body.detail-light header h2,
 body.detail-light header h3 {
   color: #f8fffc !important;
+  text-align: center !important;
 }
 
 body.detail-light header p {
   color: rgba(248, 255, 252, 0.90) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 body.detail-light header .text-brand-accent {
