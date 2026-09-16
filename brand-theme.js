@@ -4,13 +4,13 @@
   const TRACKS = {
     'arte-digital.html': {
       age: '8+',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Progresivo',
       duration: '5 meses'
     },
     'contenidos-y-marketing.html': {
       age: '12+',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Progresivo',
       duration: '5 meses',
       fit: 'Querés aprender estrategia, marketing, métricas, edición y producción digital con una mirada más integral.',
@@ -22,7 +22,7 @@
     },
     'creador-de-contenidos.html': {
       age: '10+',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Inicial',
       duration: '5 meses',
       fit: 'Querés empezar creando videos, aprendiendo edición y entendiendo cómo gestionar contenido para redes.',
@@ -34,37 +34,37 @@
     },
     'electronica-robotica.html': {
       age: 'Consultar',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Inicial',
       duration: '5 meses'
     },
     'lectura-critica-y-storytelling.html': {
       age: '14+',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Progresivo',
       duration: '5 meses'
     },
     'modelado-y-animacion-3d.html': {
       age: '12+',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Progresivo',
       duration: '5 meses'
     },
     'pequeños-programadores.html': {
       age: 'Consultar',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Inicial',
       duration: '5 meses'
     },
     'produccion-musical.html': {
       age: '14+',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Progresivo',
       duration: '5 meses'
     },
     'programacion-de-videojuegos-10-11.html': {
       age: '10–11',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Inicial',
       duration: '5 meses',
       fit: 'Tenés entre 10 y 11 años y querés aprender lógica y creación de videojuegos con un recorrido pensado para esa edad.',
@@ -76,7 +76,7 @@
     },
     'programacion-de-videojuegos-12-14.html': {
       age: '12–14',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Intermedio',
       duration: '5 meses',
       fit: 'Tenés entre 12 y 14 años y querés desarrollar juegos 2D y 3D sin quedar atado a una sola plataforma.',
@@ -88,7 +88,7 @@
     },
     'programacion-de-videojuegos-15.html': {
       age: '15+',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Avanzado',
       duration: '5 meses',
       fit: 'Tenés 15 años o más y querés trabajar con Unity, Unreal Engine y herramientas cercanas a un flujo profesional.',
@@ -100,7 +100,7 @@
     },
     'programación-en-roblox.html': {
       age: '14+',
-      modality: 'Online en vivo',
+      modality: 'Online',
       level: 'Intermedio',
       duration: '5 meses',
       fit: 'Tenés 14 años o más y querés especializarte en Roblox Studio, Lua, multijugador y sistemas propios de esa plataforma.',
@@ -115,19 +115,20 @@
   const VOSEO_REPLACEMENTS = [
     [/\bLas habilidades que desarrollará\b/g, 'Las habilidades que vas a desarrollar'],
     [/\bLas habilidades clave que dominará\b/g, 'Las habilidades clave que vas a dominar'],
-    [/\bSoftware que aprenderá:\b/g, 'Software que vas a aprender:'],
-    [/\bHerramientas que aprenderá:\b/g, 'Herramientas que vas a aprender:'],
-    [/^Aprende\b/, 'Aprendé'],
-    [/^Desarrolla\b/, 'Desarrollá'],
-    [/^Domina\b/, 'Dominá'],
-    [/^Explora\b/, 'Explorá'],
-    [/^Visualiza\b/, 'Visualizá'],
-    [/^Actualiza\b/, 'Actualizá'],
-    [/^Crea\b/, 'Creá'],
-    [/^Descubre\b/, 'Descubrí'],
-    [/^Elige\b/, 'Elegí'],
-    [/^Construye\b/, 'Construí'],
-    [/^Convierte\b/, 'Convertí'],
+    [/\bLas habilidades que aprenderá\b/g, 'Las habilidades que vas a aprender'],
+    [/Software que aprenderá:/g, 'Software que vas a aprender:'],
+    [/Herramientas que aprenderá:/g, 'Herramientas que vas a aprender:'],
+    [/(^|\s)Aprende\b/g, '$1Aprendé'],
+    [/(^|\s)Desarrolla\b/g, '$1Desarrollá'],
+    [/(^|\s)Domina\b/g, '$1Dominá'],
+    [/(^|\s)Explora\b/g, '$1Explorá'],
+    [/(^|\s)Visualiza\b/g, '$1Visualizá'],
+    [/(^|\s)Actualiza\b/g, '$1Actualizá'],
+    [/(^|\s)Crea\b/g, '$1Creá'],
+    [/(^|\s)Descubre\b/g, '$1Descubrí'],
+    [/(^|\s)Elige\b/g, '$1Elegí'],
+    [/(^|\s)Construye\b/g, '$1Construí'],
+    [/(^|\s)Convierte\b/g, '$1Convertí'],
     [/\bpuedes\b/g, 'podés'],
     [/\bHablanos\b/g, 'Hablános'],
     [/Crean su camino y lo recorren a tu propio ritmo\./g, 'Crean su camino y lo recorren a su propio ritmo.']
@@ -166,7 +167,11 @@
       const pathname = new URL(value, window.location.href).pathname;
       return decodeURIComponent(pathname.split('/').pop() || '');
     } catch (_) {
-      return decodeURIComponent(String(value).split('/').pop() || '');
+      try {
+        return decodeURIComponent(String(value).split('/').pop() || '');
+      } catch (_) {
+        return String(value).split('/').pop() || '';
+      }
     }
   }
 
