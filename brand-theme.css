@@ -106,12 +106,94 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
+.cc-course-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem 0.75rem;
+  margin: 0.85rem 0 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--cc-line);
+  border-radius: 0.8rem;
+  background: #f8fffc;
+  color: var(--cc-muted);
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+
+.cc-course-facts span {
+  display: block;
+}
+
+.cc-course-facts span::first-letter {
+  color: var(--cc-ink);
+}
+
+.cc-track-fit {
+  padding: 1.25rem 1rem;
+  background: #f7fbf9;
+  border-bottom: 1px solid var(--cc-line);
+}
+
+.cc-track-fit__inner {
+  width: min(100%, 64rem);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cc-track-fit__item {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--cc-line);
+  border-radius: 1rem;
+  background: #fff;
+  color: var(--cc-ink);
+}
+
+.cc-track-fit__item--alt {
+  background: var(--cc-accent-soft);
+  border-color: rgba(15, 118, 110, 0.25);
+}
+
+.cc-track-fit__eyebrow {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--cc-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cc-track-fit p {
+  margin: 0;
+  color: var(--cc-muted);
+  line-height: 1.55;
+}
+
+.cc-track-fit a {
+  display: inline-block;
+  margin-top: 0.65rem;
+  color: var(--cc-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cc-track-fit a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 767px) {
   .cc-navbar-mark {
     width: 32px;
     height: 32px;
     flex-basis: 32px;
     border-radius: 0;
+  }
+
+  .cc-course-facts,
+  .cc-track-fit__inner {
+    grid-template-columns: 1fr;
   }
 }
 
