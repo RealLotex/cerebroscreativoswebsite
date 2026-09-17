@@ -53,7 +53,7 @@
     "nombre": "Programación de Videojuegos Roblox",
     "edad_min": 14,
     "edad_max": null,
-    "url": "/programación-en-roblox.html"
+    "url": "/programacion-en-roblox.html"
   },
   {
     "trayecto": "programadores",
@@ -61,7 +61,7 @@
     "nombre": "Curso de programación para niños",
     "edad_min": null,
     "edad_max": null,
-    "url": "/pequeños-programadores.html"
+    "url": "/pequenos-programadores.html"
   },
   {
     "trayecto": "musica",
