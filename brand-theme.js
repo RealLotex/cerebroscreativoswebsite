@@ -103,11 +103,8 @@
       const pathname = new URL(value, window.location.href).pathname;
       return decodeURIComponent(pathname.split('/').pop() || '');
     } catch (_) {
-      try {
-        return decodeURIComponent(String(value).split('/').pop() || '');
-      } catch (_) {
-        return String(value).split('/').pop() || '';
-      }
+      try { return decodeURIComponent(String(value).split('/').pop() || ''); }
+      catch (_) { return String(value).split('/').pop() || ''; }
     }
   }
 
@@ -118,8 +115,7 @@
   function rewriteLegacyLinks() {
     document.querySelectorAll('a[href]').forEach(link => {
       const raw = link.getAttribute('href');
-      const file = normalizeFilename(raw);
-      const canonical = LEGACY_LINKS[file];
+      const canonical = LEGACY_LINKS[normalizeFilename(raw)];
       if (!raw || !canonical) return;
       link.setAttribute('href', raw
         .replace('pequeños-programadores.html', 'pequenos-programadores.html')
@@ -151,9 +147,9 @@
         </div>
       </div>`;
 
-    const accessSlot = nav.querySelector('.cc-detail-nav__access');
-    if (access) accessSlot.replaceWith(access);
-    else accessSlot.remove();
+    const slot = nav.querySelector('.cc-detail-nav__access');
+    if (access) slot.replaceWith(access);
+    else slot.remove();
     document.body.prepend(nav);
   }
 
@@ -214,8 +210,7 @@
 
   function normalizeCertifications() {
     if (!document.body.classList.contains('detail-light')) return;
-    const labels = Array.from(document.querySelectorAll('p'))
-      .filter(p => /Hito Desbloqueado/i.test(p.textContent || ''));
+    const labels = Array.from(document.querySelectorAll('p')).filter(p => /Hito Desbloqueado/i.test(p.textContent || ''));
     const names = ['Certificado Inicial', 'Certificado Intermedio', 'Certificado Avanzado'];
     labels.forEach((label, index) => {
       const container = label.parentElement;
@@ -228,21 +223,34 @@
 
   function setLinkLabel(link, label) {
     if (!link) return;
-    Array.from(link.childNodes)
-      .filter(node => node.nodeType === Node.TEXT_NODE)
-      .forEach(node => node.remove());
+    Array.from(link.childNodes).filter(node => node.nodeType === Node.TEXT_NODE).forEach(node => node.remove());
     link.append(` ${label}`);
   }
 
   function normalizeDetailCta() {
     if (!document.body.classList.contains('detail-light')) return;
-    const cta = document.querySelector('.final-cta');
-    if (!cta) return;
+    let cta = document.querySelector('.final-cta');
+
+    if (!cta) {
+      cta = document.createElement('section');
+      cta.className = 'final-cta cc-detail-cta';
+      cta.innerHTML = `
+        <div class="cc-detail-cta__inner">
+          <h2>¿Querés saber si este trayecto<br>es para vos?</h2>
+          <p class="cc-detail-cta-copy">Hablá con un asesor y te ayudamos a confirmar edad, nivel, modalidad y disponibilidad.</p>
+          <div><a id="btn-whatsapp" class="cc-detail-cta-button cc-detail-cta-button--primary meta-lead-btn" href="https://wa.me/5493404564631?text=Hola! quisiera consultar por este trayecto de Cerebros Creativos" target="_blank" rel="noopener"><i data-lucide="message-circle-more"></i> Consultar por WhatsApp</a></div>
+          <div><a id="btn-phone" class="cc-detail-cta-button" href="tel:+5493404564631"><i data-lucide="phone"></i> Llamar</a></div>
+          <div><a id="btn-mail" class="cc-detail-cta-button" href="mailto:contacto@cerebroscreativos.org"><i data-lucide="mail"></i> Enviar email</a></div>
+        </div>`;
+      document.body.appendChild(cta);
+      return;
+    }
+
     cta.classList.add('cc-detail-cta');
     const inner = cta.querySelector(':scope > div') || cta;
+    inner.classList.add('cc-detail-cta__inner');
     const heading = inner.querySelector('h2');
     if (heading) heading.innerHTML = '¿Querés saber si este trayecto<br>es para vos?';
-
     let copy = inner.querySelector('.cc-detail-cta-copy');
     if (!copy) {
       copy = document.createElement('p');
@@ -251,7 +259,6 @@
       if (heading) heading.insertAdjacentElement('afterend', copy);
       else inner.prepend(copy);
     }
-
     const whatsapp = cta.querySelector('#btn-whatsapp, a[href^="https://wa.me/"]');
     const phone = cta.querySelector('#btn-phone, a[href^="tel:"]');
     const mail = cta.querySelector('#btn-mail, a[href^="mailto:"]');
@@ -269,16 +276,9 @@
     footer.className = 'cc-detail-footer';
     footer.innerHTML = `
       <div class="cc-detail-footer__inner">
-        <a class="cc-detail-footer__brand" href="/">
-          <img src="./cc-favicon.png" alt="" aria-hidden="true">
-          <span>CerebrosCreativos<span>.org</span></span>
-        </a>
+        <a class="cc-detail-footer__brand" href="/"><img src="./cc-favicon.png" alt="" aria-hidden="true"><span>CerebrosCreativos<span>.org</span></span></a>
         <nav class="cc-detail-footer__links" aria-label="Enlaces del sitio">
-          <a href="/">Inicio</a>
-          <a href="/propuesta.html">KIDS</a>
-          <a href="/propuestajr.html">Jr_</a>
-          <a href="/propuestastudio.html">Studio</a>
-          <a href="mailto:contacto@cerebroscreativos.org">Contacto</a>
+          <a href="/">Inicio</a><a href="/propuesta.html">KIDS</a><a href="/propuestajr.html">Jr_</a><a href="/propuestastudio.html">Studio</a><a href="mailto:contacto@cerebroscreativos.org">Contacto</a>
         </nav>
         <p>© ${new Date().getFullYear()} CerebrosCreativos.org</p>
       </div>`;
@@ -315,10 +315,8 @@
     normalizeDetailCta();
     ensureDetailFooter();
     applyTextCleanup();
-    window.requestAnimationFrame(() => {
-      rewriteLegacyLinks();
-      decorateCourseCards();
-    });
+    if (window.lucide && typeof window.lucide.createIcons === 'function') window.lucide.createIcons();
+    window.requestAnimationFrame(() => { rewriteLegacyLinks(); decorateCourseCards(); });
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyBranding);
